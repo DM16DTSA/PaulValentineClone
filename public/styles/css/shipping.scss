@@ -1,0 +1,51 @@
+.shipping-header {
+  margin: 0px;
+  height: 30vh;
+  width: 100vw;
+  background-image: url('../../styles/images/headers/shipping.jpg');
+  background-size: cover;
+}
+
+.shipping-container {
+  text-align: center;
+  margin: 0px;
+  height: 70vh;
+  width: 100vw;
+  background-color: #F3F3F5;
+}
+
+.shipping-info {
+  height: auto;
+  width: 80vw;
+  margin: auto;
+
+  h2 {
+    margin-bottom: 1px;
+    font-family: helvetica;
+  }
+
+  h3 {
+    margin-bottom: 1px;
+  }
+
+  p {
+    line-height: 26px;
+  }
+
+}
+
+.customs {
+  height: auto;
+  width: 80vw;
+  margin: auto;
+
+  h2 {
+    margin-bottom: 1px;
+    font-family: helvetica;
+  }
+
+  p {
+    margin-bottom: 1px;
+    line-height: 26px;
+  }
+}
