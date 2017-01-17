@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/DM16DTSA/PaulValentineClone/issues"
   },
-  "homepage": "https://github.com/DM16DTSA/PaulValentineClone#readme"
+  "homepage": "https://github.com/DM16DTSA/PaulValentineClone#readme",
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "body-parser": "^1.15.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2"
+  }
 }
