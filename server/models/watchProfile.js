@@ -5,6 +5,7 @@ var watchProfile = new mongoose.Schema({
   name: String,
   price: Number,
   image: String,
+  background: String,
   inStock: Boolean,
   description: String,
   coll: String,

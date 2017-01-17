@@ -31,7 +31,7 @@
     "image" : "url",
     "inStock" : true,
     "description" : "The Marina Gold Mesh combines timeless elegance with modern minimalism to make for a look that is equal parts trendy and fashionable – and classically upscale. Named after Los Angeles' beautiful harbor-side neighborhood Marina Del Rey, the Marina Gold Mesh watch is made from rose gold-plated stainless steel and it is sophisticated, but not flashy, just like the polished Marina itself. The Marina's minimalist, ultra-thin watch case and luxury stainless steel mesh strap make it light and comfortable to wear, whether you're heading to a gala or simply going for a walk on the beach. Understated luxury at its best.",
-    "coll":"Marina Rose Gold"
+    "coll":"Marina"
     "popularity" : 2,
     "straps" : [],
     "similar" : [],
