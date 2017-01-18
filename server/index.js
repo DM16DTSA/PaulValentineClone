@@ -3,11 +3,12 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
 
-var port = 4261;
+var port = 3000;
 
 var app = express();
+app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(cors());
 
 mongoose.connect('mongodb://localhost/pvclonedb');
 mongoose.connection.on('connected', function() {
