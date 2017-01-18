@@ -104,8 +104,14 @@ angular.module("app")
       url: '/collections/straps',
       templateUrl: './app/routes/straps/strapsTmpl.html',
       controller: 'strapsCtrl'
-    });
+    })
 
+    //journal state
+    .state('journal',{
+      url: '/journal',
+      templateUrl:'./app/routes/journal/journalTmpl.html',
+      controller: 'journalCtrl'
+    });
 
     // ASSIGN OTHERWISE
 		// ============================================================
