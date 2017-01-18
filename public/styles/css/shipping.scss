@@ -1,3 +1,5 @@
+@import '../styles';
+
 .shipping-header {
   margin: 0px;
   height: 30vh;
@@ -11,7 +13,7 @@
   margin: 0px;
   height: 70vh;
   width: 100vw;
-  background-color: #F3F3F5;
+  background-color: $gray-background;
 }
 
 .shipping-info {
@@ -22,6 +24,7 @@
   h2 {
     margin-bottom: 1px;
     font-family: helvetica;
+    font-size: 40px;
   }
 
   h3 {
