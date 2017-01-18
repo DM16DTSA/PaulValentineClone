@@ -1,3 +1,45 @@
+@import '../styles';
+$sec-nav-text-black: #333333;
+$sec-nav-border-gray: #E4E4E4;
+$sec-nav-background: #FFFFFF;
+.hand{
+  cursor: pointer;
+  cursor: hand;
+}
 .secondaryNavbar-wrapper{
-  
+  // z-index: 1;
+  width: 93.959vw;
+  height: 8.316vh;
+  background-color: $sec-nav-background;
+  // border: 1px solid red;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .secondarynavbar-btn-wrapper{
+    // background-color: blue;
+    width: 44.323vw;
+    height: 4.106vh;
+    display: flex;
+    justify-content: space-between;
+    div{
+      padding-left: 1.042vw;
+      padding-right: 1.042vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2px;
+      border: 1px solid $sec-nav-border-gray;
+      color: $sec-nav-text-black;
+      font-size: 1.3vh;
+      letter-spacing: 2px;
+      font-weight: 900;
+    }
+  }
+}
+.secondary-placeholder{
+  width: 93.959vw;
+  height: 8.316vh;
 }
