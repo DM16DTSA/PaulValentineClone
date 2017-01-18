@@ -7,6 +7,7 @@ var port = 4261;
 
 var app = express();
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
 
 mongoose.connect('mongodb://localhost/pvclonedb');
 mongoose.connection.on('connected', function() {
@@ -16,10 +17,15 @@ mongoose.connection.on('connected', function() {
 // var sightings = db.collection('sightings');
 
 var watchController = require('./controllers/watchController.js');
+var strapController = require('./controllers/strapController.js');
 
 app.post('/watches', watchController.addWatch);
 
 app.get('/watches', watchController.getWatches);
+
+app.post('/straps', strapController.addStrap);
+
+app.get('/straps', strapController.getStraps);
 // watchController.watchProfile.create({
 //   "name":"Feliz Mesh",
 //   "price": 149.00,
