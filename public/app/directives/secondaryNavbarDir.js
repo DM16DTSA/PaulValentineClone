@@ -3,7 +3,10 @@ angular.module("app")
 
   return {
     restrict: 'AE',
-    templateUrl: './app/directives/secondaryNavbarTmpl.html'
+    templateUrl: './app/directives/secondaryNavbarTmpl.html',
+    controller: ($scope)=>{
+      
+    }
   }
 
 
