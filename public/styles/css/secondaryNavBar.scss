@@ -13,16 +13,16 @@ $sec-nav-background: #FFFFFF;
   position: fixed;
   right: 0;
   top: 0;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   .secondarynavbar-btn-wrapper{
     // border: 1px solid red;
-    width: 44.375vw;
-    // width: 852px;
-    height: 4.316vh;
-    // height: 41px;
+    // width: 44.375vw;
+    width: 852px;
+    // height: 4.316vh;
+    height: 41px;
     display: flex;
     justify-content: space-between;
     .secnav-btn{
