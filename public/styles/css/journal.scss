@@ -1,12 +1,12 @@
 @import '../styles';
-$journal-width: 93.959vw;
+$journal-width: 93.907vw;
 .journal-wrapper{
   width: $journal-width;
   height: auto;
   position: absolute;
   right: 0;
   top: 0;
-  @import 'secondaryNavBar';
+  // @import 'secondaryNavBar';
   border: 1px solid $gray-background;
   .journal-container-one{
     display: flex;
@@ -46,5 +46,21 @@ $journal-width: 93.959vw;
       width: 50%;
       // border: 1px solid yellow;
     }
+  }
+  .empty-foot{
+    width: $journal-width;
+    height: 437px;
+  }
+  .empty-foot-holder{
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -1;
+    width:$journal-width;
+    height: 437px;
+    position: fixed;
+    bottom: 0;
+    background-color: $bottom-pink;
   }
 }
