@@ -1,17 +1,12 @@
 @import '../styles';
 
-.view-window {
-  width: 100vw;
-  height: 2000px;
-  background-color: pink;
-}
-
 .overall-navbar-container-full {
   width: auto;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 9999;
 }
 
 .overall-navbar-container-fixed {
@@ -106,6 +101,8 @@
 
 .navbar-bag h3 {
   padding-bottom: 20px;
+  font-family: $header;
+  color: $light-gray;
 }
 
 // #bag.clicked .bag-dropdown-full {
