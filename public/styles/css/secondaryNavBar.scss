@@ -1,3 +1,60 @@
+@import '../styles';
+$sec-nav-text-black: #525252;
+$sec-nav-border-gray: #E4E4E4;
+$sec-nav-background: #FFFFFF;
+.hand{
+  cursor: pointer;
+}
 .secondaryNavbar-wrapper{
+  z-index: 1;
+  width: 93.907vw;
+  height: 8.422vh;
+  background-color: $sec-nav-background;
+  position: fixed;
+  right: 0;
+  top: 0;
   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .secondarynavbar-btn-wrapper{
+    // border: 1px solid red;
+    width: 44.375vw;
+    // width: 852px;
+    height: 4.316vh;
+    // height: 41px;
+    display: flex;
+    justify-content: space-between;
+    .secnav-btn{
+      height: 100%;
+      padding-left: 1.04vw;
+      padding-right: 1.04vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2px;
+      border: 1px solid $sec-nav-border-gray;
+      color: $sec-nav-text-black;
+      h1{
+        font-size: 11px;
+        letter-spacing: 2px;
+        line-height: 40px;
+        font-weight: 900;
+      }
+    }
+    .secnav-btn:hover{
+      background-color: $pink-btn-text;
+      color: #FFFFFF;
+      border: 1px solid white;
+    }
+    .secnavbar-current{
+      background-color: $pink-btn-text;
+      color: #FFFFFF;
+      border: 1px solid white;
+    }
+  }
+}
+.secondary-placeholder{
+  width: 93.907vw;
+  height: 8.422vh;
 }
