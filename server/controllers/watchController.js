@@ -1,8 +1,8 @@
-var watchProfile = require('../models/watchProfile.js');
+var watches = require('../models/watchProfile.js');
 
 module.exports = {
   addWatch: function(req, res) {
-    watchProfile.collection.insert(req.body, function(err, watches) {
+    watches.collection.insert(req.body, function(err, watches) {
       if(err) {
         res.status(400).send(err);
       }
@@ -36,7 +36,7 @@ module.exports = {
     // return res;
   },
   getWatches: function(req, res) {
-    watchProfile.find({}, function(err, watches) {
+    watches.find({}, function(err, watches) {
     res.send(watches);
   });
   }

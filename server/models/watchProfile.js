@@ -29,4 +29,4 @@ var watchProfile = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('watchProfile', watchProfile);
+module.exports = mongoose.model('watches', watchProfile);
