@@ -3,7 +3,16 @@ angular.module("app")
 
   return {
     restrict: 'AE',
-    templateUrl: './app/directives/overallNavbarTmpl.html'
+    templateUrl: './app/directives/overallNavbarTmpl.html',
+    controller: function($scope, mainService) {
+
+      $(window).ready(function() {
+        $('#submenus').on('click', function(){
+          $(this).toggleClass('clicked');
+        });
+      });
+
+    }
   }
 
 
