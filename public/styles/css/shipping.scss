@@ -3,7 +3,7 @@
 .shipping-header {
   display: block;
   box-sizing: border-box;
-  margin-top: 60px;
+  margin-left: 100px;
   padding-left: 100px;
   padding-top: 250px;
   padding-bottom: 180px;
@@ -17,7 +17,6 @@
 @media (max-width: 800px) {
   .shipping-header {
     height: 300px;
-    margin-top: 60px;
     padding-left: 100px;
     padding-bottom: 60px;
   }
@@ -26,6 +25,7 @@
 .shipping-container {
   text-align: center;
   margin: auto;
+  margin-left: 50px;
   height: 70vh;
   width: 100vw;
   background-color: $gray-background;
