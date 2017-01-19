@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
 var port = 3000;
 
@@ -10,10 +10,10 @@ app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost/pvclonedb');
-mongoose.connection.on('connected', function() {
-  console.log("jgjjkjkfgjkdfg");
-})
+// mongoose.connect('mongodb://localhost/pvclonedb');
+// mongoose.connection.on('connected', function() {
+//   console.log("jgjjkjkfgjkdfg");
+// })
 // var db = mongoose('birds');
 // var sightings = db.collection('sightings');
 
