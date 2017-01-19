@@ -115,5 +115,5 @@ angular.module("app")
 
     // ASSIGN OTHERWISE
 		// ============================================================
-		$urlRouterProvider.otherwise('/home');
+		$urlRouterProvider.otherwise('/');
   })

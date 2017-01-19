@@ -1,0 +1,225 @@
+@import '../styles';
+
+.view-window {
+  width: 100vw;
+  height: 2000px;
+  background-color: pink;
+}
+
+.overall-navbar-container-full {
+  width: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.overall-navbar-container-fixed {
+  width: 99px;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9);
+  left: 0;
+  top: 0;
+}
+
+.overall-navbar-container {
+  width: 99px;
+  height: 100vh;
+  position: relative;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9);
+  left: 0;
+  top: 0;
+  border-right: thin solid #ebebeb;
+}
+
+.navbar-logo {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 20px;
+}
+
+.navbar-logo img {
+  width: 35px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -17.5px;
+}
+
+.navbar-ham {
+  width: 100%;
+  height: 30px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+
+.bar {
+  width: 25px;
+  height: 1px;
+  margin: auto;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -12.5px;
+}
+
+.top {
+
+}
+
+.middle {
+  margin-top: 10px;
+}
+
+.bottom {
+  margin-top: 20px;
+}
+
+.navbar-bag {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+}
+
+.navbar-bag img {
+  width: 25px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -12.5px;
+  bottom: 50px;
+}
+
+.navbar-bag h3 {
+  padding-bottom: 20px;
+}
+
+// #bag.clicked .bag-dropdown-full {
+//   transform: rotateX(0deg);
+// }
+//
+// .bag-dropdown-full {
+//   transition: 0ms transform ease-in-out;
+//   transform: rotateX(90deg);
+//   transform-origin: top;
+// }
+//
+#submenus.clicked .submenus {
+  transform: rotateY(0deg);
+}
+
+.submenus {
+  width: 363px;
+  height: 100vh;
+  margin: auto;
+  margin-left: -363px;
+  position: absolute;
+  left: 462px;
+  top: 0;
+  // -webkit-transform: translateX(-363px);
+  // transform: translateX(-363px);
+  transition: 300ms transform ease-in-out;
+  transform: rotateY(90deg);
+  transform-origin: left;
+}
+
+.submenu1 {
+  width: 363px;
+  height: 100vh;
+  margin: auto;
+  background-color: $black-sidebar;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.submenus a {
+  color: white;
+  text-decoration: none;
+}
+
+.submenu1-paul-valentine {
+  width: 138px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+
+.submenu1-paul-valentine img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.submenu1-links {
+  width: auto;
+  height: auto;
+  margin: auto;
+  color: white;
+  position: absolute;
+  top: 50%;
+  margin-top: -75px;
+  left: 50px;
+}
+
+.submenu-brand {
+  width: 360px;
+  height: 100vh;
+  margin: auto;
+  background-color: #222222;
+  position: absolute;
+  left: 363px;
+  top: 0;
+  z-index: 1;
+  // -webkit-transform: translateX(-360px);
+  // transform: translateX(-360px);
+}
+
+.submenu-brand-links {
+  width: 360px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  margin-top: -55px;
+  left: 50px;
+}
+
+.submenu-customer {
+  width: 360px;
+  height: 100vh;
+  margin: auto;
+  background-color: #222222;
+  position: absolute;
+  left: 363px;
+  top: 0;
+  z-index: 1;
+  // -webkit-transform: translateX(-360px);
+  // transform: translateX(-360px);
+}
+
+.submenu-customer-links {
+  width: 360px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  margin-top: -55px;
+  left: 50px;
+}
