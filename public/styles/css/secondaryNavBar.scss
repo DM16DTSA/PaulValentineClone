@@ -8,7 +8,7 @@ $sec-nav-background: #FFFFFF;
 .secondaryNavbar-wrapper{
   z-index: 1;
   width: 93.907vw;
-  height: 8.422vh;
+  height: 80px;
   background-color: $sec-nav-background;
   position: fixed;
   right: 0;
@@ -40,6 +40,7 @@ $sec-nav-background: #FFFFFF;
         letter-spacing: 2px;
         line-height: 40px;
         font-weight: 900;
+        font-family: $header;
       }
     }
     .secnav-btn:hover{
