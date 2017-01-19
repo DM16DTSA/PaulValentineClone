@@ -11,7 +11,8 @@ angular.module("app")
     .state('home', {
       url: '/',
       templateUrl: './app/routes/home/homeTmpl.html',
-      controller: 'homeCtrl'
+      controller: 'homeCtrl',
+      
     })
 
     // ABOUT STATE
