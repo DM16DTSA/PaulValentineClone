@@ -3,7 +3,7 @@ angular.module("app")
   $rootScope.header = "Paul Valentine | badass watches for babes all over the world – Paul Valentine US";
   mainService.getWatches()
   .then(function(response) {
-    $scope.mainWatches = response;
+    $scope.mainWatches = response.data;
     console.log($scope.mainWatches)
   })
 
