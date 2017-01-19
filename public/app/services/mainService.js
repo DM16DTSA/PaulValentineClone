@@ -5,5 +5,11 @@ angular.module("app")
 			.then(function(response) {
 				return response;
 			})
+		};
+		this.getStraps = function() {
+			return $http.get('/straps')
+			.then(function(response) {
+				return response;
+			})
 		}
 });
