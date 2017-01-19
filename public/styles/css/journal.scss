@@ -3,6 +3,7 @@ $journal-width: 93.907vw;
 
 .journal-wrapper{
   margin-left: 100px;
+  margin-bottom: 437px;
   width: $journal-width;
   height: auto;
   // position: absolute;
@@ -84,21 +85,5 @@ $journal-width: 93.907vw;
     //
     //   }
     // }
-  }
-  .empty-foot{
-    width: $journal-width;
-    height: 437px;
-  }
-  .empty-foot-holder{
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: -1;
-    width:$journal-width;
-    height: 437px;
-    position: fixed;
-    bottom: 0;
-    background-color: $bottom-pink;
   }
 }

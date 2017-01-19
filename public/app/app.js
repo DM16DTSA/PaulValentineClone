@@ -35,11 +35,25 @@ angular.module("app")
       controller: 'faqCtrl'
     })
 
+    // LEGAL STATE
+    .state('legal', {
+      url: '/legal-notice',
+      templateUrl: './app/routes/legal/legalTmpl.html',
+      controller: 'legalCtrl'
+    })
+
     // LOOKBOOK STATE
     .state('lookbook', {
       url: '/lookbook',
       templateUrl: './app/routes/lookbook/lookbookTmpl.html',
       controller: 'lookbookCtrl'
+    })
+
+    // PRIVACY STATE
+    .state('privacy', {
+      url: '/privacy',
+      templateUrl: './app/routes/privacy/privacyTmpl.html',
+      controller: 'privacyCtrl'
     })
 
     // RETURNS STATE
@@ -68,6 +82,13 @@ angular.module("app")
       url: '/store_finder',
       templateUrl: './app/routes/storeFinder/storeFinderTmpl.html',
       controller: 'storeFinderCtrl'
+    })
+
+    // TERMS & CONDITIONS STATE
+    .state('terms', {
+      url: '/terms-conditions',
+      templateUrl: './app/routes/terms/termsTmpl.html',
+      controller: 'termsCtrl'
     })
 
     // COLLECTIONS
