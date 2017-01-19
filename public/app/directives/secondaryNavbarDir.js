@@ -7,7 +7,7 @@ angular.module("app")
     controller: ($scope)=>{
       
     }
-  }
+  };
 
 
 });
