@@ -43,5 +43,9 @@ module.exports = {
         }
       });
     }
+  },
+  destroyCart: (req,res,next)=>{
+    req.session.cart = [];
+    res.status(200).send(req.session.cart);
   }
 }//closing
