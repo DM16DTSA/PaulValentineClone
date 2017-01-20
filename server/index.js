@@ -41,10 +41,10 @@ app.get('/straps', strapController.getStraps);
 // app.post('/straps', strapController.addStrap);
 var cartCtrl = require('./controllers/cartCtrl.js');
 
-app.get('/cart', cartCtrl.getCart);
-app.post('/cart', cartCtrl.postCart);
-app.put('/cart/:id/:quantity', cartCtrl.putCart);
-app.delete('/cart/:id', cartCtrl.deleteCart);
+app.get('api/cart', cartCtrl.getCart);
+app.post('api/cart', cartCtrl.postCart);
+app.put('api/cart/:id/:quantity', cartCtrl.putCart);
+app.delete('api/cart/:id', cartCtrl.deleteCart);
 
 
 app.listen(config.port, function() {

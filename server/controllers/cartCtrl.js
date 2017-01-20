@@ -13,6 +13,7 @@ module.exports = {
       res.status(200).send(req.session.cart);
     }else{
       req.session.cart.push(req.body);
+      res.status(200).send(req.session.cart);
     }
   },
   putCart: (req,res,next)=>{
@@ -23,8 +24,10 @@ module.exports = {
         if(element._id === req.params.id){
           if(req.params.quantity == 0){
             req.session.cart.splice(index,1);
+            res.status(200).send(req.session.cart);
           }
           element.quantity = req.params.quantity;
+          res.status(200).send(req.session.cart);
         }
       });
     }
@@ -36,6 +39,7 @@ module.exports = {
       req.session.cart.forEach((element, index)=>{
         if(element._id === req.params.id){
           req.session.cart.splice(index,1);
+          res.status(200).send(req.session.cart);
         }
       });
     }
