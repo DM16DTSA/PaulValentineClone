@@ -1,5 +1,13 @@
 @import '../styles';
 
+.footer-margin {
+  width: 100vw;
+  height: 1px;
+  margin: auto;
+  margin-bottom: 436px;
+  background-color: $bottom-pink;
+}
+
 footer {
   width: 100vw;
   height: 437px;
