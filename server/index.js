@@ -45,6 +45,7 @@ app.get('api/cart', cartCtrl.getCart);
 app.post('api/cart', cartCtrl.postCart);
 app.put('api/cart/:id/:quantity', cartCtrl.putCart);
 app.delete('api/cart/:id', cartCtrl.deleteCart);
+app.delete('api/destroy', cartCtrl.destroyCart);
 
 
 app.listen(config.port, function() {
