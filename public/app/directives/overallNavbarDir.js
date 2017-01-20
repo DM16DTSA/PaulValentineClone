@@ -10,6 +10,9 @@ angular.module("app")
         $('#submenus').on('click', function(){
           $(this).toggleClass('clicked');
         });
+        $('#bag').on('click', function(){
+          $(this).toggleClass('clicked');
+        });
       });
 
     }

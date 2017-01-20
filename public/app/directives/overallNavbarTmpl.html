@@ -60,11 +60,34 @@
         </div>
       </div>
 
-      <div class="navbar-bag">
-        <a>
-          <img src="./styles/images/icons/cart.png" />
-        </a>
+      <div id="bag" class="navbar-bag">
+        <img src="./styles/images/icons/cart.png" />
         <h3>USD</h3>
+        <div class="cart-dir-container">
+          <div class="navbar-your-bag">
+            <h1>YOUR BAG</h1>
+          </div>
+
+          <div class="navbar-bag-items" ng-if="product">
+
+          </div>
+
+          <div class="navbar-bag-noitems" ng-if="!product">
+            <h3>Your bag is currently empty.</h3>
+          </div>
+
+          <div class="navbar-bag-bottom">
+            <div class="navbar-bag-total">
+              <h2>TOTAL</h2>
+              <br>
+              <div class="navbar-paynowbtn">PAY NOW SECURELY</div>
+            </div>
+
+            <!-- <div class="navbar-paynowbtn-container"> -->
+            <!-- <button class="navbar-paynowbtn">PAY NOW SECURELY</button> -->
+            <!-- </div> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
