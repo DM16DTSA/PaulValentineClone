@@ -1,12 +1,56 @@
 @import '../styles';
-$journal-width: 93.959vw;
+$journal-width: 93.907vw;
+
+.journal-cont-par{
+  font-family: $header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 502px;
+  width: 50%;
+  span{
+    height: 304px;
+    width: 31.198vw;
+    display: flex;
+    flex-direction: column;
+    h1{
+      font-size: 24px;
+      line-height: 34px;
+      color: #333333;
+      letter-spacing: 2px;
+    }
+    p{
+      font-size: 16px;
+      line-height: 26px;
+      color: #999999;
+    }
+    .journal-btn{
+      height: 42px;
+      width: 152px;
+      background-color: $pink-btn-text;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2px;
+      font-size: 12px;
+      line-height: 40px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 0 $pink-btn-text;
+      transition: all ease 0.8s;
+      &:hover {
+        box-shadow: inset 0 -100px 0 0 black;
+      }
+    }
+  }
+}
+
 .journal-wrapper{
+  margin-left: 98px;
+  margin-bottom: 437px;
   width: $journal-width;
   height: auto;
-  position: absolute;
-  right: 0;
-  top: 0;
-  @import 'secondaryNavBar';
   border: 1px solid $gray-background;
   .journal-container-one{
     display: flex;
@@ -14,18 +58,12 @@ $journal-width: 93.959vw;
     width: $journal-width;
     background-color: $near-white-background-2;
     .journal-img-store{
-      // border: 1px solid green;
-      height: 52.8429vh;
+      height: 502px;
       width: 50%;
       background-image: url('../../styles/images/journal/journalstore.png');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-    }
-    .journal-cont-par{
-      height: 52.8429vh;
-      width: 50%;
-      // border: 1px solid yellow;
     }
   }
   .journal-container-two{
@@ -34,17 +72,12 @@ $journal-width: 93.959vw;
     width: $journal-width;
     background-color: $gray-background;
     .journal-img-lady{
-      height: 52.8429vh;
+      height: 502px;
       width: 50%;
       background-image: url('../../styles/images/journal/journallady.jpg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-    }
-    .journal-cont-par{
-      height: 52.8429vh;
-      width: 50%;
-      // border: 1px solid yellow;
     }
   }
 }
