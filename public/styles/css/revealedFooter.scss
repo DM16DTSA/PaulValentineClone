@@ -5,6 +5,7 @@
   height: 1px;
   margin: auto;
   margin-bottom: 436px;
+  margin-left: 100px;
   background-color: $bottom-pink;
 }
 
@@ -52,7 +53,7 @@ footer a {
   text-align: center;
   position: absolute;
   left: 50%;
-  margin-left: -200px;
+  margin-left: -195px;
   margin-top: 210px;
 }
 
@@ -72,7 +73,7 @@ footer a {
 }
 
 .footer-bottom {
-  width: 350px;
+  width: 400px;
   height: auto;
   margin: auto;
   text-align: center;
@@ -80,7 +81,7 @@ footer a {
   position: absolute;
   bottom: 80px;
   left: 50%;
-  margin-left: -220px;
+  margin-left: -215px;
 }
 
 .footer-terms {
@@ -88,6 +89,7 @@ footer a {
   height: auto;
   display: flex;
   flex-direction: row;
+  text-align: center;
 }
 
 .footer-bottom a {
