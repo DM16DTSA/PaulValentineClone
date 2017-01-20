@@ -12,7 +12,7 @@ angular.module("app")
       url: '/',
       templateUrl: './app/routes/home/homeTmpl.html',
       controller: 'homeCtrl',
-      
+
     })
 
     // ABOUT STATE
@@ -116,5 +116,5 @@ angular.module("app")
 
     // ASSIGN OTHERWISE
 		// ============================================================
-		$urlRouterProvider.otherwise('/home');
+		$urlRouterProvider.otherwise('/');
   })

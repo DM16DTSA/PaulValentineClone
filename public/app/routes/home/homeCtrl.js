@@ -4,7 +4,6 @@ angular.module("app")
   mainService.getWatches()
   .then(function(response) {
     $scope.mainWatches = response.data;
-    console.log($scope.mainWatches)
+    console.log(response.data)
   })
-
 });
