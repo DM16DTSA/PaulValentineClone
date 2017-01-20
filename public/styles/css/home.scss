@@ -2,12 +2,13 @@
 * {
   box-sizing: border-box;
 }
+
 .homeMain {
   background-color: $gray-background;
   margin-bottom: 435px;
   position: relative;
   box-sizing: border-box;
-
+}
 
 .hero {
   background-color: #DDDDDD;
@@ -130,99 +131,289 @@
   }
 }
 }
-  .homeCollections {
-    background: $near-white-background;
-    padding-left: 100px;
-    border-top: 1px solid #ebebeb;
-    border-bottom: 1px solid #ebebeb;
-    .innerWrap2 {
-      padding: 25px 25px 0 25px;
-      width: 100%;
-      .grid {
-        margin-left: -25px;
-        padding: 0;
-        box-sizing: border-box;
-        .grid-item {
-          min-height: 1px;
-          width: 33.33%;
-          padding-left: 25px;
-          float: left;
-          .collection {
+
+.homeCollections {
+  background: $near-white-background;
+  padding-left: 100px;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  .innerWrap2 {
+    padding: 25px 25px 0 25px;
+    width: 100%;
+    .grid {
+      margin-left: -25px;
+      padding: 0;
+      box-sizing: border-box;
+      .grid-item {
+        min-height: 1px;
+        width: 33.33%;
+        padding-left: 25px;
+        float: left;
+        .collection {
+          width: 100%;
+          padding-top: 66%;
+          height: 0;
+          display: block;
+          margin-bottom: 25px;
+          overflow: hidden;
+          position: relative;
+          .foo {
+            position: absolute;
+            top: 0;
             width: 100%;
-            padding-top: 66%;
-            height: 0;
-            display: block;
-            margin-bottom: 25px;
-            overflow: hidden;
-            position: relative;
-            .foo {
-              position: absolute;
-              top: 0;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            transition: transform 0.8s;
+          }
+          .coll-bg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            background: rgba(255,255,255,0.3);
+            opacity: 0;
+            transition: all 0.5s;
+          }
+          .collection_inner {
+            position: absolute;
+            bottom: 20px;
+            padding: 0 30px;
+            transition: all 350ms;
+            h2 {
+              color: white;
+              font-family: $headerlight;
+              text-transform: uppercase;
+              font-size: 24px;
+              letter-spacing: 2px;
+            }
+            &.right {
               width: 100%;
-              height: 100%;
-              background-position: center;
-              background-size: cover;
+              text-align: right;
             }
+          }
+          &:hover {
             .coll-bg {
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              right: 0;
-              top: 0;
-              background: rgba(255,255,255,0.3);
-              opacity: 0;
-              transition: all 0.5s;
+              opacity: 1;
             }
-            .collection_inner {
+          }
+          &:hover {
+            .foo {
+              transform: scale(1.2);
+            }
+          }
+        }
+        .journal {
+          box-sizing: border-box;
+          width: 100%;
+          height: 0;
+          padding-top: calc(132% + 25px);
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          overflow: hidden;
+          display: block;
+          .blogImage {
+            position: absolute;
+            top: 0;
+            transition: transform 1s;
+            width: 100%;
+            height:100%;
+            background-size: cover;
+            background-position: center;
+          }
+          .blog_border {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 30px;
+            bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.4);
+            .blog_inner {
               position: absolute;
-              bottom: 20px;
+              top: 50%;
+              margin-top: -50px;
+              width: 100%;
               padding: 0 30px;
-              transition: all 350ms;
+              text-align: center;
+              font-family: $headerlight;
+              h3 {
+                color: white;
+                font-size: 18px;
+                text-transform: uppercase;
+                line-height: 1.4;
+                letter-spacing: 1px;
+              }
               h2 {
                 color: white;
-                font-family: $headerlight;
+                font-size: 40px;
                 text-transform: uppercase;
-                font-size: 24px;
+                line-height: 1.4;
                 letter-spacing: 2px;
               }
-              &.right {
-                width: 100%;
-                text-align: right;
+              .slidebtn {
+                margin-top: 10px;
+                background-color: $pink-btn-text;
+                box-shadow: inset 0 0 0 0 #333;
+                &:hover {
+                  box-shadow: inset 0 -100px 0 0 #333;
+                }
               }
             }
-            &:hover {
-              .coll-bg {
-                opacity: 1;
-              }
+          }
+          &:hover {
+            .blogImage {
+              transform: scale(1.2);
             }
           }
         }
       }
     }
+    &:after {
+    content: '';
+    display: table;
+    clear: both;
+    }
   }
-
 }
 
-.mobile {
-  display: none!important;
+.homeAbout {
+  padding: 100px 0;
+  padding-left: 100px;
+  .content {
+    width: 100%;
+    max-width: 545px;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      font-family: $headerlight;
+      text-transform: uppercase;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      line-height: 1.4;
+    }
+    p {
+      font-family: $headerlight;
+      margin-bottom: 15px;
+      color: #A8A8A8;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a {
+
+    }
+  }
 }
-// <section class=homeCollections>
-//   <div class="innerWrap2">
-//     <div class="grid">
-//       <div class="grid-item large--one-third">
-//         <a href="#"></a>
-//         <a href="#"></a>
+
+.homeInstagram {
+  cursor: pointer;
+  left: 100px;
+  right: 0px;
+  width: auto;
+  position: relative;
+  background-color: black;
+  // height: 300px;
+  margin-right: 100px;
+  .instagram2 {
+    padding-top: 33.333%;
+    position: relative;
+    background-size: cover;
+  }
+  .igBox {
+    width: 33.333%;
+    display: inline-block;
+    float: left;
+    position: relative;
+    .ig {
+      width: 50%;
+      padding-top: 50%;
+      background-color: yellow;
+      display: inline-block;
+      float: left;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      .overlay {
+        background-color: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+      &:hover {
+        .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &:after {
+  content: '';
+  display: table;
+  clear: both;
+  }
+}
+// <section class="homeInstagram">
+//   <div class="igBox instagram1">
+//     <div class="ig">
+//       <div class="overlay">
+//
 //       </div>
-//       <div class="grid-item large--one-third">
-//         <a href="#"></a>
+//     </div>
+//     <div class="ig">
+//       <div class="overlay">
+//
 //       </div>
-//       <div class="grid-item large--one-third">
-//         <a href="#"></a>
-//         <a href="#"></a>
+//     </div>
+//     <div class="ig">
+//       <div class="overlay">
+//
+//       </div>
+//     </div>
+//     <div class="ig">
+//       <div class="overlay">
+//
+//       </div>
+//     </div>
+//   </div>
+//   <div class="igBox instagram2">
+//
+//   </div>
+//   <div class="igBox instagram3">
+//     <div class="ig">
+//       <div class="overlay">
+//
+//       </div>
+//     </div>
+//     <div class="ig">
+//       <div class="overlay">
+//
+//       </div>
+//     </div>
+//     <div class="ig">
+//       <div class="overlay">
+//
+//       </div>
+//     </div>
+//     <div class="ig">
+//       <div class="overlay">
+//
 //       </div>
 //     </div>
 //   </div>
 // </section>
+
+.mobile {
+  display: none!important;
+}
+
+
 
 .slidebtn {
   background-color: black;
@@ -249,15 +440,3 @@
     box-shadow: inset 0 -100px 0 0 $pink-btn-text;
   }
 }
-
-// <div class="homeProducts">
-//   <div class="innerWrap">
-//     <h2></h2>
-//     <div class="grid">
-//
-//     </div>
-//     <div class="homeProductsFooter">
-//
-//     </div>
-//   </div>
-// </div>
