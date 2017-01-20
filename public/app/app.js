@@ -11,8 +11,7 @@ angular.module("app")
     .state('home', {
       url: '/',
       templateUrl: './app/routes/home/homeTmpl.html',
-      controller: 'homeCtrl',
-
+      controller: 'homeCtrl'
     })
 
     // ABOUT STATE
@@ -34,6 +33,13 @@ angular.module("app")
       url: '/faq',
       templateUrl: './app/routes/faq/faqTmpl.html',
       controller: 'faqCtrl'
+    })
+
+    //JOURNAL STATE
+    .state('journal',{
+      url: '/journal',
+      templateUrl:'./app/routes/journal/journalTmpl.html',
+      controller: 'journalCtrl'
     })
 
     // LOOKBOOK STATE
@@ -105,13 +111,6 @@ angular.module("app")
       url: '/collections/straps',
       templateUrl: './app/routes/straps/strapsTmpl.html',
       controller: 'strapsCtrl'
-    })
-
-    //journal state
-    .state('journal',{
-      url: '/journal',
-      templateUrl:'./app/routes/journal/journalTmpl.html',
-      controller: 'journalCtrl'
     });
 
     // ASSIGN OTHERWISE
