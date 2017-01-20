@@ -11,6 +11,8 @@ angular.module('app').service('cartCtrl',($scope, $stateParams, $rootScope, cart
       }
     });
   };
+  //invoking get cart
+  $scope.getCart();
   //function post new item to cart
   $scope.postCart = (obj,quantity)=>{
     if(!obj.quantity && quantity === 0){
