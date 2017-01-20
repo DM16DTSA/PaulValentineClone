@@ -1,1 +1,263 @@
 @import '../styles';
+* {
+  box-sizing: border-box;
+}
+.homeMain {
+  background-color: $gray-background;
+  margin-bottom: 435px;
+  position: relative;
+  box-sizing: border-box;
+
+
+.hero {
+  background-color: #DDDDDD;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  .heroPic {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../styles/images/home/hero_image_2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+  }
+}
+
+.adPop {
+  box-sizing: border-box;
+  background-color: #fde9e5;
+  padding-left: 100px;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+    line-height: 40px;
+  p {
+    font-family: $header;
+    color: black;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.homeProducts {
+  font-family: $header;
+  padding-left: 100px;
+  padding-top: 50px;
+  // height: 100%;
+  .innerWrap {
+    // width: 100%;
+    padding: 0 25px;
+    margin: 0 auto;
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 1.4;
+      margin-bottom: 0.5em;
+      font-family: 'Nunito', sans-serif;
+      letter-spacing: 3px;
+    }
+    .grid {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      margin-left: -25px;
+      .grid-item {
+        box-sizing: border-box;
+        padding-left: 25px;
+        width: 25%;
+        float: left;
+        vertical-align: top;
+        a {
+          display: block;
+          margin: 0 auto;
+          padding: 0 15px 80px;
+          position: relative;
+          background-image: url("../../styles/images/icons/shadow.png");
+          background-size: 100% auto;
+          background-position: center 90%;
+          background-repeat: no-repeat;
+          text-decoration: none;
+          img {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: 0;
+            max-width: 100%;
+            transition: top 0.5s;
+          }
+          .productInfo {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: $header;
+            margin-left: -15px;
+            position: absolute;
+            transition: all 0.5s;
+            width: 100%;
+            bottom: 0px;
+            opacity: 0;
+            h3 {
+              font-size: 12px;
+              line-height: 1.4;
+              color: black;
+              margin-bottom: 0.5em;
+            }
+            p {
+              color:#c5c5c5;
+              margin: 0 0 15px 0;
+            }
+          }
+        }
+        a:hover {
+          background-image: none;
+          img {
+            top: -30px;
+          }
+          .productInfo {
+            bottom: 50px;
+            opacity: 1;
+          }
+      }
+    }
+  }
+  .homeProductsFooter {
+    text-align: center;
+    margin: 0 0 40px 0;
+  }
+}
+}
+  .homeCollections {
+    background: $near-white-background;
+    padding-left: 100px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    .innerWrap2 {
+      padding: 25px 25px 0 25px;
+      width: 100%;
+      .grid {
+        margin-left: -25px;
+        padding: 0;
+        box-sizing: border-box;
+        .grid-item {
+          min-height: 1px;
+          width: 33.33%;
+          padding-left: 25px;
+          float: left;
+          .collection {
+            width: 100%;
+            padding-top: 66%;
+            height: 0;
+            display: block;
+            margin-bottom: 25px;
+            overflow: hidden;
+            position: relative;
+            .foo {
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-position: center;
+              background-size: cover;
+            }
+            .coll-bg {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              top: 0;
+              background: rgba(255,255,255,0.3);
+              opacity: 0;
+              transition: all 0.5s;
+            }
+            .collection_inner {
+              position: absolute;
+              bottom: 20px;
+              padding: 0 30px;
+              transition: all 350ms;
+              h2 {
+                color: white;
+                font-family: $headerlight;
+                text-transform: uppercase;
+                font-size: 24px;
+                letter-spacing: 2px;
+              }
+              &.right {
+                width: 100%;
+                text-align: right;
+              }
+            }
+            &:hover {
+              .coll-bg {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.mobile {
+  display: none!important;
+}
+// <section class=homeCollections>
+//   <div class="innerWrap2">
+//     <div class="grid">
+//       <div class="grid-item large--one-third">
+//         <a href="#"></a>
+//         <a href="#"></a>
+//       </div>
+//       <div class="grid-item large--one-third">
+//         <a href="#"></a>
+//       </div>
+//       <div class="grid-item large--one-third">
+//         <a href="#"></a>
+//         <a href="#"></a>
+//       </div>
+//     </div>
+//   </div>
+// </section>
+
+.slidebtn {
+  background-color: black;
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  font-family: $header;
+  width: auto;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 0 $pink-btn-text;
+  color: white;
+  transition: all ease 0.8s;
+  &:hover {
+    box-shadow: inset 0 -100px 0 0 $pink-btn-text;
+  }
+}
+
+// <div class="homeProducts">
+//   <div class="innerWrap">
+//     <h2></h2>
+//     <div class="grid">
+//
+//     </div>
+//     <div class="homeProductsFooter">
+//
+//     </div>
+//   </div>
+// </div>

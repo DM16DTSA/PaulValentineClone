@@ -1,0 +1,83 @@
+<div class="homeMain">
+  <div class="hero">
+    <div class="heroPic">
+    </div>
+  </div>
+
+  <div class="adPop">
+    <p>🔥 MESH WATCHES HAVE BEEN RESTOCKED 🔥</p>
+  </div>
+
+  <section class="homeProducts">
+    <div class="innerWrap">
+      <h2>OUR MOST <br> POPULAR WATCHES</h2>
+      <div class="grid">
+        <div class="grid-item" ng-repeat="watch in mainWatches | limitTo: 8">
+          <a href="#">
+            <img src="{{watch.image}}" alt="">
+            <div class="productInfo">
+              <h3>{{watch.name}}</h3>
+              <p>{{watch.price | currency}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="homeProductsFooter">
+        <a class="slidebtn" href="#">ALL WATCHES</a>
+      </div>
+    </div>
+  </section>
+
+  <section class=homeCollections>
+    <div class="innerWrap2">
+      <div class="grid">
+        <div class="grid-item grid1">
+          <a href="#" class="collection">
+            <div class="foo" style="background-image: url('../../styles/images/home/home_collection_feliz.jpg')"></div>
+            <div class="coll-bg"></div>
+            <div class="collection_inner">
+              <h2>Feliz</h2>
+              <span class="slidebtn mobile">View Collection</span>
+            </div>
+          </a>
+          <a href="#" class="collection">
+            <div class="foo"style="background-image: url('../../styles/images/home/home_collection_pearl.jpg')"></div>
+            <div class="coll-bg"></div>
+            <div class="collection_inner">
+              <h2>Pearl</h2>
+              <span class="slidebtn mobile">View Collection</span>
+            </div>
+          </a>
+        </div>
+        <div class="grid-item grid2">
+          <a href="#" class="blog">
+            <div class="blogImage" style="background-image: url('../../styles/images/home/home_blog_image.jpg')"></div>
+            <div class="blog__borderded">
+              <div class="blog__inner">
+                <h3>Join Us On Our</h3>
+                <h2>Journey</h2>
+                <span class="btn">Journey</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-item grid3">
+          <a href="#" class="collection"><div class="foo" style="background-image: url('../../styles/images/home/home_collection_marina.jpg')"></div>
+            <div class="coll-bg"></div>
+            <div class="collection_inner right">
+              <h2>Marina</h2>
+              <span class="slidebtn mobile">View Collection</span>
+            </div>
+          </a>
+          <a href="#" class="collection"><div class="foo" style="background-image: url('../../styles/images/home/home_collection_straps.jpg')"></div>
+            <div class="coll-bg"></div>
+            <div class="collection_inner right">
+              <h2>Straps</h2>
+              <span class="slidebtn mobile">View Collection</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
