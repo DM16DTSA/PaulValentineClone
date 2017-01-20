@@ -20,28 +20,24 @@ module.exports = {
     if(!req.session.cart){
       res.status(200).send(false);
     }else{
-      req.session.cart.forEach((element, index)=>{
-        if(element._id === req.params.id){
-          if(req.params.quantity == 0){
-            req.session.cart.splice(index,1);
-            res.status(200).send(req.session.cart);
-          }
-          element.quantity = req.params.quantity;
-          res.status(200).send(req.session.cart);
+      for(let i = req.session.length-1; i >= 0; i--){
+        if(req.session[i] === req.params.id){
+          req.session.cart.splice(i,1);
         }
-      });
+      };
+      res.status(200).send(req.session.cart);
     }
   },
   deleteCart: (req,res,next)=>{
     if(!req.session.cart){
       res.status(200).send(false);
     }else{
-      req.session.cart.forEach((element, index)=>{
-        if(element._id === req.params.id){
-          req.session.cart.splice(index,1);
-          res.status(200).send(req.session.cart);
+      for(let i = req.session.length-1; i >= 0; i--){
+        if(req.session[i]._id === req.params.id){
+          req.session.cart.splice(i,1);
         }
-      });
+      };
+      res.status(200).send(req.session.cart);
     }
   },
   destroyCart: (req,res,next)=>{
