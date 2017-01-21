@@ -1,1 +1,300 @@
 @import '../styles';
+
+.about-header {
+  display: block;
+  box-sizing: border-box;
+  padding-left: 100px;
+  height: 370px;
+  width: 100%;
+  padding-top: 250px;
+  padding-bottom: 180px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../../styles/images/about/about.jpg');
+
+}
+
+@media (max-width: 800px) {
+  .about-header {
+    height: 300px;
+    padding-left: 100px;
+    padding-bottom: 60px;
+  }
+}
+
+.about-one {
+  height: auto;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 100px 0;
+  padding-left: 100px;
+  background-color: $gray-background;
+
+  .about-content {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-family: $header;
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    line-height: 1.2;
+    padding: 2px;
+    color: #333;
+
+  }
+}
+
+.about-two {
+  padding-left: 100px;
+  background-color: $gray-background;
+  border-top: 1px solid #ebebeb;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+
+  .half-one {
+    display: flex;
+    max-height: 550px;
+    height: 380px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: row;
+
+    .left-half {
+      height: auto;
+      width: 50%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../../styles/images/about/about_image_2.jpg');
+    }
+
+    .our-mission {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 100px;
+      height: auto;
+      width: 50%;
+      background-color: white;
+
+      h2 {
+        font-family: $header;
+        font-size: 24px;
+        letter-spacing: 2px;
+        color: #333;
+        line-height: 1.2;
+      }
+      p {
+        font-family: $header;
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: #999;
+        line-height: 1.2;
+      }
+    }
+  }
+
+
+  .half-two {
+    display: flex;
+    max-height: 550px;
+    height: 380px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: row;
+
+    .right-half {
+      height: auto;
+      width: 50%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../../styles/images/about/about_image_3.jpg');
+    }
+
+    .our-watches {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 100px;
+      height: auto;
+      width: 50%;
+      background-color: white;
+
+      h2 {
+        font-family: $header;
+        font-size: 24px;
+        letter-spacing: 2px;
+        color: #333;
+        line-height: 1.2;
+      }
+      p {
+        font-family: $header;
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: #999;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+.about-three {
+  padding-left: 100px;
+  background-color: $gray-background;
+  border-top: 1px solid #ebebeb;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+
+  .how-we-do {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 80px;
+    font-family: $header;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #333;
+    line-height: 1.2;
+  }
+
+  .steps {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    .steps-box {
+      height: 380px;
+      width: 80%;
+
+      .step-one {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 33.33%;
+        height: 100%;
+        float: left;
+
+        .one-step {
+          height: 100px;
+          width: 100%;
+          font-family: $header;
+          font-size: 14px;
+          letter-spacing: 1px;
+          color: #333;
+          line-height: 1.2;
+          text-align: center;
+          background-image: url('../../styles/images/about/01.png');
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          p {
+            padding-top: 30px;
+            padding-left: 2px;
+          }
+        }
+
+        .work {
+          text-align: center;
+          font-family: $header;
+          font-size: 16px;
+          color: #999;
+          line-height: 1.2;
+          margin: 25px;
+        }
+      }
+
+      .step-two {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 33.33%;
+        height: 100%;
+        float: left;
+
+        .two-step {
+          height: 100px;
+          width: 100%;
+          font-family: $header;
+          font-size: 14px;
+          letter-spacing: 1px;
+          color: #333;
+          line-height: 1.2;
+          text-align: center;
+          background-image: url('../../styles/images/about/02.png');
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          p {
+            padding-top: 30px;
+            padding-left: 2px;
+          }
+        }
+
+        .sorry {
+          text-align: center;
+          font-family: $header;
+          font-size: 16px;
+          color: #999;
+          line-height: 1.2;
+          margin: 25px;
+        }
+      }
+
+      .step-three {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 33.33%;
+        height: 100%;
+        float: left;
+
+        .three-step {
+          height: 100px;
+          width: 100%;
+          font-family: $header;
+          font-size: 14px;
+          letter-spacing: 1px;
+          color: #333;
+          line-height: 1.2;
+          text-align: center;
+          background-image: url('../../styles/images/about/03.png');
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          p {
+            padding-top: 30px;
+            padding-left: 2px;
+          }
+        }
+
+        .sell-directly {
+          text-align: center;
+          font-family: $header;
+          font-size: 16px;
+          color: #999;
+          line-height: 1.2;
+          margin: 25px;
+        }
+      }
+    }
+  }
+}
