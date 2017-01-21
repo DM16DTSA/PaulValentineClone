@@ -327,6 +327,9 @@
     display: inline-block;
     float: left;
     position: relative;
+    font: $header;
+    color: white;
+    text-align: center;
     .ig {
       width: 50%;
       padding-top: 50%;
@@ -345,11 +348,69 @@
         bottom: 0;
         opacity: 0;
         transition: opacity 0.25s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        // font: $header;
+        // color: white;
+        .igIcon {
+          padding: 5px 10px 0 5px;
+          font-size: 18pt;
+          margin-bottom: 9px;
+        }
+        .igLink {
+          font-size: 10pt;
+          line-height: 1;
+          padding: 3px 6px;
+          margin: 10px;
+          margin-top: 37px;
+          color: white;
+          font-family: $header;
+        }
+        .igDate {
+          margin-top: 10px;
+          font-family: $header;
+          font-size: 8pt;
+          line-height: 8pt;
+          letter-spacing: 1px;
+        }
       }
       &:hover {
         .overlay {
           opacity: 1;
         }
+      }
+    }
+    .overlayBg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      display: -webkit-flex;
+      -webkit-flex-direction: column;
+      -webkit-align-items: center;
+      -webkit-justify-content: center;
+      .igIcon {
+        font-size: 30px;
+        margin-bottom: 18px;
+      }
+      .igLink {
+        font-family: $headerlight;
+        font-size: 24px;
+        line-height: 1.4;
+        letter-spacing: 2px;
+
       }
     }
   }
