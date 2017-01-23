@@ -4,6 +4,22 @@
   top: 0;
   z-index: 100;
 }
+.collectionHero {
+  margin-left: 100px;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.collProducts {
+  padding: 116px 0 40px 100px;
+  position: relative;
+  background-color: $gray-background;
+  .collNav {
+    top: 0px;
+  }
+}
+
 .collectionProducts {
   padding: 200px 0 40px 100px;
   position: relative;

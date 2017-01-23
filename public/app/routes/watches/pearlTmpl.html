@@ -1,0 +1,29 @@
+<overall-navbar-dir></overall-navbar-dir>
+<div class="adPop">
+  <p>FREE SHIPPING WORLDWIDE</p>
+</div>
+<section class="collectionHero" style="background-image:url('../../styles/images/coll/Pearl_hero.jpg')">
+
+</section>
+<section class="collProducts">
+  <div class="collNav">
+    <div class="innerWrap4">
+      <a ui-sref="watches" class="slidebtn collbtn">all watches</a>
+      <a ui-sref="marina" class="slidebtn collbtn">marina</a>
+      <a ui-sref="pearl" class="slidebtn collbtn active">pearl</a>
+      <a ui-sref="feliz" class="slidebtn collbtn">feliz</a>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-item" ng-repeat="watch in collWatches | filter:{coll:'Pearl'} | orderBy: specs.strap">
+      <a href="#">
+        <img src="{{watch.image}}" alt="">
+        <div class="productInfo">
+          <h3>{{watch.name}}</h3>
+          <p>{{watch.price | currency}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<revealed-footer-dir></revealed-footer-dir>
