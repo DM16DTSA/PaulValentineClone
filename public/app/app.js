@@ -21,6 +21,13 @@ angular.module("app")
       controller: 'aboutCtrl'
     })
 
+    // ACCOUNT STATE
+    .state('account', {
+      url: '/account',
+      templateUrl: './app/routes/account/accountTmpl.html',
+      controller: 'accountCtrl'
+    })
+
     // CONTACT STATE
     .state('contact', {
       url: '/contact',
