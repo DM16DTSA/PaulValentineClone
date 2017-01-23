@@ -1,5 +1,26 @@
-<div class="bigger">
-  <div class="imagebox" style="background-image: url(../public/styles/images/icons/feliz.jpg)">
-    <img src="../public/styles/images/secondary/STBLACK_SILVER_FRONT.jpg" alt="">
-  </div>
+<overall-navbar-dir></overall-navbar-dir>
+<div class="adPop">
+  <p>FREE SHIPPING WORLDWIDE</p>
 </div>
+<section class="collectionProducts">
+  <div class="collNav">
+    <div class="innerWrap4">
+      <a ui-sref="watches" class="slidebtn collbtn active">all watches</a>
+      <a ui-sref="marina" class="slidebtn collbtn">marina</a>
+      <a ui-sref="pearl" class="slidebtn collbtn">pearl</a>
+      <a ui-sref="feliz" class="slidebtn collbtn">feliz</a>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-item" ng-repeat="watch in collWatches | orderBy: 'coll':true: '-2' | orderBy: 'strap'">
+      <a href="#">
+        <img src="{{watch.image}}" alt="">
+        <div class="productInfo">
+          <h3>{{watch.name}}</h3>
+          <p>{{watch.price | currency}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<revealed-footer-dir></revealed-footer-dir>

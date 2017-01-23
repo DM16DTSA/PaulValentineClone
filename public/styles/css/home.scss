@@ -184,73 +184,73 @@
       font-family: 'Nunito', sans-serif;
       letter-spacing: 3px;
     }
-    .grid {
-      display: flex;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-      margin-left: -25px;
-      .grid-item {
-        box-sizing: border-box;
-        padding-left: 25px;
-        width: 25%;
-        float: left;
-        vertical-align: top;
-        a {
-          display: block;
-          margin: 0 auto;
-          padding: 0 15px 80px;
-          position: relative;
-          background-image: url("../../styles/images/icons/shadow.png");
-          background-size: 100% auto;
-          background-position: center 90%;
-          background-repeat: no-repeat;
-          text-decoration: none;
-          img {
-            display: block;
-            margin: 0 auto;
-            position: relative;
-            top: 0;
-            max-width: 100%;
-            transition: top 0.5s;
-          }
-          .productInfo {
-            text-align: center;
-            text-transform: uppercase;
-            font-family: $header;
-            margin-left: -15px;
-            position: absolute;
-            transition: all 0.5s;
-            width: 100%;
-            bottom: 0px;
-            opacity: 0;
-            h3 {
-              font-size: 12px;
-              line-height: 1.4;
-              color: black;
-              margin-bottom: 0.5em;
-            }
-            p {
-              color:#c5c5c5;
-              margin: 0 0 15px 0;
-            }
-          }
-        }
-        a:hover {
-          background-image: none;
-          img {
-            top: -30px;
-          }
-          .productInfo {
-            bottom: 50px;
-            opacity: 1;
-          }
-      }
-    }
-  }
   .homeProductsFooter {
     text-align: center;
     margin: 0 0 40px 0;
+  }
+}
+}
+.grid {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  margin-left: -25px;
+  .grid-item {
+    box-sizing: border-box;
+    padding-left: 25px;
+    width: 25%;
+    float: left;
+    vertical-align: top;
+    a {
+      display: block;
+      margin: 0 auto;
+      padding: 0 15px 80px;
+      position: relative;
+      background-image: url("../../styles/images/icons/shadow.png");
+      background-size: 100% auto;
+      background-position: center 90%;
+      background-repeat: no-repeat;
+      text-decoration: none;
+      img {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        top: 0;
+        max-width: 100%;
+        transition: top 0.5s;
+      }
+      .productInfo {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $header;
+        margin-left: -15px;
+        position: absolute;
+        transition: all 0.5s;
+        width: 100%;
+        bottom: 0px;
+        opacity: 0;
+        h3 {
+          font-size: 12px;
+          line-height: 1.4;
+          color: black;
+          margin-bottom: 0.5em;
+        }
+        p {
+          color:#c5c5c5;
+          margin: 0 0 15px 0;
+        }
+      }
+    }
+    a:hover {
+      background-image: none;
+      img {
+        top: -30px;
+      }
+      .productInfo {
+        bottom: 50px;
+        opacity: 1;
+      }
   }
 }
 }
@@ -726,7 +726,11 @@ overall-navbar-dir {
   //   text-align: center!important;
   // }
 }
-
+revealed-footer-dir {
+  .footer-margin {
+    margin-left: 0;
+  }
+}
 .mobile {
   display: none!important;
 }
