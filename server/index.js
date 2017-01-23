@@ -9,8 +9,6 @@ var config = require('./config');
 
 var mongoose = require('mongoose');
 
-var port = 3000;
-
 var app = express();
 app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -41,8 +39,15 @@ app.get('/straps', strapController.getStraps);
 
 // app.post('/watches', watchController.addWatch);
 // app.post('/straps', strapController.addStrap);
+var cartCtrl = require('./controllers/cartCtrl.js');
+
+app.get('api/cart', cartCtrl.getCart);
+app.post('api/cart', cartCtrl.postCart);
+app.put('api/cart/:id/:quantity', cartCtrl.putCart);
+app.delete('api/cart/:id', cartCtrl.deleteCart);
+app.delete('api/destroy', cartCtrl.destroyCart);
 
 
 app.listen(config.port, function() {
-  console.log("Started server on port", port);
+  console.log("Started server on port", config.port);
 });

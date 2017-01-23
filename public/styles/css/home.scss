@@ -2,12 +2,136 @@
 * {
   box-sizing: border-box;
 }
+
+// <div id="pageLoader">
+//   <div class="loadBG">
+//     <div class="tickTocktickTocktick">
+//       <img src="../../styles/images/home/loaderwatch.jpg" alt="">
+//     </div>
+//   </div>
+// </div>
+
+#pageLoader {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  z-index: 9999999;
+  animation: slideUp 3s 1 forwards ease;
+  // animation-timing-function:
+  .loadBG {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .tickTocktickTocktick {
+      position: absolute;
+      margin-top: -90px;
+      margin-left: -34px;
+      width: 68px;
+      left: 50%;
+      top: 50%;
+      img {
+        width: 100%;
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        top: 56px;
+        left: 32px;
+        width: 25px;
+        height: 2px;
+        background-color: black;
+        box-sizing: border-box;
+        transform-origin: 0 1px;
+
+        animation-name: spin;
+        animation-duration: 0.4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        -webkit-animation-name: spin;
+        -webkit-animation-duration: 0.4s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+        -moz-animation-name: spin;
+        -moz-animation-duration: 0.4s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+
+        -ms-animation-name: spin;
+        -ms-animation-duration: 0.4s;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: linear;
+        -o-transition: rotate(3600deg);
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        top: 56px;
+        width: 14px;
+        left: 32px;
+        background: black;
+        height: 2px;
+        transform-origin: 0 1px;
+        animation-name: spin;
+        animation-duration: 9.6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        -webkit-animation-name: spin;
+        -webkit-animation-duration: 9.6s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+        -moz-animation-name: spin;
+        -moz-animation-duration: 9.6s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+
+        -ms-animation-name: spin;
+        -ms-animation-duration: 9.6s;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: linear;
+        -o-transition: rotate(3600deg);
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      top: 0px;
+    }
+    85% {
+      top: 0px;
+    }
+    99% {
+      top: -100%;
+    }
+    100% {
+      top:-100%;
+      display: none;
+    }
+  }
+}
+
 .homeMain {
   background-color: $gray-background;
   margin-bottom: 435px;
   position: relative;
   box-sizing: border-box;
-
+}
 
 .hero {
   background-color: #DDDDDD;
@@ -35,7 +159,7 @@
   height: 40px;
     line-height: 40px;
   p {
-    font-family: $header;
+    font-family: $headerlight;
     color: black;
     font-size: 15px;
     margin-bottom: 15px;
@@ -60,169 +184,558 @@
       font-family: 'Nunito', sans-serif;
       letter-spacing: 3px;
     }
-    .grid {
-      display: flex;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-      margin-left: -25px;
-      .grid-item {
-        box-sizing: border-box;
-        padding-left: 25px;
-        width: 25%;
-        float: left;
-        vertical-align: top;
-        a {
-          display: block;
-          margin: 0 auto;
-          padding: 0 15px 80px;
-          position: relative;
-          background-image: url("../../styles/images/icons/shadow.png");
-          background-size: 100% auto;
-          background-position: center 90%;
-          background-repeat: no-repeat;
-          text-decoration: none;
-          img {
-            display: block;
-            margin: 0 auto;
-            position: relative;
-            top: 0;
-            max-width: 100%;
-            transition: top 0.5s;
-          }
-          .productInfo {
-            text-align: center;
-            text-transform: uppercase;
-            font-family: $header;
-            margin-left: -15px;
-            position: absolute;
-            transition: all 0.5s;
-            width: 100%;
-            bottom: 0px;
-            opacity: 0;
-            h3 {
-              font-size: 12px;
-              line-height: 1.4;
-              color: black;
-              margin-bottom: 0.5em;
-            }
-            p {
-              color:#c5c5c5;
-              margin: 0 0 15px 0;
-            }
-          }
-        }
-        a:hover {
-          background-image: none;
-          img {
-            top: -30px;
-          }
-          .productInfo {
-            bottom: 50px;
-            opacity: 1;
-          }
-      }
-    }
-  }
   .homeProductsFooter {
     text-align: center;
     margin: 0 0 40px 0;
   }
 }
 }
-  .homeCollections {
-    background: $near-white-background;
-    padding-left: 100px;
-    border-top: 1px solid #ebebeb;
-    border-bottom: 1px solid #ebebeb;
-    .innerWrap2 {
-      padding: 25px 25px 0 25px;
-      width: 100%;
-      .grid {
-        margin-left: -25px;
-        padding: 0;
-        box-sizing: border-box;
-        .grid-item {
-          min-height: 1px;
-          width: 33.33%;
-          padding-left: 25px;
-          float: left;
-          .collection {
+.grid {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  margin-left: -25px;
+  .grid-item {
+    box-sizing: border-box;
+    padding-left: 25px;
+    width: 25%;
+    float: left;
+    vertical-align: top;
+    a {
+      display: block;
+      margin: 0 auto;
+      padding: 0 15px 80px;
+      position: relative;
+      background-image: url("../../styles/images/icons/shadow.png");
+      background-size: 100% auto;
+      background-position: center 90%;
+      background-repeat: no-repeat;
+      text-decoration: none;
+      img {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        top: 0;
+        max-width: 100%;
+        transition: top 0.5s;
+      }
+      .productInfo {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $header;
+        margin-left: -15px;
+        position: absolute;
+        transition: all 0.5s;
+        width: 100%;
+        bottom: 0px;
+        opacity: 0;
+        h3 {
+          font-size: 12px;
+          line-height: 1.4;
+          color: black;
+          margin-bottom: 0.5em;
+        }
+        p {
+          color:#c5c5c5;
+          margin: 0 0 15px 0;
+        }
+      }
+    }
+    a:hover {
+      background-image: none;
+      img {
+        top: -30px;
+      }
+      .productInfo {
+        bottom: 50px;
+        opacity: 1;
+      }
+  }
+}
+}
+
+.homeCollections {
+  background: $near-white-background;
+  padding-left: 100px;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  .innerWrap2 {
+    padding: 25px 25px 0 25px;
+    width: 100%;
+    .grid {
+      margin-left: -25px;
+      padding: 0;
+      box-sizing: border-box;
+      .grid-item {
+        min-height: 1px;
+        width: 33.33%;
+        padding-left: 25px;
+        float: left;
+        .collection {
+          width: 100%;
+          padding-top: 66%;
+          height: 0;
+          display: block;
+          margin-bottom: 25px;
+          overflow: hidden;
+          position: relative;
+          .foo {
+            position: absolute;
+            top: 0;
             width: 100%;
-            padding-top: 66%;
-            height: 0;
-            display: block;
-            margin-bottom: 25px;
-            overflow: hidden;
-            position: relative;
-            .foo {
-              position: absolute;
-              top: 0;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            transition: transform 0.8s;
+          }
+          .coll-bg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            background: rgba(255,255,255,0.3);
+            opacity: 0;
+            transition: all 0.5s;
+          }
+          .collection_inner {
+            position: absolute;
+            bottom: 20px;
+            padding: 0 30px;
+            transition: all 350ms;
+            h2 {
+              color: white;
+              font-family: $headerlight;
+              text-transform: uppercase;
+              font-size: 24px;
+              letter-spacing: 2px;
+              line-height: 1.4;
+            }
+            &.right {
               width: 100%;
-              height: 100%;
-              background-position: center;
-              background-size: cover;
+              text-align: right;
             }
+          }
+          &:hover {
             .coll-bg {
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              right: 0;
-              top: 0;
-              background: rgba(255,255,255,0.3);
-              opacity: 0;
-              transition: all 0.5s;
+              opacity: 1;
             }
-            .collection_inner {
+          }
+          &:hover {
+            .foo {
+              transform: scale(1.2);
+            }
+          }
+        }
+        .journal {
+          box-sizing: border-box;
+          width: 100%;
+          height: 0;
+          padding-top: calc(132% + 25px);
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          overflow: hidden;
+          display: block;
+          .blogImage {
+            position: absolute;
+            top: 0;
+            transition: transform 1s;
+            width: 100%;
+            height:100%;
+            background-size: cover;
+            background-position: center;
+          }
+          .blog_border {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 30px;
+            bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.4);
+            .blog_inner {
               position: absolute;
-              bottom: 20px;
+              top: 50%;
+              margin-top: -50px;
+              width: 100%;
               padding: 0 30px;
-              transition: all 350ms;
+              text-align: center;
+              font-family: $headerlight;
+              h3 {
+                color: white;
+                font-size: 18px;
+                text-transform: uppercase;
+                line-height: 1.4;
+                letter-spacing: 1px;
+              }
               h2 {
                 color: white;
-                font-family: $headerlight;
+                font-size: 40px;
                 text-transform: uppercase;
-                font-size: 24px;
+                line-height: 1.4;
                 letter-spacing: 2px;
               }
-              &.right {
-                width: 100%;
-                text-align: right;
+              .slidebtn {
+                margin-top: 10px;
+                background-color: $pink-btn-text;
+                box-shadow: inset 0 0 0 0 #333;
+                &:hover {
+                  box-shadow: inset 0 -100px 0 0 #333;
+                }
               }
             }
-            &:hover {
-              .coll-bg {
-                opacity: 1;
-              }
+          }
+          &:hover {
+            .blogImage {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+    &:after {
+    content: '';
+    display: table;
+    clear: both;
+    }
+  }
+}
+
+.homeAbout {
+  padding: 100px 0;
+  padding-left: 100px;
+  .content {
+    width: 100%;
+    max-width: 545px;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      font-family: $headerlight;
+      text-transform: uppercase;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      line-height: 1.4;
+    }
+    p {
+      font-family: $headerlight;
+      margin-bottom: 15px;
+      color: #A8A8A8;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a {
+
+    }
+  }
+}
+
+.homeInstagram {
+  cursor: pointer;
+  left: 100px;
+  right: 0px;
+  width: auto;
+  position: relative;
+  background-color: black;
+  // height: 300px;
+  margin-right: 100px;
+  .instagram2 {
+    padding-top: 33.333%;
+    position: relative;
+    background-size: cover;
+  }
+  .igBox {
+    width: 33.333%;
+    display: inline-block;
+    float: left;
+    position: relative;
+    font: $header;
+    color: white;
+    text-align: center;
+    .ig {
+      width: 50%;
+      padding-top: 50%;
+      background-color: yellow;
+      display: inline-block;
+      float: left;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      .overlay {
+        background-color: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity 0.25s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        // font: $header;
+        // color: white;
+        .igIcon {
+          padding: 5px 10px 0 5px;
+          font-size: 18pt;
+          margin-bottom: 9px;
+        }
+        .igLink {
+          font-size: 10pt;
+          line-height: 1;
+          padding: 3px 6px;
+          margin: 10px;
+          margin-top: 37px;
+          color: white;
+          font-family: $header;
+        }
+        .igDate {
+          margin-top: 10px;
+          font-family: $header;
+          font-size: 8pt;
+          line-height: 8pt;
+          letter-spacing: 1px;
+        }
+      }
+      &:hover {
+        .overlay {
+          opacity: 1;
+        }
+      }
+    }
+    .overlayBg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      display: -webkit-flex;
+      -webkit-flex-direction: column;
+      -webkit-align-items: center;
+      -webkit-justify-content: center;
+      .igIcon {
+        font-size: 30px;
+        margin-bottom: 18px;
+      }
+      .igLink {
+        font-family: $headerlight;
+        font-size: 24px;
+        line-height: 1.4;
+        letter-spacing: 2px;
+
+      }
+    }
+  }
+  &:after {
+  content: '';
+  display: table;
+  clear: both;
+  }
+}
+@media screen and (max-width:1000px) {
+  .homeProducts {
+    .innerWrap {
+      padding-top: 30px;
+      padding-bottom: 40px;
+      .grid-item {
+        width: 33.33%!important;
+      }
+    }
+  }
+  .homeCollections {
+    .innerWrap2 {
+      .grid {
+        .grid2 {
+          .blog_inner {
+            padding: 0!important;
+            h2 {
+              font-size: 35px!important;
             }
           }
         }
       }
     }
   }
-
 }
 
+
+@media screen and (max-width: 800px) {
+overall-navbar-dir {
+  display: none;
+}
+  .adPop {
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    p {
+      overflow: hidden;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .homeProducts {
+    padding-left: 0;
+    padding-top: 20px;
+    .innerWrap {
+      .grid {
+        .grid-item {
+          width: 50%!important;
+          a {
+            padding-left: 0;
+            padding-right: 0;
+            background-position: center 80%;
+            .productInfo {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .homeCollections {
+    padding-left: 0px;
+    .innerWrap2 {
+      .grid {
+        .grid-item {
+          width: 100%;
+          .collection {
+            padding-top: 0;
+            height: auto;
+            text-decoration: none;
+            border: 1px solid #e9e9e9;
+            .foo {
+              height: 300px;
+              position: relative;
+            }
+            .coll-bg {
+              position: relative;
+              height: auto;
+            }
+            .collection_inner {
+              width: 100%;
+              position: relative;
+              bottom: 0px;
+              background: #fff;
+              text-align: center;
+              h2 {
+                padding: 13px 0 24px 0;
+                color: #333;
+              }
+              &.right {
+                text-align: center;
+              }
+              .mobile {
+                display: inline-block!important;
+                position: relative;
+                top: -20px;
+                font-size: 11px;
+                padding: 0 15px;
+                height: 30px;
+                line-height: 34px;
+                background-color: $pink-btn-text;
+                box-shadow: inset 0 0 0 0 #333;
+              &:hover {
+                box-shadow: inset 0 -100px 0 0 #333;
+                }
+              }
+            }
+          }
+        }
+        .grid2 {
+          .blog_border {
+            border: none!important;
+            .blog_inner {
+              h2 {
+                font-size: 40px!important;
+              }
+            }
+          }
+          .journal {
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+  .homeAbout {
+    padding-left: 0px;
+  }
+  .homeInstagram {
+    left: 0;
+    margin: 0;
+    position: relative;
+    background-color: $gray-background;
+    height: 296vw;
+    .igBox {
+      width: 100%;
+      .ig {
+        .overlay {
+          display: none;
+        }
+        &:hover {
+          .overlay {
+            display: none;
+          }
+        }
+      }
+    }
+    .instagram2 {
+      padding-top: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .instagram1 {
+      position: absolute;
+      top: 100vw;
+      left: 0;
+      padding: 1.3vw 1.6vw 0 1.6vw;
+      .ig {
+        margin: 1.6vw;
+        padding-top: 46.66%;
+        width: 46.66%;
+      }
+    }
+    .instagram3 {
+      position: absolute;
+      top: 196vw;
+      padding: 1.3vw 1.6vw 0 1.6vw;
+      .ig {
+        margin: 1.6vw;
+        padding-top: 46.66%;
+        width: 46.66%;
+      }
+    }
+  }
+  // footer {
+  //   margin: auto!important;
+  //   text-align: center!important;
+  // }
+}
+revealed-footer-dir {
+  .footer-margin {
+    margin-left: 0;
+  }
+}
 .mobile {
   display: none!important;
 }
-// <section class=homeCollections>
-//   <div class="innerWrap2">
-//     <div class="grid">
-//       <div class="grid-item large--one-third">
-//         <a href="#"></a>
-//         <a href="#"></a>
-//       </div>
-//       <div class="grid-item large--one-third">
-//         <a href="#"></a>
-//       </div>
-//       <div class="grid-item large--one-third">
-//         <a href="#"></a>
-//         <a href="#"></a>
-//       </div>
-//     </div>
-//   </div>
-// </section>
+
+
 
 .slidebtn {
   background-color: black;
@@ -249,15 +762,3 @@
     box-shadow: inset 0 -100px 0 0 $pink-btn-text;
   }
 }
-
-// <div class="homeProducts">
-//   <div class="innerWrap">
-//     <h2></h2>
-//     <div class="grid">
-//
-//     </div>
-//     <div class="homeProductsFooter">
-//
-//     </div>
-//   </div>
-// </div>

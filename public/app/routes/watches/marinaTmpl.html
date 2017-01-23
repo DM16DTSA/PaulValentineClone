@@ -2,17 +2,20 @@
 <div class="adPop">
   <p>FREE SHIPPING WORLDWIDE</p>
 </div>
-<section class="collectionProducts">
+<section class="collectionHero" style="background-image:url('../../styles/images/coll/Marina_hero_slider2.jpg')">
+
+</section>
+<section class="collProducts">
   <div class="collNav">
     <div class="innerWrap4">
-      <a ui-sref="watches" class="slidebtn collbtn active">all watches</a>
-      <a ui-sref="marina" class="slidebtn collbtn">marina</a>
+      <a ui-sref="watches" class="slidebtn collbtn">all watches</a>
+      <a ui-sref="marina" class="slidebtn collbtn active">marina</a>
       <a ui-sref="pearl" class="slidebtn collbtn">pearl</a>
       <a ui-sref="feliz" class="slidebtn collbtn">feliz</a>
     </div>
   </div>
   <div class="grid">
-    <div class="grid-item" ng-repeat="watch in collWatches | orderBy: 'coll':true: '-2' | orderBy: 'strap'">
+    <div class="grid-item" ng-repeat="watch in collWatches | filter:{coll:'Marina'}">
       <a href="#">
         <img src="{{watch.image}}" alt="">
         <div class="productInfo">
