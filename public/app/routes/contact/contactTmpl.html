@@ -1,5 +1,5 @@
+<overall-navbar-dir></overall-navbar-dir>
 <div class="contact-wrapper">
-  <overall-navbar-dir></overall-navbar-dir>
   <secondary-navbar-dir></secondary-navbar-dir>
   <div class="contact-img"></div>
   <div class="contact-form">
@@ -16,7 +16,7 @@
 
       <textarea name="name" rows="8" cols="80" placeholder="Message" ng-model='message' maxlength="400"></textarea>
 
-      <button type="button" class='contact-slidebtn' name="button">SEND</button>
+      <button type="button" class='contact-slidebtn' name="button" ng-click='send(name,email,number,message)'>SEND</button>
     </form>
   </div>
 </div>
