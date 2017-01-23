@@ -88,22 +88,22 @@ angular.module("app")
     // MARINA COLLECTION STATE
     .state('marina', {
       url: '/collections/marina',
-      templateUrl: './app/routes/marina/marinaTmpl.html',
-      controller: 'marinaCtrl'
+      templateUrl: './app/routes/watches/marinaTmpl.html',
+      controller: 'watchesCtrl'
     })
 
     // PEARL COLLECTION STATE
     .state('pearl', {
       url: '/collections/pearl',
-      templateUrl: './app/routes/pearl/pearlTmpl.html',
-      controller: 'pearlCtrl'
+      templateUrl: './app/routes/watches/pearlTmpl.html',
+      controller: 'watchesCtrl'
     })
 
     // FELIZ COLLECTION STATE
     .state('feliz', {
       url: '/collections/feliz',
-      templateUrl: './app/routes/feliz/felizTmpl.html',
-      controller: 'felizCtrl'
+      templateUrl: './app/routes/watches/felizTmpl.html',
+      controller: 'watchesCtrl'
     })
 
     // STRAPS COLLECTION STATE
