@@ -14,15 +14,17 @@
       <a ui-sref="feliz" class="slidebtn collbtn active">feliz</a>
     </div>
   </div>
-  <div class="grid">
-    <div class="grid-item" ng-repeat="watch in collWatches | filter:{coll:'Feliz'} | orderBy: specs.strap">
-      <a href="#">
-        <img src="{{watch.image}}" alt="">
-        <div class="productInfo">
-          <h3>{{watch.name}}</h3>
-          <p>{{watch.price | currency}}</p>
-        </div>
-      </a>
+  <div class="innerWrap">
+    <div class="grid">
+      <div class="grid-item" ng-repeat="watch in collWatches | filter:{coll:'Feliz'} | orderBy: specs.strap">
+        <a ui-sref="product({id:'{{watch._id}}'})">
+          <img src="{{watch.image}}" alt="">
+          <div class="productInfo">
+            <h3>{{watch.name}}</h3>
+            <p>{{watch.price | currency}}</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
