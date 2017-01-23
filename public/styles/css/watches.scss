@@ -1,1 +1,45 @@
 @import '../styles';
+.adPop {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+.collectionProducts {
+  padding: 200px 0 40px 100px;
+  position: relative;
+  background-color: $gray-background;
+}
+
+.collNav {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  right: 0;
+  height: 80px;
+  text-align: center;
+  line-height: 76px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebebeb;
+  background: #fff;
+  z-index: 100;
+}
+
+.collbtn {
+  margin: 0 8px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #e4e4e4;
+  font-family: $headerlight;
+  font-weight: 800;
+  font-size: 11px;
+  &:hover {
+    border-color: $pink-btn-text;
+    color: #fff;
+  }
+  &.active {
+    background-color: $pink-btn-text;
+    border-color: $pink-btn-text;
+    color: #fff;
+  }
+}
