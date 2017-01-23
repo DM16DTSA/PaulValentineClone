@@ -1,0 +1,91 @@
+@import '../styles';
+
+.inboxlove-container {
+  width: 100vw;
+  height: 273px;
+  margin: auto;
+  padding-left: 100px;
+  text-align: center;
+  background-color: $near-white-background-2;
+  // position: relative;
+  // z-index: 5;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+
+.inboxlove-img {
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  padding-top: 50px;
+  // position: absolute;
+  // left: 50%;
+  // margin-left: -12.5px;
+  // z-index: 10;
+}
+
+.inboxlove-img img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.inboxlove-container h2 {
+  font-family: $header;
+  font-size: 12px;
+  line-height: 17px;
+  color: #333333;
+  padding-top: 40px;
+}
+
+.inboxlove-input {
+  width: 320px;
+  height: 47px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.inboxlove-input input {
+  width: 320px;
+  height: 47px;
+  margin: auto;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: 1px solid #ebebeb;
+  font-family: $header;
+  font-size: 16px;
+  line-height: 26px;
+  padding-left: 10px;
+}
+
+.inboxlove-input button {
+  width: 97px;
+  height: 47px;
+  background-color: #333;
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 40px;
+  font-size: 12px;
+  font-family: $header;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  outline: none;
+  border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: inset 0 0 0 0 $pink-btn-text;
+  color: white;
+  transition: all ease 0.8s;
+  &:hover {
+    box-shadow: inset 0 -100px 0 0 $pink-btn-text;
+  }
+}

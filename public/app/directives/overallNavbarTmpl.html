@@ -1,4 +1,4 @@
-<div class="overall-navbar-container-full">
+<nav class="overall-navbar-container-full">
   <div class="overall-navbar-container-fixed">
     <div class="overall-navbar-container">
       <div class="navbar-logo">
@@ -6,30 +6,38 @@
           <img src="./styles/images/icons/logo.png" />
         </a>
       </div>
+      <div class="navbar-logo-white">
+        <a ui-sref="home">
+          <img src="./styles/images/icons/logo-white.png" />
+        </a>
+      </div>
 
-      <div id="submenus">
+      <div id="submenus" class="submenus-container">
         <div class="navbar-ham">
           <div class="bar top"></div>
-          <div class="bar middle"></div>
+          <div class="bar middle" id="center"></div>
           <div class="bar bottom"></div>
         </div>
+
+        <div class="navbar-white-container"></div>
 
         <div class="submenus">
           <div id="submenu" class="submenu1">
             <div class="submenu1-paul-valentine">
               <img src="./styles/images/icons/logo-text.png" />
             </div>
-
-            <div class="submenu1-links">
-              <a>WATCHES</a>
-              <br><br>
-              <a>STRAPS</a>
-              <br><br>
-              <a>SHOP INSTAGRAM</a>
-              <br><br>
-              <a>+ Brand</a>
-              <br><br>
-              <a>+ Customer Care</a>
+            <div id="submenu-initial" class="submenu-initial">
+              <div class="submenu1-links">
+                <a ui-sref="watches">WATCHES</a>
+                <br><br>
+                <a ui-sref="straps">STRAPS</a>
+                <br><br>
+                <a ui-sref="shop_instagram">SHOP INSTAGRAM</a>
+                <br><br>
+                <span href="#">+ Brand</span>
+                <br><br>
+                <span href="#">+ Customer Care</span>
+              </div>
             </div>
           </div>
 
@@ -61,7 +69,9 @@
       </div>
 
       <div id="bag" class="navbar-bag">
-        <img src="./styles/images/icons/cart.png" />
+        <div class="gray-filter-layer"></div>
+        <img class="bag-icon" src="./styles/images/icons/cart.png" />
+        <img class="bag-icon-white" src="./styles/images/icons/cart-white.png" />
         <h3>USD</h3>
         <div class="cart-dir-container">
           <div class="navbar-your-bag">
@@ -82,10 +92,6 @@
               <br>
               <div class="navbar-paynowbtn">PAY NOW SECURELY</div>
             </div>
-
-            <!-- <div class="navbar-paynowbtn-container"> -->
-            <!-- <button class="navbar-paynowbtn">PAY NOW SECURELY</button> -->
-            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -93,4 +99,4 @@
   </div>
 
 
-</div>
+</nav>
