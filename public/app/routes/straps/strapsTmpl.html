@@ -2,7 +2,7 @@
 <div class="adPop">
   <p>FREE SHIPPING WORLDWIDE</p>
 </div>
-<section class="collectionHero" style="background-image:url('../../styles/images/coll/Pearl_hero.jpg')">
+<section class="collectionHero" style="background-image:url('../../styles/images/straps/Straps_website.jpg')">
 
 </section>
 <section class="collProducts">
@@ -10,18 +10,18 @@
     <div class="innerWrap4">
       <a ui-sref="watches" class="slidebtn collbtn">all watches</a>
       <a ui-sref="marina" class="slidebtn collbtn">marina</a>
-      <a ui-sref="pearl" class="slidebtn collbtn active">pearl</a>
-      <a ui-sref="feliz" class="slidebtn collbtn">feliz</a>
+      <a ui-sref="pearl" class="slidebtn collbtn">pearl</a>
+      <a ui-sref="feliz" class="slidebtn collbtn active">feliz</a>
     </div>
   </div>
   <div class="innerWrap">
     <div class="grid">
-      <div class="grid-item" ng-repeat="watch in collWatches | filter:{coll:'Pearl'} | orderBy: specs.strap">
-        <a ui-sref="product({id:'{{watch._id}}'})">
-          <img src="{{watch.image}}" alt="">
+      <div class="grid-item" ng-repeat="strap in collStraps">
+        <a ui-sref="product({id:'{{strap._id}}'})">
+          <img src="{{strap.image}}" alt="">
           <div class="productInfo">
-            <h3>{{watch.name}}</h3>
-            <p>{{watch.price | currency}}</p>
+            <h3>{{strap.name}}</h3>
+            <p>{{strap.price | currency}}</p>
           </div>
         </a>
       </div>
