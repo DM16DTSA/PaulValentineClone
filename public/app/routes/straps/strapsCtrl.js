@@ -6,5 +6,4 @@ angular.module("app")
     $scope.collStraps = response.data;
     // console.log(response.data)
   })
-
 });
