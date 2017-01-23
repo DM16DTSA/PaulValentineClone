@@ -1,1 +1,156 @@
 @import '../styles';
+
+.returns-header {
+  display: block;
+  box-sizing: border-box;
+  margin-left: 98px;
+  height: 420px;
+  width: 100%;
+  background-image: url('../../styles/images/headers/returns.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 800px) {
+  .returns-header {
+    height: 300px;
+    padding-left: 100px;
+    padding-bottom: 60px;
+  }
+}
+
+.returns-container {
+  text-align: center;
+  margin: auto;
+  margin-left: 50px;
+  height: auto;
+  width: 100vw;
+  background-color: $gray-background;
+  padding: 0;
+}
+
+.returns-info {
+  height: auto;
+  width: 80vw;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 60px;
+
+  h2 {
+    margin-bottom: 1px;
+    font-family: $header;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 20px;
+  }
+
+  p {
+    line-height: 26px;
+    width: 550px;
+    margin: auto;
+    font-family: $header;
+    line-height: 1.6;
+    font-size: 16px;
+    color: $light-gray;
+  }
+
+}
+
+.warranty-info {
+  height: auto;
+  width: 80vw;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 20px;
+
+  h2 {
+    margin-bottom: 1px;
+    font-family: $header;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 20px;
+  }
+
+  p {
+    line-height: 26px;
+    width: 550px;
+    margin: auto;
+    font-family: $header;
+    line-height: 1.6;
+    font-size: 16px;
+    color: $light-gray;
+  }
+
+}
+
+
+.warranty-info {
+  height: 400px;
+  width: 100%;
+  background-color: $gray-background;
+}
+
+.returns-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-background;
+  width: 100%;
+  height: 560px;
+
+  form{
+    position: relative;
+    width: 550px;
+    height: 100%;
+    text-align: center;
+    p{
+      margin-top: 100px;
+      font-family: $header;
+      font-size: 16px;
+      line-height: 26px;
+      color: $light-gray;
+    }
+    input{
+      margin-top: 12px;
+      font-size: 16px;
+      width: 550px;
+      height: 42px;
+      font-family: $header;
+    }
+    textarea{
+      font-size: 16px;
+      margin-top: 12px;
+      height: 267px;
+      width: 550px;
+      font-family: $header;
+    }
+    .returns-slidebtn {
+      position: absolute;
+      right: 0px;
+      bottom: 66px;
+      background-color: #FFDCD3;
+      display: inline-block;
+      padding: 0 20px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 12px;
+      font-family: $header;
+      width: auto;
+      text-decoration: none;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      outline: none;
+      border: 0;
+      border-radius: 3px;
+      box-shadow: inset 0 0 0 0 #333;
+      color: white;
+      transition: all ease 0.8s;
+      &:hover {
+        box-shadow: inset 0 -100px 0 0 #333;
+      }
+    }
+  }
+}
