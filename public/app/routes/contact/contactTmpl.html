@@ -1,0 +1,23 @@
+<overall-navbar-dir></overall-navbar-dir>
+<div class="contact-wrapper">
+  <secondary-navbar-dir></secondary-navbar-dir>
+  <div class="contact-img"></div>
+  <div class="contact-form">
+    <form>
+      <p>
+      If there's anything that we cand do to help or if you have any questions, please don't hesitate to get in touch
+    </p>
+
+      <input type="text" ng-model='name' placeholder="Name">
+
+      <input type="text" ng-model='email' placeholder="Email">
+
+      <input type="text" ng-model='number' placeholder="Phone Number">
+
+      <textarea name="name" rows="8" cols="80" placeholder="Message" ng-model='message' maxlength="400"></textarea>
+
+      <button type="button" class='contact-slidebtn' name="button" ng-click='send(name,email,number,message)'>SEND</button>
+    </form>
+  </div>
+</div>
+<revealed-footer-dir></revealed-footer-dir>

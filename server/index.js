@@ -46,6 +46,43 @@ app.post('api/cart', cartCtrl.postCart);
 app.put('api/cart/:id/:quantity', cartCtrl.putCart);
 app.delete('api/cart/:id', cartCtrl.deleteCart);
 app.delete('api/destroy', cartCtrl.destroyCart);
+//////////////////////
+///nodemailer/////////
+//////////////////////
+const nodemailer = require('nodemailer');
+const hbs = require('nodemailer-express-handlebars');
+const mailCtrl = require('./controllers/mailCtrl.js');
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  // secure: true,
+  auth: {
+    user: config.emailAddress,
+    pass: config.emailPas
+  }
+});
+app.post('/sendmail', (req,res,next)=>{
+  // console.log()
+  let text = req.body.name+'\n\n'+'phone: '+req.body.phone+'\n\n'+req.body.message;
+  let mailOptions = {
+    from: config.emailAddress, // sender address
+    to: config.emailAddress, // list of receivers
+    subject: 'From:'+req.body.email, // Subject line
+    text: text//, // plaintext body
+    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+          console.log(error);
+          res.send('error');
+      }else{
+          console.log('Message sent: ' + info.response);
+          res.send({yo: info.response});
+      };
+  });
+});
+//////////////////////
+///nodemailer/////////
+//////////////////////
 
 
 app.listen(config.port, function() {

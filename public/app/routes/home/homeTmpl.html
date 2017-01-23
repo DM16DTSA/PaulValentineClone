@@ -22,7 +22,7 @@
       <h2>OUR MOST <br> POPULAR WATCHES</h2>
       <div class="grid">
         <div class="grid-item" ng-repeat="watch in mainWatches | limitTo: 8">
-          <a href="#">
+           <a ui-sref="product({id:'{{watch._id}}'})">
             <img src="{{watch.image}}" alt="">
             <div class="productInfo">
               <h3>{{watch.name}}</h3>

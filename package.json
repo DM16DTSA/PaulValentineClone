@@ -31,6 +31,8 @@
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2",
     "mongoose": "^4.7.7",
+    "nodemailer": "^2.7.2",
+    "nodemailer-express-handlebars": "^2.0.0",
     "passport": "^0.3.2"
   }
 }
