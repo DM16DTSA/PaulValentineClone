@@ -111,8 +111,13 @@ angular.module("app")
       url: '/collections/straps',
       templateUrl: './app/routes/straps/strapsTmpl.html',
       controller: 'strapsCtrl'
+    })
+    // WATCH PRODUCT STATE
+    .state('product', {
+      url:'product/:id',
+      templateUrl: './app/routes/product/productTmpl.html',
+      controller: 'productCtrl'
     });
-
     // ASSIGN OTHERWISE
 		// ============================================================
 		$urlRouterProvider.otherwise('/');
