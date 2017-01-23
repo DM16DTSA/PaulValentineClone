@@ -15,31 +15,43 @@ angular.module("app")
                "border-right": "1px solid rgb(235, 235, 235)",
                "background-color": "white",
                "-webkit-transition": "background-color 600ms ease-in-out",
+               "-moz-transition": "background-color 600ms ease-in-out",
+               "-o-transition": "background-color 600ms ease-in-out",
                "transition": "background-color 600ms ease-in-out"
              });
              $(".navbar-logo-white").css({
                "display": "none",
                "-webkit-transition": "display 600ms ease-in-out",
+               "-moz-transition": "display 600ms ease-in-out",
+               "-o-transition": "display 600ms ease-in-out",
                "transition": "display 600ms ease-in-out"
              });
              $(".navbar-logo").css({
                "display": "block",
                "-webkit-transition": "display 600ms ease-in-out",
+               "-moz-transition": "display 600ms ease-in-out",
+               "-o-transition": "display 600ms ease-in-out",
                "transition": "display 600ms ease-in-out"
              });
              $(".bag-icon").css({
                "display": "block",
                "-webkit-transition": "display 600ms ease-in-out",
+               "-moz-transition": "display 600ms ease-in-out",
+               "-o-transition": "display 600ms ease-in-out",
                "transition": "display 600ms ease-in-out"
              });
              $(".bag-icon-white").css({
                "display": "none",
                "-webkit-transition": "display 600ms ease-in-out",
+               "-moz-transition": "display 600ms ease-in-out",
+               "-o-transition": "display 600ms ease-in-out",
                "transition": "display 600ms ease-in-out"
              });
              $(".bar").css({
                "background-color": "rgb(25, 25, 25)",
                "-webkit-transition": "background-color 2s",
+               "-moz-transition": "background-color 2s",
+               "-o-transition": "background-color 2s",
                "transition": "background-color 2s"
              });
              $(".bar").css({
@@ -79,31 +91,43 @@ angular.module("app")
              "border-right": "1px solid rgb(51, 51, 51)",
              "background-color": "rgb(25, 25, 25)",
              "-webkit-transition": "background-color 600ms ease-in-out",
+             "-moz-transition": "background-color 600ms ease-in-out",
+             "-o-transition": "background-color 600ms ease-in-out",
              "transition": "background-color 600ms ease-in-out"
            });
            $(".navbar-logo-white").css({
              "display": "block",
              "-webkit-transition": "display 600ms ease-in-out",
+             "-moz-transition": "display 600ms ease-in-out",
+             "-o-transition": "display 600ms ease-in-out",
              "transition": "display 600ms ease-in-out"
            });
            $(".navbar-logo").css({
              "display": "none",
              "-webkit-transition": "display 600ms ease-in-out",
+             "-moz-transition": "display 600ms ease-in-out",
+             "-o-transition": "display 600ms ease-in-out",
              "transition": "display 600ms ease-in-out"
            });
            $(".bag-icon").css({
              "display": "none",
              "-webkit-transition": "display 600ms ease-in-out",
+             "-moz-transition": "display 600ms ease-in-out",
+             "-o-transition": "display 600ms ease-in-out",
              "transition": "display 600ms ease-in-out"
            });
            $(".bag-icon-white").css({
              "display": "block",
              "-webkit-transition": "display 600ms ease-in-out",
+             "-moz-transition": "display 600ms ease-in-out",
+             "-o-transition": "display 600ms ease-in-out",
              "transition": "display 600ms ease-in-out"
            });
                $(".bar").css({
                  "background-color": "white",
                  "-webkit-transition": "background-color 2s",
+                 "-moz-transition": "background-color 2s",
+                 "-o-transition": "background-color 2s",
                  "transition": "background-color 2s"
                });
                $(".top").css({
