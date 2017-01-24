@@ -1,10 +1,9 @@
 angular.module("app")
 .controller('productCtrl', function($scope, $stateParams, mainService, $rootScope) {
-  mainService.getWatches()
+  mainService.getWatches($stateParams.id)
   .then(function(response) {
-    $scope.collWatches = response.data;
-    $rootScope.header = "Watches – Paul Valentine US";
-    console.log(response.data)
+    $scope.thisProduct = response[0];
+    $rootScope.header = $scope.thisProduct.name + " – Paul Valentine US";
+    console.log(response[0])
   })
-
 });

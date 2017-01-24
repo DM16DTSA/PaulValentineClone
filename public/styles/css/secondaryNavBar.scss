@@ -38,9 +38,9 @@ $sec-nav-background: #FFFFFF;
       h1{
         font-size: 11px;
         letter-spacing: 2px;
-        line-height: 40px;
+        line-height: 41px;
         font-weight: 900;
-        font-family: $header;
+        font-family: $headerlight;
       }
       box-shadow: inset 0 0 0 0 $pink-btn-text;
       transition: all ease 0.8s;
@@ -63,4 +63,10 @@ $sec-nav-background: #FFFFFF;
 .secondary-placeholder{
   width: 93.907vw;
   height: 8.422vh;
+}
+
+@media (max-width: 800px) {
+  .secondaryNavbar-wrapper {
+    display: none;
+  }
 }
