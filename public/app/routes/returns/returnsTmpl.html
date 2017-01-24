@@ -32,7 +32,7 @@
         <input type="text" ng-model='number' placeholder="Phone Number">
         <input type="text" ng-model='order' placeholder="Order No.">
         <textarea name="name" rows="8" cols="80" placeholder="Message" ng-model='message' maxlength="400"></textarea>
-        <button type="button" class='returns-slidebtn' name="button">SEND</button>
+        <button type="button" class='returns-slidebtn' name="button" ng-click='send(name,email,number,order,message)'>SEND</button>
       </form>
 
   </div>
