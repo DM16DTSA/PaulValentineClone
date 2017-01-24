@@ -3,6 +3,12 @@ angular.module("app")
   // $rootScope.header = "Contact – Paul Valentine US";
   $scope.send = function(name,email,number,message){
     console.log('contactCtrl fired',name,email,number,message);
+    if(!name || !email || !number || !message){
+      return swal('please fill out all fields');
+    }
+    if(!email.match(/@/gi)){
+      return swal('please enter a valid email');
+    }
     let obj = {
       name: name,
       email: email,
@@ -15,5 +21,5 @@ angular.module("app")
     $scope.number = '';
     $scope.message = '';
   };
-
+  // return alert('Info sent');
 });
