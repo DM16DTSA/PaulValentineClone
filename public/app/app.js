@@ -121,7 +121,7 @@ angular.module("app")
     })
     // WATCH PRODUCT STATE
     .state('product', {
-      url:'product/:id',
+      url:'/product/:id',
       templateUrl: './app/routes/product/productTmpl.html',
       controller: 'productCtrl'
     });

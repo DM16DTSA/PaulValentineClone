@@ -20,4 +20,11 @@ angular.module("app")
       }
     });
   });
+  $scope.menuSwitch = function() {
+    if($('.collMenuTabs').hasClass('open')) {
+      $('.collMenuTabs').removeClass('open')
+    } else {
+      $('.collMenuTabs').addClass('open')
+    }
+  }
 });

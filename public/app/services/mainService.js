@@ -4,8 +4,11 @@ angular.module("app")
 			return $http.get('/watches')
 			.then(function(response) {
 				if(x) {
-					return response.data.filter(function(x) {
-						return id === x
+					return response.data.filter(function(el) {
+						if(el._id == x) {
+							return el;
+							console.log(el)
+						}
 					})
 				}
 				else {

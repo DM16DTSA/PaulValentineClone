@@ -93,10 +93,20 @@
       position: relative;
       top: 120px;
     }
+    .grid {
+      .grid-item {
+        a {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+    .mobile {
+      display: block!important;
+      cursor: pointer;
+    }
   }
-  .mobile {
-    display: block!important;
-  }
+
   .collectionProducts {
     padding-top: 160px;
     padding-left: 0px;
@@ -122,7 +132,10 @@
     background-color: #fff;
     z-index: 9999;
     .mobile {
-      z-index: 9999!important;
+      z-index: 9999;
+      position: absolute;
+      width: 100%;
+      background: #fff;
     }
     .collMenuTabs {
       margin: 0;
