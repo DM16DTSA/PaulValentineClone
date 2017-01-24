@@ -4,8 +4,14 @@ angular.module("app")
   return {
     restrict: 'AE',
     templateUrl: './app/directives/secondaryNavbarTmpl.html',
-    controller: ($scope)=>{
-      
+    controller: function($scope) {
+      $scope.menuSwitch = function() {
+        if($('.collMenuTabs').hasClass('open')) {
+          $('.collMenuTabs').removeClass('open')
+        } else {
+          $('.collMenuTabs').addClass('open')
+        }
+      }
     }
   };
 
