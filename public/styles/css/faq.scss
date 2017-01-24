@@ -1,1 +1,88 @@
 @import '../styles';
+
+.faq-header {
+    display: block;
+    box-sizing: border-box;
+    margin-left: 98px;
+    height: 430px;
+    width: 100%;
+    background-image: url('../../styles/images/headers/faq.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.faq-container {
+    height: auto;
+    width: 100vw;
+    margin: auto auto auto 50px;
+    padding: 0;
+    background-color: $gray-background;
+
+    .faq-content {
+        width: 100%;
+        max-width: 580px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 150px;
+        padding-bottom: 100px;
+
+        .faq {
+            display: block;
+
+            .faq-question {
+                text-align: left;
+                font-weight: 100;
+                margin-bottom: -1px;
+                border-bottom: 1px solid #e4e4e4;
+                position: relative;
+                border-top: 1px solid #e4e4e4;
+                cursor: pointer;
+                padding: 10px 0;
+                font-family: $header;
+
+                h2 {
+                    font-size: 16px;
+                    margin: 0;
+                    line-height: 25px;
+                    letter-spacing: 2px;
+                    font-family: $header;
+                    text-transform: uppercase;
+                }
+            }
+
+            .faq-question:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                background: url('../../styles/images/icons/plus.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 15px;
+                height: 15px;
+                top: 15px;
+            }
+
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.8s;
+                position: relative;
+                text-align: left;
+                line-height: 1.6;
+                color: #999;
+                font-family: $header;
+
+                p {
+                    margin: 0 0 15px;
+                    padding: 30px 0;
+                }
+
+                &.open {
+                  max-height: 1000px;
+                  height: auto;
+                }
+            }
+        }
+    }
+}
