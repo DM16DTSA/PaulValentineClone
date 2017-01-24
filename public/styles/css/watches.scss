@@ -1,8 +1,10 @@
 @import '../styles';
-.adPop {
-  position: absolute;
-  top: 0;
-  z-index: 100;
+.pageHolderr {
+  .adPop {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+  }
 }
 .collectionHero {
   margin-left: 100px;
@@ -41,6 +43,10 @@
   z-index: 100;
 }
 
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+}
 .innerWrap {
   width: 100%;
   padding: 0 25px 0 25px;
@@ -61,5 +67,130 @@
     background-color: $pink-btn-text;
     border-color: $pink-btn-text;
     color: #fff;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .collectionProducts {
+    .innerWrap {
+      .grid-item {
+        width: 33.333%;
+      }
+    }
+  }
+  .collProducts {
+    .innerWrap {
+      .grid-item {
+        width: 33.333%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pageHolderr {
+    .adPop {
+      position: relative;
+      top: 120px;
+    }
+  }
+  .mobile {
+    display: block!important;
+  }
+  .collectionProducts {
+    padding-top: 160px;
+    padding-left: 0px;
+  }
+  .collProducts {
+    padding-left: 0;
+    padding-top: 40px;
+  }
+  .pageNav2 {
+    left: 0;
+    top: 60px;
+    right: 0px;
+    height: 60px;
+    line-height: 60px;
+    position: fixed;
+    text-align: center;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0;
+    font-family: $headerlight;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #999999;
+    background-color: #fff;
+    z-index: 9999;
+    .mobile {
+      z-index: 9999!important;
+    }
+    .collMenuTabs {
+      margin: 0;
+      top: -100%;
+      margin-top: 120px;
+      transition: top 0.5s;
+      position: fixed;
+      padding-left: 0;
+      height: auto;
+      line-height: 50px;
+      z-index: 100;
+      background: #fff;
+      .collbtn {
+        line-height: 60px;
+        height: 60px;
+        width: 100vw;
+        margin: 0;
+        border-radius: 1px;
+        border-top: 0px;
+      }
+      &.open {
+        top: 0px;
+        z-index: 8;
+      }
+    }
+  }
+  .collNav {
+    display: none;
+  }
+  .collectionHero {
+    margin-top: 120px;
+    margin-left: 0;
+    height: 200px;
+  }
+  .inboxlove-container {
+    padding-left: 0;
+  }
+  .empty-foot-holder {
+    margin-left: 0;
+    a {
+      padding-right: 0;
+    }
+    .footer-bottom {
+      padding-right: 0;
+    }
+    .footer-social-links-container {
+      margin: 210px auto 0 auto;
+      left: 30%;
+    }
+    .footer-terms {
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (max-width:650px) {
+  .collectionProducts {
+    .innerWrap {
+      .grid-item {
+        width: 50%;
+      }
+    }
+  }
+  .collProducts {
+    .innerWrap {
+      .grid-item {
+        width: 50%;
+      }
+    }
   }
 }
