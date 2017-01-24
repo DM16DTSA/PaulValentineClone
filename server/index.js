@@ -39,52 +39,32 @@ app.get('/straps', strapController.getStraps);
 
 // app.post('/watches', watchController.addWatch);
 // app.post('/straps', strapController.addStrap);
-var cartCtrl = require('./controllers/cartCtrl.js');
 
+
+//////////////////////
+///////cart///////////
+//////////////////////
+const cartCtrl = require('./controllers/cartCtrl.js');
 app.get('api/cart', cartCtrl.getCart);
 app.post('api/cart', cartCtrl.postCart);
 app.put('api/cart/:id/:quantity', cartCtrl.putCart);
 app.delete('api/cart/:id', cartCtrl.deleteCart);
 app.delete('api/destroy', cartCtrl.destroyCart);
 //////////////////////
+///////cart///////////
+//////////////////////
+
+
+//////////////////////
 ///nodemailer/////////
 //////////////////////
-const nodemailer = require('nodemailer');
-const hbs = require('nodemailer-express-handlebars');
 const mailCtrl = require('./controllers/mailCtrl.js');
-let transporter = nodemailer.createTransport({
-  service: 'gmail',
-  // secure: true,
-  auth: {
-    user: config.emailAddress,
-    pass: config.emailPas
-  }
-});
-app.post('/sendmail', (req,res,next)=>{
-  // console.log()
-  let text = req.body.name+'\n\n'+'phone: '+req.body.phone+'\n\n'+req.body.message;
-  let mailOptions = {
-    from: config.emailAddress, // sender address
-    to: config.emailAddress, // list of receivers
-    subject: 'From:'+req.body.email, // Subject line
-    text: text//, // plaintext body
-    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
-  };
-  transporter.sendMail(mailOptions, function(error, info){
-      if(error){
-          console.log(error);
-          res.send('error');
-      }else{
-          console.log('Message sent: ' + info.response);
-          res.send({yo: info.response});
-      };
-  });
-});
+app.post('/sendmail', mailCtrl.mail);
 //////////////////////
 ///nodemailer/////////
 //////////////////////
 
-
+module.exports = app;
 app.listen(config.port, function() {
   console.log("Started server on port", config.port);
 });

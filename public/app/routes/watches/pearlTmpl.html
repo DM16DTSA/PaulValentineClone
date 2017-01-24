@@ -1,3 +1,4 @@
+<div class="pageHolderr">
 <overall-navbar-dir></overall-navbar-dir>
 <div class="adPop">
   <p>FREE SHIPPING WORLDWIDE</p>
@@ -14,6 +15,15 @@
       <a ui-sref="feliz" class="slidebtn collbtn">feliz</a>
     </div>
   </div>
+  <div class="pageNav2 mobile">
+    <div class="mobile" ng-click="menuSwitch()">SELECT COLLECTION +</div>
+    <div class="collMenuTabs">
+      <a ui-sref="watches" class=" slidebtn collbtn">ALL WATCHES</a>
+      <a ui-sref="marina" class=" slidebtn collbtn">MARINA</a>
+      <a ui-sref="pearl" class=" slidebtn collbtn active">PEARL</a>
+      <a ui-sref="feliz" class=" slidebtn collbtn">FELIZ</a>
+    </div>
+  </div>
   <div class="innerWrap">
     <div class="grid">
       <div class="grid-item" ng-repeat="watch in collWatches | filter:{coll:'Pearl'} | orderBy: specs.strap">
@@ -28,4 +38,6 @@
     </div>
   </div>
 </section>
+<inbox-love-dir></inbox-love-dir>
 <revealed-footer-dir></revealed-footer-dir>
+</div>
