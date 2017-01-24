@@ -1,1 +1,76 @@
 @import '../styles';
+
+.map-sidebar {
+  position: absolute;
+  height: calc(100% - 80px);
+  width: 300px;
+  left: 100px;
+  top: 80px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+
+  .location-one {
+    height: 200px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+
+    .location {
+      padding: 15px;
+      font-family: $header;
+      font-size: 16px;
+      line-height: 1.4;
+
+      p {
+        color: $light-gray;
+      }
+
+      span {
+        color: $pink-btn-text;
+      }
+    }
+
+  }
+
+  .location-two {
+    height: 200px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+
+    .location {
+      padding: 15px;
+      font-family: $header;
+      font-size: 16px;
+      line-height: 1.4;
+
+      p {
+        color: $light-gray;
+      }
+
+      span {
+        color: $pink-btn-text;
+      }
+    }
+
+  }
+
+  .location-one:hover {
+    cursor: pointer;
+    background-color: rgba(238, 238, 238, .60);
+  }
+
+  .location-two:hover {
+    cursor: pointer;
+    background-color: rgba(238, 238, 238, .60);
+  }
+}
+
+#map {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 400px);
+  height: calc(100% - 80px);
+  top: 80px;
+  background-color: #dedede;
+
+}
