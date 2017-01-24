@@ -47,6 +47,9 @@ angular.module("app")
             "-o-transition": "display 600ms ease-in-out",
             "transition": "display 600ms ease-in-out"
           });
+          $(".bag-icon-qty span").css({
+            "color": "rgb(17, 17, 17)"
+          });
           $(".bar").css({
             "background-color": "rgb(25, 25, 25)",
             "-webkit-transition": "background-color 2s",
@@ -126,6 +129,9 @@ angular.module("app")
             "-moz-transition": "display 600ms ease-in-out",
             "-o-transition": "display 600ms ease-in-out",
             "transition": "display 600ms ease-in-out"
+          });
+          $(".bag-icon-qty span").css({
+            "color": "white"
           });
           $(".bar").css({
             "background-color": "white",
