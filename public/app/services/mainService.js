@@ -7,19 +7,26 @@ angular.module("app")
 					return response.data.filter(function(el) {
 						if(el._id == x) {
 							return el;
-							console.log(el)
+
 						}
 					})
-				}
-				else {
+				} else {
 				return response;
-			}
+				}
 			})
 		};
-		this.getStraps = function() {
+		this.getStraps = function(y) {
 			return $http.get('/straps')
 			.then(function(response) {
-				return response;
+				if(y) {
+					return response.data.filter(function(el) {
+						if(el._id == y) {
+							return el;
+						}
+					})
+				} else {
+					return response;
+				}
 			})
 		}
 });

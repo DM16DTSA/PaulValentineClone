@@ -1,0 +1,294 @@
+@import '../styles';
+
+.productNav {
+  height: 80px;
+  background: #fff;
+  position: fixed;
+  z-index: 1;
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 80px;
+  left: 100px;
+  right: 0px;
+  overflow: hidden;
+  nav {
+    width: 50%;
+    margin: 0 auto;
+    z-index: 9999;
+    position: relative;
+    a {
+      display: inline-block;
+      margin: 0 15px;
+      font-family: $header;
+      cursor: pointer;
+      color: #333;
+      font-size: 12px;
+      letter-spacing: 1px;
+      &.active {
+        color: $pink-btn-text;
+      }
+    }
+  }
+  .productDetails {
+    position: absolute;
+    width: 100%;
+    transition: top 0.5s;
+    top: 100px;
+    h2 {
+      width: 49%;
+      float: left;
+      text-align: left;
+      margin: 0;
+      padding: 30px;
+      font-family: $headerlight;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 2px;
+    }
+    .pNavRight {
+      padding-right: 30px;
+      text-align: right;
+      width: 49%;
+      float: right;
+      div {
+        margin-bottom: 15px;
+        span {
+          font-size: 14px;
+          position: relative;
+          top: 2px;
+          right: 10px;
+          font-family: $header;
+          color: $pink-btn-text;
+        }
+        .bagEmail {
+
+        }
+      }
+    }
+    &.pScrolled {
+      top: 0;
+    }
+  }
+}
+.productPageHolder {
+  background: $gray-background;
+  margin-bottom: 435px;
+  position: relative;
+  z-index: 100;
+}
+.itemContainer {
+  padding-left: 100px;
+  overflow: hidden;
+  position: relative;
+  .itemBg {
+    padding: 100px;
+    text-align: center;
+    height: 95vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    padding-left: 200px;
+    .bgimage {
+      opacity: 0.88;
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      left: 100px;
+      right: 0px;
+      height: 80vh;
+    }
+    .productPhotos {
+      cursor: -webkit-zoom-in;
+      cursor: -moz-zoom-in;
+      position: relative;
+      width: 50%;
+      margin-left: 50px;
+      height: 80vh;
+      .photoZoomed {
+        width: 120%;
+        margin-left: -10%;
+        height: 150%;
+        margin-top: -50px;
+        position: absolute;
+        opacity: 0;
+        overflow: hidden;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        transition: opacity 0.5s;
+
+      }
+      img {
+        opacity: 1;
+        transition: opacity 0.5s;
+        width: auto;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+      &:hover {
+        .photoZoomed {
+          opacity: 1;
+        }
+        img {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .itemDetails {
+    .itemGrid {
+      padding: 100px;
+      text-align: center;
+      height: 200vh;
+      margin-left: -25px;
+
+    }
+  }
+}
+
+.itemGrid1 {
+  width: 100%;
+  text-align: center;
+  float: left;
+  min-height: 1px;
+  padding-left: 25px;
+}
+
+.itemGrid2 {
+  width: 33.33%;
+  float: left;
+  min-height: 1px;
+  padding-left: 25px;
+  position: relative;
+  .grid2Panel {
+    height: 80vh;
+    position: relative;
+    .panel {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin-top: -60px;
+      span {
+        font-size: 12px;
+        font-family: $headerlight;
+        font-weight: 400;
+        color: #999;
+      }
+      h1 {
+        font-family: $header;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.panelOffers {
+  div {
+    margin-bottom: 15px;
+    .bagEmail {
+      margin-top: 15px;
+      font-weight: 700;
+    }
+    a {
+      display: block;
+      margin-top: 15px;
+      font-size: 15px;
+      color: #333;
+      text-decoration: none;
+      font-family: $headerlight;
+    }
+  }
+}
+
+@media screen and(min-width: 769px) {
+  .itemGrid1 {
+    width: 50%;
+  }
+  .itemGrid2 {
+    width: 33.33%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .itemGrid2 {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .productNav {
+    nav {
+      margin: 0;
+      text-align: left;
+      padding-left: 30px;
+    }
+    .productDetails {
+      h2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .itemGrid2 {
+    width: 100%;
+    .grid2Panel {
+      height: auto;
+      position: relative;
+      .panel {
+        position: relative;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .productNav {
+    display: none;
+  }
+  .itemGrid2 {
+    padding: 0;
+    width: 100%;
+    .grid2Panel {
+      padding: 0 30px;
+      height: auto;
+      &:first-child {
+        border-bottom: 1px solid #e9e9e9;
+      }
+      .panel {
+        top: 0;
+        h1 {
+          display: block;
+          text-align: center;
+          margin: 0 -30px;
+          padding: 0 30px;
+          margin-bottom: 30px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+  .panelOffers {
+    div {
+      margin-bottom: 15px;
+      .bagEmail {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+      }
+    }
+  }
+}

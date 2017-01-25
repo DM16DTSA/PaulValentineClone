@@ -1,11 +1,52 @@
 <div class="productPageHolder">
-  <div class="productNav">
-    <nav>
-      <a class="overview">OVERVIEW</a>
-      <a class="details">DETAILS</a>
-      <a class="inspiration">INSPIRATION</a>
-      <a class="overview">STRAPS</a>
-    </nav>
+    <overall-navbar-dir></overall-navbar-dir>
+    <div class="productNav">
+        <nav>
+            <a class="overview">OVERVIEW</a>
+            <a class="details">DETAILS</a>
+            <a class="inspiration">INSPIRATION</a>
+            <a class="overview">STRAPS</a>
+        </nav>
 
-  </div>
+        <div class="productDetails">
+            <h2>{{thP.name}}</h2>
+            <div class="pNavRight">
+                <div>
+                    <span>{{thP.price | currency}}</span>
+                    <button class="slidebtn bagEmail" type="button" name="button">{{buttonText}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="itemContainer">
+        <div class="itemBg">
+            <div class="bgimage" style="background-image: url('{{thP.background}}')"></div>
+            <div class="productPhotos">
+                <div class="photoZoomed" style="background-image: url('../../styles/images/products/{{thP._id}}.png')"></div>
+                <img src="../../styles/images/products/{{thP._id}}.png" alt="">
+            </div>
+        </div>
+        <div class="itemDetails">
+            <div class="itemGrid">
+                <div class="itemGrid1"></div>
+                <div class="itemGrid2">
+                    <div class="grid2Panel">
+                        <div class="panel">
+                            <span ng-if="thP.inStock === false">SOLD OUT</span>
+                            <h1>{{thP.name}}</h1>
+                            <div class="panelOffers">
+                                <div>
+                                    <button class="slidebtn bagEmail" type="button" name="button">{{buttonText}} {{thP.inStock === true ? " - $" + thP.price + ".00"  : ""}}</button>
+                                    <a ui-sref="contact">send gift hint</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<inbox-love-dir></inbox-love-dir>
+</div>
+<revealed-footer-dir></revealed-footer-dir>
