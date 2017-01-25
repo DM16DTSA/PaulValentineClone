@@ -91,6 +91,20 @@ angular.module("app")
             "-webkit-transform": "translateX(-363px)",
             "transform": "translateX(-363px)"
           });
+          $(".grid-item").css({
+            "pointer-events": "auto"
+          });
+          $(".gray-filter-layer2").css({
+            "display": "none"
+          });
+          $(".submenu-brand").css({
+            "-webkit-transform": "translateX(-363px)",
+            "transform": "translateX(-363px)"
+          });
+          $(".submenu-customer").css({
+            "-webkit-transform": "translateX(-363px)",
+            "transform": "translateX(-363px)"
+          });
 
         } else {
           // even clicks
@@ -169,6 +183,12 @@ angular.module("app")
             "-webkit-transform": "translateX(363px)",
             "transform": "translateX(363px)"
           });
+          $(".grid-item").css({
+            "pointer-events": "none"
+          });
+          $(".gray-filter-layer2").css({
+            "display": "block"
+          });
         }
         $(this).data("clicks", !clicks);
       });
@@ -218,12 +238,31 @@ angular.module("app")
         }
         $(this).data("clicks", !clicks);
       });
-      });
 
-      $(window).ready(function() {
-        $('#bag').on('click', function(){
-          $(this).toggleClass('clicked');
-        });
+      $('#bag-click').click(function() {
+        var clicks = $(this).data('clicks');
+        if (clicks) {
+          // odd clicks
+          $(".cart-dir-container").css({
+            "-webkit-transform": "translateX(340px)",
+            "transform": "translateX(340px)"
+          });
+          $(".gray-filter-layer").css({
+            "display": "none"
+          });
+
+        } else {
+          // even clicks
+          $(".cart-dir-container").css({
+            "-webkit-transform": "translateX(0px)",
+            "transform": "translateX(0px)"
+          });
+          $(".gray-filter-layer").css({
+            "display": "block"
+          });
+        }
+        $(this).data("clicks", !clicks);
+      });
       });
 
     }

@@ -28,6 +28,13 @@ angular.module("app")
       controller: 'accountCtrl'
     })
 
+    // CART STATE
+    .state('cart', {
+      url: '/cart',
+      templateUrl: './app/routes/cart/cartTmpl.html',
+      controller: 'cartCtrl'
+    })
+
     // CONTACT STATE
     .state('contact', {
       url: '/contact',
@@ -49,11 +56,25 @@ angular.module("app")
       controller: 'journalCtrl'
     })
 
+    // LEGAL NOTICE STATE
+    .state('legal', {
+      url: '/legal',
+      templateUrl: './app/routes/legal/legalTmpl.html',
+      controller: 'legalCtrl'
+    })
+
     // LOOKBOOK STATE
     .state('lookbook', {
       url: '/lookbook',
       templateUrl: './app/routes/lookbook/lookbookTmpl.html',
       controller: 'lookbookCtrl'
+    })
+
+    // PRIVACY STATE
+    .state('privacy', {
+      url: '/privacy',
+      templateUrl: './app/routes/privacy/privacyTmpl.html',
+      controller: 'privacyCtrl'
     })
 
     // RETURNS STATE
@@ -82,6 +103,13 @@ angular.module("app")
       url: '/store_finder',
       templateUrl: './app/routes/storeFinder/storeFinderTmpl.html',
       controller: 'storeFinderCtrl'
+    })
+
+    // TERMS & CONDITIONS STATE
+    .state('terms', {
+      url: '/terms',
+      templateUrl: './app/routes/terms/termsTmpl.html',
+      controller: 'termsCtrl'
     })
 
     // COLLECTIONS
