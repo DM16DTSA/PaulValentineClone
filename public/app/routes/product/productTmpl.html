@@ -22,13 +22,12 @@
         <div class="itemBg">
             <div class="bgimage" style="background-image: url('{{thP.background}}')"></div>
             <div class="productPhotos">
-                <div class="photoZoomed" style="background-image: url('../../styles/images/products/{{thP._id}}.png')"></div>
+                <div class="photoZoomed" id="fddf" style="background-image: url('../../styles/images/products/{{thP._id}}.png')"></div>
                 <img src="../../styles/images/products/{{thP._id}}.png" alt="">
             </div>
         </div>
         <div class="itemDetails">
             <div class="itemGrid">
-                <div class="itemGrid1"></div>
                 <div class="itemGrid2">
                     <div class="grid2Panel">
                         <div class="panel">
@@ -42,10 +41,112 @@
                             </div>
                         </div>
                     </div>
+                    <div class="grid2Panel">
+                      <div class="panel">
+                        <div class="prodDescr">
+                          <h2 ng-click="sel = 'des'">Description</h2>
+                          <div class="extraDesc" ng-class="{false: 'hidden'}[sel === 'des']">
+                            <p>{{thP.description}}</p>
+                          </div>
+                          <!-- <a class="readMoreLink">Read More</a> -->
+                          <h2 ng-click="sel = 'spec'" ng-show="thP.specs !== undefined">Specifications</h2>
+                          <div class="extraDesc" ng-class="{false: 'hidden'}[sel === 'spec']" ng-show="thP.specs !== undefined">
+                            <p>
+                              <strong>Case:</strong><span>&nbsp;{{thP.specs.case}}</span><br>
+                              <strong>Material:</strong><span>&nbsp;{{thP.specs.material}}</span><br>
+                              <strong>Case Color:</strong><span>&nbsp;{{thP.specs.caseColor}}</span><br>
+                              <strong>Case Thickness:</strong><span>&nbsp;{{thP.specs.caseThickness}}</span><br>
+                              <strong>Water Resistant:</strong><span>&nbsp;{{thP.specs.waterResistant}}</span><br>
+                              <strong>Movement:</strong><span>&nbsp;{{thP.specs.movement}}</span><br>
+                              <strong>Dial Color:</strong><span>&nbsp;{{thP.specs.dialColor}}</span><br>
+                              <strong>Strap:</strong><span>&nbsp;{{thP.specs.strap}}</span><br>
+                              <strong>Strap Width:</strong><span>&nbsp;{{thP.specs.strapWidth}}</span><br>
+                              <strong>Interchangeable Straps:</strong><span>&nbsp;{{thP.specs.interchangeableStraps}}&nbsp;</span>
+                            </p>
+                          </div>
+                          <h2 ng-click="sel = 'shp'">Shipping / Returns</h2>
+                          <div class="extraDesc" ng-class="{false: 'hidden'}[sel === 'shp']">
+                            <p>Free shipping worldwide. <br> Fast and safe with DHL. <br> Easy returns within 14 days of delivery.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+<section class="productStats">
+  <div class="proWrap">
+    <div class="sGrid">
+      <div class="gridItem">
+        <div class="icon">
+          <img src="../../styles/images/icons/icon-shipping.png" alt="">
+          <h3>Free Shipping Worldwide</h3>
+        </div>
+      </div>
+      <div class="gridItem">
+        <div class="icon">
+          <img src="../../styles/images/icons/icon-returns.png" alt="">
+          <h3>Simple Returns</h3>
+        </div>
+      </div>
+      <div class="gridItem">
+        <div class="icon">
+          <img src="../../styles/images/icons/icon-warranty.png" alt="">
+          <h3>2 Year Warranty</h3>
+        </div>
+      </div>
+      <div class="gridItem">
+        <div class="icon">
+          <img src="../../styles/images/icons/icon-card.png" alt="">
+          <h3>Safe Payments</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="productGallery">
+  <div class="proWrap mobile">
+    <div class="mHeader">
+      <h2>How Babes wear their watch</h2>
+    </div>
+  </div>
+  <div class="gGrid mobile">
+    <div class="viewport">
+      <div class="slider">
+        <div class="gridItem" ng-repeat="pic in thP.gallery">
+          <img src="{{pic}}" alt="">
+        </div>
+      </div>
+    </div>
+    <ol class="viewDots">
+      <li class="dot" ng-repeat="pic in thP.gallery"></li>
+    </ol>
+  </div>
+  <div class="proWrap notMobile">
+    <div class="gGrid2">
+      <div class="gridItem">
+        <a class="fancybox" ng-repeat="pic in thP.gallery">
+          <img src="{{pic}}" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="productReviews">
+
+</section>
+<section class="productStraps">
+  <div class="proWrap">
+
+  </div>
+</section>
+<section class="productRelated">
+  <div class="proWrap">
+
+  </div>
+</section>
+
 </div>
 <inbox-love-dir></inbox-love-dir>
 </div>
