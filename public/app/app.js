@@ -35,6 +35,13 @@ angular.module("app")
       controller: 'cartCtrl'
     })
 
+    // CHECKOUT STATE
+    .state('checkout', {
+      url: '/checkout',
+      templateUrl: './app/routes/checkout/checkoutTmpl.html',
+      controller: 'checkoutCtrl'
+    })
+
     // CONTACT STATE
     .state('contact', {
       url: '/contact',
