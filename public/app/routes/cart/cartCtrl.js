@@ -1,4 +1,4 @@
-angular.module('app').service('cartCtrl',($scope, $stateParams, $rootScope, cartSrvc)=>{
+angular.module('app').controller('cartCtrl',($scope, $stateParams, $rootScope, cartSrvc)=>{
 
   //function gets cart from session. If no cart then sets cart to null;
   $scope.getCart = ()=>{
