@@ -1,4 +1,5 @@
 angular.module('app').service('cartCtrl',($scope, $stateParams, $rootScope, cartSrvc)=>{
+
   //function gets cart from session. If no cart then sets cart to null;
   $scope.getCart = ()=>{
     cartSrvc.getCart().then((res)=>{
@@ -6,7 +7,8 @@ angular.module('app').service('cartCtrl',($scope, $stateParams, $rootScope, cart
         $scope.cart = res;
         console.log('cartCtrl get', res);
       }else{
-        $scope.cart = null;
+        //should be null if no cart is availble
+        $scope.cart = res;
         console.log('cartCtrl get', res);
       }
     });
@@ -15,7 +17,7 @@ angular.module('app').service('cartCtrl',($scope, $stateParams, $rootScope, cart
   $scope.getCart();
   //function post new item to cart
   $scope.postCart = (obj,quantity)=>{
-    if(!obj.quantity && quantity === 0){
+    if(!obj.quantity || quantity === 0){
       obj.quantity = 1;
     }else{
       obj.quantity = quantity;
