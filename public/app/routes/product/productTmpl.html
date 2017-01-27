@@ -28,9 +28,10 @@
         </div>
         <div class="itemDetails">
             <div class="itemGrid">
+                <div class="itemGrid1"></div>
                 <div class="itemGrid2">
                     <div class="grid2Panel">
-                        <div class="panel">
+                        <div class="panel" id="sctl">
                             <span ng-if="thP.inStock === false">SOLD OUT</span>
                             <h1>{{thP.name}}</h1>
                             <div class="panelOffers">
@@ -44,7 +45,7 @@
                     <div class="grid2Panel">
                       <div class="panel">
                         <div class="prodDescr">
-                          <h2 ng-click="sel = 'des'">Description</h2>
+                          <h2 ng-click="sel = 'des'" id="spcs">Description</h2>
                           <div class="extraDesc" ng-class="{false: 'hidden'}[sel === 'des']">
                             <p>{{thP.description}}</p>
                           </div>
@@ -125,8 +126,8 @@
   </div>
   <div class="proWrap notMobile">
     <div class="gGrid2">
-      <div class="gridItem">
-        <a class="fancybox" ng-repeat="pic in thP.gallery">
+      <div class="gridItem" ng-repeat="pic in thP.gallery">
+        <a class="fancybox" href="{{pic}}">
           <img src="{{pic}}" alt="">
         </a>
       </div>

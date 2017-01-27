@@ -54,4 +54,51 @@ angular.module("app")
     });
  });
 
+
+
+ $(document).ready(function() {
+
+   $("a.fancybox").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600,
+		'speedOut'		:	200,
+		'overlayShow'	:	true,
+    'frameWidth' : 300,
+    'frameHeight' : 300
+	});
+
+	// $("a.fancybox").fancybox({
+  //   'showCloseButton': true,
+	// 	'transitionIn'	:	'elastic',
+	// 	'transitionOut'	:	'elastic',
+	// 	'speedIn'		:	600,
+	// 	'speedOut'		:	200,
+	// 	'overlayShow'	:	false
+	// });
+
+});
+var $productDetails = $('.productDetails');
+var $page = $(document);
+var $itemBg = $('.itemBg');
+var panelDist = $("#sctl").offset().top;
+var spcsDist = $("#spcs").offset().top - 150;
+// var perc = $('.home').height() * .01;
+
+$page.bind('scroll', function() {
+  // console.log($page.scrollTop())
+  if ($page.scrollTop() >= panelDist) {
+      $productDetails.addClass("pScrolled");
+  }
+  else {
+    $productDetails.removeClass("pScrolled")
+  }
+  if($page.scrollTop() >= spcsDist) {
+    $itemBg.addClass("stuck");
+  }
+  else {
+    $itemBg.removeClass("stuck")
+  }
+});
+
 });
