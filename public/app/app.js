@@ -7,6 +7,14 @@ angular.module("app")
 		// ============================================================
 		$stateProvider
 
+    .state('carttest',{
+      url: '/carttest',
+      templateUrl: './app/routes/cartTest.html',
+      controller: 'cartCtrl'
+    })
+
+
+
 		// HOME STATE
     .state('home', {
       url: '/',
@@ -29,11 +37,11 @@ angular.module("app")
     })
 
     // CART STATE
-    .state('cart', {
-      url: '/cart',
-      templateUrl: './app/routes/cart/cartTmpl.html',
-      controller: 'cartCtrl'
-    })
+    // .state('cart', {
+    //   url: '/cart',
+    //   templateUrl: './app/routes/cart/cartTmpl.html',
+    //   controller: 'cartCtrl'
+    // })
 
     // CONTACT STATE
     .state('contact', {
