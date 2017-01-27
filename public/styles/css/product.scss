@@ -388,6 +388,60 @@
     clear: both;
   }
 }
+.gridItemThird {
+  display: inline-block;
+  float: left;
+  min-height: 1px;
+  padding-left: 25px;
+  vertical-align: top;
+  width: 33.333%;
+  img {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px
+  }
+}
+
+.gridItem2Thirds {
+  display: inline-block;
+  float: left;
+  min-height: 1px;
+  padding-left: 25px;
+  vertical-align: top;
+  width: 66.666%;
+  img {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px
+  }
+}
+.gridItemHalf {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  min-height: 1px;
+  padding-left: 25px;
+  vertical-align: top;
+  img {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px
+  }
+}
+
+.gGrid2 {
+  img {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+.fancybox-overlay {
+  background-color: rgba(0,0,0,0.5)!important;
+}
+
 
 @media screen and(min-width: 769px) {
   .itemGrid1 {
@@ -602,6 +656,17 @@
       }
     }
   }
+  .mHeader {
+    padding: 30px 0 0 0;
+    text-align: center;
+    h2 {
+      margin-bottom: 30px;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: $headerlight;
+    }
+  }
   .productGallery {
     padding-left: 0px;
   }
@@ -615,6 +680,47 @@
       }
     }
   }
+  .mobile {
+    display: block!important;
+  }
+  .gGrid {
+    height: 133.397vw;
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+  .hundred {
+    height: 100vw;
+  }
+  .flickity-viewport {
+    height: 100%;
+    .flickity-slider {
+      .gridCell {
+        padding: 0;
+        height: 100%;
+        float: left;
+        vertical-align: top;
+        width: 100%;
+        img {
+          width: 100%;
+          display: block;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .flickity-page-dots {
+    bottom: 50px!important;
+    .dot {
+      background: #fff!important;
+    }
+  }
+  .flickity-prev-next-button {
+    display: none;
+  }
+
 }
 @media (max-width: 500px) {
   .sGrid {

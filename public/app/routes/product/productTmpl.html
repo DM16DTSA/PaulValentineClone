@@ -109,28 +109,26 @@
 <section class="productGallery">
   <div class="proWrap mobile">
     <div class="mHeader">
-      <h2>How Babes wear their watch</h2>
+      <h2>{{mHead}}</h2>
     </div>
   </div>
   <div class="gGrid mobile">
-    <div class="viewport">
-      <div class="slider">
-        <div class="gridItem" ng-repeat="pic in thP.gallery">
-          <img src="{{pic}}" alt="">
+        <div class="gridCell">
+          <img src="{{thP.gallery[0]}}" alt="">
         </div>
-      </div>
-    </div>
-    <ol class="viewDots">
-      <li class="dot" ng-repeat="pic in thP.gallery"></li>
-    </ol>
+        <div class="gridCell">
+          <img src="{{thP.gallery[1]}}" alt="">
+        </div>
+        <div class="gridCell 3rdCell">
+          <img src="{{thP.gallery[2]}}" alt="">
+        </div>
+        <div class="gridCell 4thCell">
+          <img src="{{thP.gallery[3]}}" alt="">
+        </div>
   </div>
+
   <div class="proWrap notMobile">
     <div class="gGrid2">
-      <div class="gridItem" ng-repeat="pic in thP.gallery">
-        <a class="fancybox" href="{{pic}}">
-          <img src="{{pic}}" alt="">
-        </a>
-      </div>
     </div>
   </div>
 </section>
