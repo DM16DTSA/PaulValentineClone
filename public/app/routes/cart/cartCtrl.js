@@ -1,3 +1,4 @@
+// <<<<<<< HEAD
 angular.module('app').controller('cartCtrl',function($scope, $stateParams, $rootScope, cartSrvc, mainService){
   $scope.itemsInCart = (arr)=>{
     if(!arr || !arr[0]){
@@ -6,6 +7,9 @@ angular.module('app').controller('cartCtrl',function($scope, $stateParams, $root
       return true;
     }
   }
+// =======
+// angular.module('app').controller('cartCtrl',($scope, $stateParams, $rootScope, cartSrvc)=>{
+// >>>>>>> master
 
   let totalCount = (arr)=>{
     if(arr[0] && arr[1]){

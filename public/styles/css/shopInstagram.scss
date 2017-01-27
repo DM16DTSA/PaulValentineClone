@@ -1,1 +1,37 @@
 @import '../styles';
+
+.instagram-container {
+  height: auto;
+  width: 100%;
+  padding-left: 110px;
+  padding: 10px;
+  background-color: $gray-background;
+  margin: auto;
+
+  .instagram-stuff {
+    margin-left: 100px;
+    padding: 10px;
+    height: auto;
+    width: 93.3%;
+    background-color: white;
+
+    .instagram-post {
+      display: inline-block;
+      width: 19.3%;
+      height: auto;
+      margin-left: 5px;
+      margin-top: 9px;
+      background-color: gray;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin: auto;
+      }
+
+      img:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

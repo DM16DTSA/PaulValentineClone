@@ -117,7 +117,7 @@
         background-size: 100% auto;
         background-repeat: no-repeat;
         transition: opacity 0.5s;
-
+        background-position: 0px -30px;
       }
       img {
         opacity: 1;
@@ -128,6 +128,7 @@
         max-width: 100%;
         display: block;
         margin: 0 auto;
+        pointer-events: none;
       }
       &:hover {
         .photoZoomed {
@@ -138,6 +139,10 @@
         }
       }
     }
+    &.stuck {
+      position: absolute;
+      margin-top: 105vh;
+    }
   }
   .itemDetails {
     .itemGrid {
@@ -145,7 +150,11 @@
       text-align: center;
       height: 200vh;
       margin-left: -25px;
-
+      &:after {
+        display: table;
+        content:'';
+        clear: both;
+      }
     }
   }
 }
@@ -177,18 +186,20 @@
         font-family: $headerlight;
         font-weight: 400;
         color: #999;
+        line-height: 1.6;
       }
       h1 {
-        font-family: $header;
+        font-family: $headerlight;
         text-transform: uppercase;
         font-size: 20px;
         line-height: 1.4;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         margin-top: 10px;
         margin-bottom: 0;
       }
     }
   }
+
 }
 
 .panelOffers {
@@ -209,6 +220,175 @@
   }
 }
 
+.prodDescr {
+  margin: 0;
+  position: relative;
+  padding-top: 20px;
+  overflow: hidden;
+  h2 {
+    margin-top: 0;
+    font-size: 15px;
+    font-family: $header;
+    text-transform: uppercase;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  .extraDesc {
+    max-height: 800px;
+    margin-bottom: 16px;
+    transition: all 0.5s;
+    position: relative;
+    padding-top: 20px;
+    overflow: hidden;
+    p {
+      margin: 0 0 15px 0;
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #999;
+      font-family: $headerlight;
+      strong {
+        width: 42%;
+        text-align: right;
+        margin-right: 15px;
+        display: inline-block;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+      span {
+        display: inline-block;
+        width: 47%;
+        text-align: left;
+        color: #333!important;
+        font-size: 13px!important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: #222;
+      left: 50%;
+      margin-left: -15px;
+      transition: all 0.5s;
+      top: 0;
+    }
+    &.hidden {
+      padding-top: 0;
+      padding-bottom: 0;
+      max-height: 0;
+      border-top: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+      &:after {
+        width: 0px;
+        margin-left: 0;
+      }
+    }
+  }
+}
+.proWrap {
+  padding: 25px;
+  width: 100%;
+}
+.productStats {
+  padding-left: 100px;
+  background: #fff;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+.sGrid {
+  margin: 0;
+  padding: 0;
+  margin-left: -25px;
+  .gridItem {
+    float: left;
+    min-height: 1px;
+    padding-left: 25px;
+    vertical-align: top;
+    .icon {
+      padding: 0 20px;
+      text-align: center;
+      line-height: 45px;
+      min-height: 54px;
+      background-color: #fffbfb;
+      border: 1px solid #ebebeb;
+      img {
+        display: inline-block;
+        line-height: 52px;
+        position: relative;
+        top: 8px;
+        margin-right: 15px;
+        max-height: 25px;
+        max-width: 25px;
+      }
+      h3 {
+        letter-spacing: 1px;
+        line-height: 52px;
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        top: 1px;
+        font-size: 12px;
+        color: #333;
+        font-family: $headerlight;
+        font-weight: 100;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+.productGallery {
+  padding-left: 100px;
+  background-color: $gray-background;
+  .proWrap {
+    padding: 25px 25px 0 25px;
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.gGrid2 {
+  margin: 0;
+  padding: 0;
+  margin-left: -25px;
+  list-style: none;
+  .gridItem {
+    display: inline-block;
+    float: left;
+    min-height: 1px;
+    padding-left: 25px;
+    vertical-align: top;
+    width: 100%;
+    img {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px
+    }
+  }
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
 @media screen and(min-width: 769px) {
   .itemGrid1 {
     width: 50%;
@@ -216,12 +396,38 @@
   .itemGrid2 {
     width: 33.33%;
   }
+  .sGrid {
+    .gridItem {
+      width: 25%;
+    }
+  }
+  .gGrid2 {
+    .gridItem {
+      width: 25%;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
   .itemGrid2 {
     width: 45%;
   }
+
+  .itemContainer {
+    .itemBg {
+      .productPhotos {
+        cursor: pointer;
+        &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  .photoZoomed {
+    display: none;
+  }
+}
+}
 }
 
 @media screen and (max-width: 1080px) {
@@ -240,6 +446,31 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .itemContainer{
+    .itemDetails {
+      .itemGrid {
+        height: auto;
+      }
+    }
+    .itemBg {
+      margin-bottom: 0;
+      height: auto;
+      position: relative;
+      padding-bottom: 0;
+      padding-left: 100px;
+      .bgimage {
+        display: none;
+      }
+      .productPhotos {
+        width: 100%;
+        height: 60vh;
+        margin: 0 auto;
+      }
+      &.stuck {
+        position: relative;
+        margin-top: 0;
+    }
+  }
   .itemGrid2 {
     width: 100%;
     .grid2Panel {
@@ -252,8 +483,43 @@
     }
   }
 }
+}
+
 
 @media screen and (max-width: 800px) {
+  .itemContainer {
+    padding-left: 0;
+    margin-top: -30px;
+    .itemBg {
+      padding: 100px 100px 20px 100px;
+      .productPhotos {
+        margin: 0;
+        position: relative;
+        height: auto;
+        margin-top: 40px;
+        img {
+          max-height: 60vh;
+
+        }
+      }
+    }
+  .itemDetails {
+    .itemGrid {
+      padding: 20px 0 0 0;
+      margin-left: 0;
+      .itemGrid2 {
+        padding: 0;
+        .grid2Panel {
+          padding: 0 30px;
+          height: auto;
+          h1 {
+
+          }
+        }
+      }
+    }
+  }
+  }
   .productNav {
     display: none;
   }
@@ -278,6 +544,10 @@
         }
       }
     }
+    :nth-child(2) {
+      margin-bottom: 15px;
+      padding: 0!important;
+    }
   }
   .panelOffers {
     div {
@@ -288,6 +558,85 @@
         left: 0;
         z-index: 9999;
         width: 100%;
+        border-radius: 0;
+        line-height: 60px;
+        height: 60px;
+      }
+      a {
+        margin-top: 35px;
+      }
+    }
+  }
+  .prodDescr {
+    .extraDesc {
+      p {
+        font-size: 16px;
+        strong {
+          width: 100%;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+          margin-right: 0;
+        }
+        span {
+          width: 100%;
+          text-align: right;
+          float: right;
+          margin-top: -23px;
+          margin-bottom: 0!important;
+        }
+      }
+    }
+  }
+  .productStats {
+    padding-left: 0px;
+  }
+  .sGrid {
+    .gridItem {
+      width: 50%;
+      .icon {
+        margin-bottom: 25px;
+        h3 {
+          font-weight: bold;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+  .productGallery {
+    padding-left: 0px;
+  }
+  .notMobile {
+    display: none;
+  }
+  .gGrid2 {
+    .gridItem {
+      img {
+        margin-bottom: 0!important;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .sGrid {
+    .gridItem {
+      .icon {
+        min-height: 100px;
+        img {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .sGrid {
+    .gridItem {
+      width: 100%;
+      .icon {
+        text-align: left;
+        min-height: 0;
+        margin-bottom: 15px;
       }
     }
   }
