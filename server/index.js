@@ -19,7 +19,7 @@ app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
+  cookie: { secure: false}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -50,6 +50,7 @@ app.post('/api/cart', cartCtrl.postCart);
 app.put('/api/cart/:id/:quantity', cartCtrl.putCart);
 app.delete('/api/cart/:id', cartCtrl.deleteCart);
 app.delete('/api/destroy', cartCtrl.destroyCart);
+app.get('/api/cartTotal', cartCtrl.cartTotal);
 //////////////////////
 ///////cart///////////
 //////////////////////
