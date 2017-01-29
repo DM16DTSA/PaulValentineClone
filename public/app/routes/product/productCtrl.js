@@ -31,7 +31,15 @@ angular.module("app")
       else {
         $("<div class='gridItem'><a class='fancybox' rel='gallery1' href='" + thP.gallery[0] + "'><img src='" + thP.gallery[0] + "' alt='pic'></a></div><div class='gridItem'><a class='fancybox' rel='gallery1' href='" + thP.gallery[1] + "'><img src='" + thP.gallery[1] + "' alt='pic'></a></div><div class='gridItem'><a class='fancybox' rel='gallery1' href='" + thP.gallery[2] + "'><img src='" + thP.gallery[2] + "' alt='pic'></a></div><div class='gridItem'><a class='fancybox' rel='gallery1' href='" + thP.gallery[3] + "'><img src='" + thP.gallery[3] + "' alt='pic'></a></div>").appendTo(".gGrid2");
       }
-      // thP.inStock = false;
+      mainService.getMoreStraps(thP.straps)
+      .then(function(response) {
+        $scope.moreStraps = response.data;
+      })
+      mainService.getSimilar(thP.coll)
+      .then(function(response) {
+        $scope.similar = response.data
+      })
+
       $scope.mHead = "How Babes wear their watch"
       $scope.thP = thP;
     }).then( function() {
@@ -67,6 +75,12 @@ angular.module("app")
 
       $("<div class='gridItemHalf'><a class='fancybox' rel='gallery1' href='" + thP.gallery[0] + "'><img src='" + thP.gallery[0] + "' alt='pic'></a></div><div class='gridItemHalf'><a class='fancybox' rel='gallery1' href='" + thP.gallery[1] + "'><img src='" + thP.gallery[1] + "' alt='pic'></a></div>").appendTo(".gGrid2");
 
+
+      mainService.similarStraps()
+      .then(function(response) {
+        console.log(response.data)
+        $scope.similar = response.data
+      })
       $scope.mHead = "More Pics"
 
     }).then( function() {
@@ -109,28 +123,55 @@ angular.module("app")
 	});
 });
 
-var $productDetails = $('.productDetails');
-var $page = $(document);
-var $itemBg = $('.itemBg');
-var panelDist = $("#sctl").offset().top;
-var spcsDist = $("#spcs").offset().top - 150;
-// var perc = $('.home').height() * .01;
 
-$page.bind('scroll', function() {
-  // console.log($page.scrollTop())
-  if ($page.scrollTop() >= panelDist) {
-      $productDetails.addClass("pScrolled");
+  $scope.submitReview = function(name, title, body) {
+    var rating = $('input[name="rating"]:checked').val();
+    var review = {
+      'product': $scope.thP.name,
+      'name': name,
+      'title': title,
+      'rating': parseInt(rating),
+      'body': body,
+      'date': new Date()
+    }
+    console.log(review)
+    if (strapsArr.indexOf($stateParams.id.toString()) == -1) {
+      mainService.addWatchReview(review)
+      .then(function(response) {
+        $scope.thP.reviews = response;
+      })
+    }
+    else {
+      mainService.addStrapReview(review)
+      .then(function(response) {
+        $scope.thP.reviews = response;
+      })
+    }
+    $scope.formAppear = false;
   }
-  else {
-    $productDetails.removeClass("pScrolled")
-  }
-  if($page.scrollTop() >= spcsDist) {
-    $itemBg.addClass("stuck");
-  }
-  else {
-    $itemBg.removeClass("stuck")
-  }
-});
+
+  var $productDetails = $('.productDetails');
+  var $page = $(document);
+  var $itemBg = $('.itemBg');
+  var panelDist = $("#sctl").offset().top;
+  var spcsDist = $("#spcs").offset().top - 150;
+
+
+  $page.bind('scroll', function() {
+
+    if ($page.scrollTop() >= panelDist) {
+        $productDetails.addClass("pScrolled");
+      }
+      else {
+        $productDetails.removeClass("pScrolled")
+      }
+      if($page.scrollTop() >= spcsDist) {
+        $itemBg.addClass("stuck");
+      }
+      else {
+        $itemBg.removeClass("stuck")
+      }
+    });
 
 
 });

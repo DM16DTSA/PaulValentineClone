@@ -37,6 +37,23 @@ var strapController = require('./controllers/strapController.js');
 app.get('/watches', watchController.getWatches);
 app.get('/straps', strapController.getStraps);
 
+app.post('/morestraps', strapController.getStrapsbyId);
+app.get('/similarW/:coll', watchController.getCollWatches);
+app.get('/similarS', strapController.similarStraps)
+/////////////////////
+//////reviews////////
+/////////////////////
+app.put('/watches', function(req, res) {
+  console.log(req.body)
+  watchController.addWatchReview(req, res)
+});
+app.put('/straps', function(res, res) {
+  watchController.addStrapReview(req, res)
+});
+/////////////////////
+//////reviews////////
+/////////////////////
+
 // app.post('/watches', watchController.addWatch);
 // app.post('/straps', strapController.addStrap);
 
