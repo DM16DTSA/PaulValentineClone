@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/DM16DTSA/PaulValentineClone#readme",
   "dependencies": {
+    "angular1-star-rating": "^1.2.4",
     "babel-core": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-register": "^6.14.0",
