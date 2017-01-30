@@ -198,12 +198,86 @@
 </section>
 <section class="productStraps" ng-if="thP.straps">
   <div class="proWrap">
-    
+    <div class="bGrid">
+      <div class="bGridItem c2"></div>
+      <div class="bGridItem">
+        <div class="content">
+          <h2>Want another strap, Babe?</h2>
+          <p>All Paul Valentine watches are designed to suit every strap so that you can easily change your watch to suit any occasion. Mix and match watches and straps to find your perfect style.</p>
+          <br>
+          <!-- <a class="btn notMobile prev">
+            <img src="../../styles/images/icons/arrow-left.png" alt="">
+          </a>
+          <a class="btn notMobile next">
+            <img src="../../styles/images/icons/arrow-right.png" alt="">
+          </a> -->
+          <!-- <div class="bGrid mobile">
+            <div class="bGridItem">
+              <a class="btn prev">
+                <img src="../../styles/images/icons/arrow-left.png" alt="">
+              </a>
+            </div>
+            <div class="bGridItem">
+              <a class="btn next">
+                <img src="../../styles/images/icons/arrow-right.png" alt="">
+              </a>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="bGridItem cmonwork">
+        <div class="bGridItemItem">
+          <a ui-sref="product({id:'{{moreStraps[0]._id}}'})">
+            <img src="{{moreStraps[0].image}}" alt="">
+            <div class="productInfo">
+              <button class="slidebtn" name="button">+ BAG - {{moreStraps[0].price | currency}}</button>
+            </div>
+          </a>
+        </div>
+        <div class="bGridItemItem">
+          <a ui-sref="product({id:'{{moreStraps[1]._id}}'})">
+            <img src="{{moreStraps[1].image}}" alt="">
+            <div class="productInfo">
+              <button class="slidebtn" name="button">+ BAG - {{moreStraps[1].price | currency}}</button>
+            </div>
+          </a>
+        </div>
+        <div class="bGridItemItem">
+          <a ui-sref="product({id:'{{moreStraps[2]._id}}'})">
+            <img src="{{moreStraps[2].image}}" alt="">
+            <div class="productInfo">
+              <button class="slidebtn" name="button">+ BAG - {{moreStraps[2].price | currency}}</button>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="bGridItemItem" ng-if="moreStraps[3]">
+          <a ui-sref="product({id:'{{moreStraps[3]._id}}'})">
+            <img src="{{moreStraps[3].image}}" alt="">
+            <div class="productInfo">
+              <button class="slidebtn" name="button">+ BAG - {{moreStraps[3].price | currency}}</button>
+            </div>
+          </a>
+        </div> -->
+      </div>
+    </div>
   </div>
 </section>
-<section class="productRelated">
-  <div class="proWrap">
-
+<section class="productRelated homeProducts">
+  <div class="relatedHead">
+    <h2>{{rHead}}</h2>
+  </div>
+  <div class="proWrap innerWrap">
+    <div class="grid">
+      <div class="grid-item" ng-repeat="sim in similar">
+         <a ui-sref="product({id:'{{sim._id}}'})">
+          <img src="{{sim.image}}" alt="">
+          <div class="productInfo">
+            <h3>{{sim.name}}</h3>
+            <p>{{sim.price | currency}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
