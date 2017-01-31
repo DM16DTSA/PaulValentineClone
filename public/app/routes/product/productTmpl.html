@@ -109,37 +109,96 @@
 <section class="productGallery">
   <div class="proWrap mobile">
     <div class="mHeader">
-      <h2>How Babes wear their watch</h2>
+      <h2>{{mHead}}</h2>
     </div>
   </div>
   <div class="gGrid mobile">
-    <div class="viewport">
-      <div class="slider">
-        <div class="gridItem" ng-repeat="pic in thP.gallery">
-          <img src="{{pic}}" alt="">
+        <div class="gridCell">
+          <img src="{{thP.gallery[0]}}" alt="">
         </div>
-      </div>
-    </div>
-    <ol class="viewDots">
-      <li class="dot" ng-repeat="pic in thP.gallery"></li>
-    </ol>
+        <div class="gridCell">
+          <img src="{{thP.gallery[1]}}" alt="">
+        </div>
+        <div class="gridCell 3rdCell">
+          <img src="{{thP.gallery[2]}}" alt="">
+        </div>
+        <div class="gridCell 4thCell">
+          <img src="{{thP.gallery[3]}}" alt="">
+        </div>
   </div>
+
   <div class="proWrap notMobile">
     <div class="gGrid2">
-      <div class="gridItem" ng-repeat="pic in thP.gallery">
-        <a class="fancybox" href="{{pic}}">
-          <img src="{{pic}}" alt="">
-        </a>
-      </div>
     </div>
   </div>
 </section>
 <section class="productReviews">
+  <div class="productReviewsWrap">
+    <div class="prContainer">
+      <div class="prHeader">
+        <h2>CUSTOMER REVIEWS</h2>
+        <button type="button" class="slidebtn" ng-click="formAppear ? formAppear = false : formAppear = true" name="button">WRITE A REVIEW</button>
+      </div>
+      <div class="prContent">
+        <div class="reviewForm" ng-if="formAppear">
+          <div class="newReview">
+            <h3>WRITE A REVIEW</h3>
+            <div class="prNameBox formBox">
+              <label>Name</label>
+              <input class="prName" type="text" ng-model="reviewName" name="name" placeholder="Enter your name">
+            </div>
+            <div class="prEmailBox formBox">
+              <label>Email</label>
+              <input class="prEmail" type="text" name="email" placeholder="john.smith@example.com">
+            </div>
 
+            <div class="prRatingBox formBox">
+              <label>Rating</label>
+              <div class="starRating">
+                <fieldset class="rating">
+                  <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="5 stars"></label>
+                  <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="4 stars"></label>
+                  <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="3 stars"></label>
+                  <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="2 stars"></label>
+                  <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="1 star"></label>
+                </fieldset>
+              </div>
+            </div>
+
+            <div class="prTitleBox formBox">
+              <label>Review Title</label>
+              <input class="prTitle" type="text" ng-model="reviewTitle" name="name" placeholder="Give your review a title">
+            </div>
+
+            <div class="prBodyBox formBox">
+              <label>Body of Review {{"(" + (1500 - reviewBody.length) + ")"}}</label>
+              <textarea class="prBody" type="text" ng-model="reviewBody" name="body" rows="10" max-length ="1500" placeholder="Write your comments here"></textarea>
+            </div>
+          </div>
+          <button class="slidebtn" ng-click="submitReview(reviewName, reviewTitle, reviewBody)">SUBMIT REVIEW</button>
+        </div>
+
+        <div class="prReviews" ng-if="thP.reviews.length >= 1">
+          <div class="reviewBox">
+            <span class="thisReview" ng-repeat="review in thP.reviews">
+              <div class="thisReviewHeader">
+                <span><i ng-show="review.rating >= 1" class="fa fa-star" aria-hidden="true"></i><i ng-show="review.rating >= 2" class="fa fa-star" aria-hidden="true"></i><i ng-show="review.rating >= 3" class="fa fa-star" aria-hidden="true"></i><i ng-show="review.rating >= 4" class="fa fa-star" aria-hidden="true"></i><i ng-show="review.rating >= 5" class="fa fa-star" aria-hidden="true"></i></span>
+                <h3>{{review.title}}</h3>
+                <span class="byline"><strong>{{review.name}}</strong> on <strong>{{review.date | date:'mediumDate'}}</strong></span>
+              </div>
+              <div class="thisReviewContent">
+                <p>{{review.body}}</p>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="productStraps">
+<section class="productStraps" ng-if="thP.straps">
   <div class="proWrap">
-
+    
   </div>
 </section>
 <section class="productRelated">

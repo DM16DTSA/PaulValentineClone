@@ -19,7 +19,7 @@ app.use(session({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
+  cookie: { secure: false}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,6 +37,23 @@ var strapController = require('./controllers/strapController.js');
 app.get('/watches', watchController.getWatches);
 app.get('/straps', strapController.getStraps);
 
+app.post('/morestraps', strapController.getStrapsbyId);
+app.get('/similarW/:coll', watchController.getCollWatches);
+app.get('/similarS', strapController.similarStraps)
+/////////////////////
+//////reviews////////
+/////////////////////
+app.put('/watches', function(req, res) {
+  console.log(req.body)
+  watchController.addWatchReview(req, res)
+});
+app.put('/straps', function(res, res) {
+  watchController.addStrapReview(req, res)
+});
+/////////////////////
+//////reviews////////
+/////////////////////
+
 // app.post('/watches', watchController.addWatch);
 // app.post('/straps', strapController.addStrap);
 
@@ -50,6 +67,7 @@ app.post('/api/cart', cartCtrl.postCart);
 app.put('/api/cart/:id/:quantity', cartCtrl.putCart);
 app.delete('/api/cart/:id', cartCtrl.deleteCart);
 app.delete('/api/destroy', cartCtrl.destroyCart);
+app.get('/api/cartTotal', cartCtrl.cartTotal);
 //////////////////////
 ///////cart///////////
 //////////////////////

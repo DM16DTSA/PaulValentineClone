@@ -1,16 +1,18 @@
-angular.module('app').service('cartSrvc',($http)=>{
+angular.module('app').service('cartSrvc',function($http){
   //get all cart from session cart
   this.getCart = ()=>{
     return $http({
       method: 'GET',
       url: '/api/cart',
     }).then((res)=>{
-      console.log('Cart service get cart', res.data);
+
+      console.log('Cart service get cart', res);
       return res.data;
     });
   };
   //post new item to cart
   this.postCart = (obj)=>{
+    console.log('Cart service Post cart', obj);
     return $http({
       method: 'POST',
       url: '/api/cart',
@@ -25,6 +27,7 @@ angular.module('app').service('cartSrvc',($http)=>{
     return $http({
       method: 'PUT',
       url: '/api/cart/'+obj._id+'/'+obj.quantity,
+      data: obj
     }).then((res)=>{
       console.log('Cart service Put cart', res.data);
       return res.data;
@@ -49,4 +52,13 @@ angular.module('app').service('cartSrvc',($http)=>{
       return res.data
     });
   };
+  // this.cartTotal = ()=>{
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/api/cartTotal',
+  //   }).then((res)=>{
+  //     console.log('Cart service destroyCart', res.data);
+  //     return res.data
+  //   });
+  // };
 });//closing
