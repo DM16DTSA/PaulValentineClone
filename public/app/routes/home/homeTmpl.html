@@ -24,13 +24,13 @@
         <div class="grid-item" ng-repeat="watch in mainWatches | limitTo: 8">
            <a ui-sref="product({id:'{{watch._id}}'})">
             <img src="{{watch.image}}" alt="">
-            <div class="productInfo">
-              <h3>{{watch.name}}</h3>
-              <p>{{watch.price | currency}}</p>
-            </div>
-          </a>
+              <div class="productInfo">
+                <h3>{{watch.name}}</h3>
+                <p>{{watch.price | currency}}</p>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
       <div class="homeProductsFooter">
         <a class="slidebtn" ui-sref="watches">ALL WATCHES</a>
       </div>
