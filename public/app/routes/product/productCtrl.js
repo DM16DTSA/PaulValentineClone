@@ -33,7 +33,20 @@ angular.module("app")
       }
       mainService.getMoreStraps(thP.straps)
       .then(function(response) {
+        // response.data.forEach(function(strap, index, arr) {
+        //   arr[index].image = "../.." + strap.image.slice(9);
+        // })
         $scope.moreStraps = response.data;
+      }).then(function() {
+          $('.cmonwork').flickity({
+            cellSelector: '.bGridItemItem',
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            setGallerySize: false,
+            pageDots: false,
+            // prevNextButtons: false
+          })
       })
       mainService.getSimilar(thP.coll)
       .then(function(response) {
@@ -41,6 +54,7 @@ angular.module("app")
       })
 
       $scope.mHead = "How Babes wear their watch"
+      $scope.rHead = "SIMILAR WATCHES YOU MAY LIKE";
       $scope.thP = thP;
     }).then( function() {
        $('.gGrid').flickity({
@@ -82,7 +96,7 @@ angular.module("app")
         $scope.similar = response.data
       })
       $scope.mHead = "More Pics"
-
+      $scope.rHead = "YOU MAY ALSO LIKE";
     }).then( function() {
        $('.gGrid').flickity({
         cellSelector: '.gridCell',
