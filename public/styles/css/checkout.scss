@@ -2,17 +2,28 @@
 
 .checkout-overall-container {
   width: calc(100vw - 98px);
-  height: 100vh;
+  height: auto;
   margin: auto;
   margin-right: 0;
   display: flex;
   flex-direction: row;
+  background-color: #fff5f4;
+  font-family: $headerlight;
+  color: #999999;
+}
+
+.checkout-overall-container a {
+  text-decoration: none;
+  color: #333333;
 }
 
 .checkout-left-container {
   width: 53vw;
-  height: 100vh;
+  height: 100%;
   margin: auto;
+  padding-top: 100px;
+  background-color: #fff5f4;
+  margin-top: 0px;
 }
 
 .checkout-logo {
@@ -20,6 +31,7 @@
   height: auto;
   margin: auto;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .checkout-logo img {
@@ -33,6 +45,7 @@
   font-size: 28px;
   line-height: 39px;
   padding-left: 50px;
+  padding-bottom: 20px;
   color: #333333;
 }
 
@@ -45,10 +58,187 @@
   text-align: center;
 }
 
+.checkout-paypal {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.checkout-or {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 30px;
+}
+
+.checkout-or span {
+  font-family: $header;
+  font-size: 12px;
+  line-height: 17px;
+  color: #cccccc;
+  margin: auto;
+}
+
+.checkout-line {
+  width: 45%;
+  height: 1px;
+  background-color: #cccccc;
+  margin: auto;
+}
+
+.checkout-form {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  text-align: left;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.checkout-form h2 {
+  font-family: $header;
+  font-size: 18px;
+  line-height: 25px;
+  color: #333333;
+  padding-bottom: 20px;
+}
+
+.checkout-form p {
+  padding-bottom: 35px;
+}
+
+.checkout-input-full {
+  width: 100%;
+  height: 44px;
+  margin: auto;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-family: $headerlight;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.checkout-input-full:focus {
+  border: 2px solid #000000;
+  outline: 0;
+}
+
+.checkout-input-half {
+  width: 49%;
+  height: 44px;
+  margin: auto;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-family: $headerlight;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.checkout-input-half:focus {
+  border: 2px solid #000000;
+  outline: 0;
+}
+
+.checkout-input-third {
+  width: 32%;
+  height: 44px;
+  margin: auto;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-family: $headerlight;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.checkout-input-third:focus {
+  border: 2px solid #000000;
+  outline: 0;
+}
+
+.checkout-input-small {
+  width: 29%;
+  height: 44px;
+  margin: auto;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-family: $headerlight;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.checkout-input-small:focus {
+  border: 2px solid #000000;
+  outline: 0;
+}
+
+.checkout-input-large {
+  width: 69%;
+  height: 44px;
+  margin: auto;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-family: $headerlight;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.checkout-input-large:focus {
+  border: 2px solid #000000;
+  outline: 0;
+}
+
+.checkout-input-checkbox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.checkout-cnt-shipping {
+  width: 300px;
+  height: 40px;
+  background-color: #333333;
+  display: inline-block;
+  float: right;
+  margin-top: -30px;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  line-height: 40px;
+  font-size: 12px;
+  font-family: $header;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 0 #FFDCD3;
+  color: white;
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+  &:hover {
+    box-shadow: inset 0 -100px 0 0 #FFDCD3;
+  }
+}
+
 .checkout-right-container {
   width: 47vw;
-  height: 100vh;
+  height: calc(100vh + 300px);
   margin: auto;
   background-color: #fafafa;
   border-left: 1px solid #cccccc;
+  padding-top: 100px;
 }
