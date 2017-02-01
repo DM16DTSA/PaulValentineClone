@@ -7,7 +7,7 @@
 </div>
 
 <overall-navbar-dir></overall-navbar-dir>
-<div class="homeMain">
+<div class="homeMain" autoscroll="true">
   <div class="hero">
     <div class="heroPic">
     </div>
@@ -23,7 +23,7 @@
       <div class="grid">
         <div class="grid-item" ng-repeat="watch in mainWatches | limitTo: 8">
            <a ui-sref="product({id:'{{watch._id}}'})">
-            <img src="{{watch.image}}" alt="">
+            <img ng-src="{{watch.image}}" alt="">
               <div class="productInfo">
                 <h3>{{watch.name}}</h3>
                 <p>{{watch.price | currency}}</p>
