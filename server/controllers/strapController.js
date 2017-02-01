@@ -29,7 +29,6 @@ module.exports = {
   });
   },
   getStrapsbyId: function(req, res) {
-    console.log(req.body)
     straps.find({_id :{
       $in: req.body.map(function(o) {
         return mongoose.Types.ObjectId(o)})

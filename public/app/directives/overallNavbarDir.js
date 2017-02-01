@@ -4,8 +4,21 @@ angular.module("app")
   return {
     restrict: 'AE',
     templateUrl: './app/directives/overallNavbarTmpl.html',
-    controller: function($scope, mainService) {
-
+    controller: function($scope, mainService, $state) {
+      var $navbar = $('.overall-navbar-container-fixed')
+      var $page = $(document);
+      if($state.current.name === 'home') {
+          $page.bind('scroll', function() {
+              if($page.scrollTop() === 0) {
+                $navbar.removeClass("shownav")
+              }
+              else {
+                  $navbar.addClass("shownav");
+                }
+            });
+          } else {
+            $navbar.addClass("shownav");
+          }
       $(document).ready(function() {
       $('#navbar-ham').click(function() {
         var clicks = $(this).data('clicks');
