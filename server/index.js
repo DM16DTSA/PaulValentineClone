@@ -64,10 +64,9 @@ app.put('/straps', function(res, res) {
 const cartCtrl = require('./controllers/cartCtrl.js');
 app.get('/api/cart', cartCtrl.getCart);
 app.post('/api/cart', cartCtrl.postCart);
-app.put('/api/cart/:id/:quantity', cartCtrl.putCart);
+app.put('/api/cart/:id/:action', cartCtrl.putCart);
 app.delete('/api/cart/:id', cartCtrl.deleteCart);
 app.delete('/api/destroy', cartCtrl.destroyCart);
-app.get('/api/cartTotal', cartCtrl.cartTotal);
 //////////////////////
 ///////cart///////////
 //////////////////////
