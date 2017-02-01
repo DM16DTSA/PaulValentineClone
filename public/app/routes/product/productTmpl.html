@@ -1,14 +1,14 @@
-<div class="productPageHolder">
+<div class="productPageHolder" autoscroll="true">
     <overall-navbar-dir></overall-navbar-dir>
     <div class="productNav">
         <nav>
-            <a class="overview">OVERVIEW</a>
-            <a class="details">DETAILS</a>
-            <a class="inspiration">INSPIRATION</a>
-            <a class="overview">STRAPS</a>
+            <a class="page-scroll overview" ng-class="{pinkA: scrollP == 'ov'}" ng-click="scrollToThis(0)">OVERVIEW</a>
+            <a class="page-scroll details" ng-class="{pinkA: scrollP == 'det'}" ng-click="scrollToThis($details)">DETAILS</a>
+            <a class="page-scroll inspiration" ng-class="{pinkA: scrollP == 'insp'}" ng-click="scrollToThis($inspiration)">INSPIRATION</a>
+            <a class="page-scroll overview" ng-if="thP.straps" ng-class="{pinkA: scrollP == 'str'}" ng-click="scrollToThis($straps)">STRAPS</a>
         </nav>
 
-        <div class="productDetails">
+        <div class="productDetails" id="overview">
             <h2>{{thP.name}}</h2>
             <div class="pNavRight">
                 <div>
@@ -18,12 +18,12 @@
             </div>
         </div>
     </div>
-    <div class="itemContainer">
+    <div class="itemContainer" autoscroll="true">
         <div class="itemBg">
-            <div class="bgimage" style="background-image: url('{{thP.background}}')"></div>
+            <div class="bgimage" ng-style="{'background-image': 'url(' + thP.background + ')'}"></div>
             <div class="productPhotos">
-                <div class="photoZoomed" id="fddf" style="background-image: url('../../styles/images/products/{{thP._id}}.png')"></div>
-                <img src="../../styles/images/products/{{thP._id}}.png" alt="">
+                <div class="photoZoomed" ng-style="{'background-image': 'url(../../styles/images/products/' + thP._id + '.png)'}"></div>
+                <img ng-src="../../styles/images/products/{{thP._id}}.png" alt="">
             </div>
         </div>
         <div class="itemDetails">
@@ -42,9 +42,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid2Panel">
+                    <div class="grid2Panel dets">
                       <div class="panel">
-                        <div class="prodDescr">
+                        <div class="prodDescr" id="details">
                           <h2 ng-click="sel = 'des'" id="spcs">Description</h2>
                           <div class="extraDesc" ng-class="{false: 'hidden'}[sel === 'des']">
                             <p>{{thP.description}}</p>
@@ -106,7 +106,7 @@
     </div>
   </div>
 </section>
-<section class="productGallery">
+<section class="productGallery" id="inspiration">
   <div class="proWrap mobile">
     <div class="mHeader">
       <h2>{{mHead}}</h2>
@@ -114,16 +114,16 @@
   </div>
   <div class="gGrid mobile">
         <div class="gridCell">
-          <img src="{{thP.gallery[0]}}" alt="">
+          <img ng-src="{{thP.gallery[0]}}" alt="">
         </div>
         <div class="gridCell">
-          <img src="{{thP.gallery[1]}}" alt="">
+          <img ng-src="{{thP.gallery[1]}}" alt="">
         </div>
         <div class="gridCell 3rdCell">
-          <img src="{{thP.gallery[2]}}" alt="">
+          <img ng-src="{{thP.gallery[2]}}" alt="">
         </div>
         <div class="gridCell 4thCell">
-          <img src="{{thP.gallery[3]}}" alt="">
+          <img ng-src="{{thP.gallery[3]}}" alt="">
         </div>
   </div>
 
@@ -228,7 +228,7 @@
       <div class="bGridItem cmonwork">
         <div class="bGridItemItem">
           <a ui-sref="product({id:'{{moreStraps[0]._id}}'})">
-            <img src="{{moreStraps[0].image}}" alt="">
+            <img ng-src="{{moreStraps[0].image}}" alt="">
             <div class="productInfo">
               <button class="slidebtn" name="button">+ BAG - {{moreStraps[0].price | currency}}</button>
             </div>
@@ -236,7 +236,7 @@
         </div>
         <div class="bGridItemItem">
           <a ui-sref="product({id:'{{moreStraps[1]._id}}'})">
-            <img src="{{moreStraps[1].image}}" alt="">
+            <img ng-src="{{moreStraps[1].image}}" alt="">
             <div class="productInfo">
               <button class="slidebtn" name="button">+ BAG - {{moreStraps[1].price | currency}}</button>
             </div>
@@ -244,7 +244,7 @@
         </div>
         <div class="bGridItemItem">
           <a ui-sref="product({id:'{{moreStraps[2]._id}}'})">
-            <img src="{{moreStraps[2].image}}" alt="">
+            <img ng-src="{{moreStraps[2].image}}" alt="">
             <div class="productInfo">
               <button class="slidebtn" name="button">+ BAG - {{moreStraps[2].price | currency}}</button>
             </div>
@@ -252,7 +252,7 @@
         </div>
         <!-- <div class="bGridItemItem" ng-if="moreStraps[3]">
           <a ui-sref="product({id:'{{moreStraps[3]._id}}'})">
-            <img src="{{moreStraps[3].image}}" alt="">
+            <img ng-src="{{moreStraps[3].image}}" alt="">
             <div class="productInfo">
               <button class="slidebtn" name="button">+ BAG - {{moreStraps[3].price | currency}}</button>
             </div>
@@ -270,7 +270,7 @@
     <div class="grid">
       <div class="grid-item" ng-repeat="sim in similar">
          <a ui-sref="product({id:'{{sim._id}}'})">
-          <img src="{{sim.image}}" alt="">
+          <img ng-src="{{sim.image}}" alt="">
           <div class="productInfo">
             <h3>{{sim.name}}</h3>
             <p>{{sim.price | currency}}</p>

@@ -26,7 +26,7 @@ app.use(passport.session());
 
 mongoose.connect('mongodb://localhost/pvclonedb');
 mongoose.connection.on('connected', function() {
-  console.log("jgjjkjkfgjkdfg");
+  console.log('connected to database')
 })
 
 var watchController = require('./controllers/watchController.js');
@@ -44,7 +44,6 @@ app.get('/similarS', strapController.similarStraps)
 //////reviews////////
 /////////////////////
 app.put('/watches', function(req, res) {
-  console.log(req.body)
   watchController.addWatchReview(req, res)
 });
 app.put('/straps', function(res, res) {

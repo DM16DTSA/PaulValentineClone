@@ -56,6 +56,7 @@ angular.module("app")
       $scope.mHead = "How Babes wear their watch"
       $scope.rHead = "SIMILAR WATCHES YOU MAY LIKE";
       $scope.thP = thP;
+
     }).then( function() {
        $('.gGrid').flickity({
         cellSelector: '.gridCell',
@@ -64,6 +65,44 @@ angular.module("app")
         wrapAround: true,
         setGallerySize: false
       })
+      setTimeout(function() {
+        $scope.$straps = $(".productStraps").offset().top - 80;
+        $scope.$details = $(".dets").offset().top + 80;
+        $scope.$inspiration = $(".productStats").offset().top - 80;
+        $scope.scrollToThis = function(where) {
+          $("html,body").animate({ scrollTop: where + 1}, 1000);
+        }
+        $page.bind('scroll', function() {
+          if ($page.scrollTop() >= panelDist) {
+              $productDetails.addClass("pScrolled");
+            }
+            else {
+              $productDetails.removeClass("pScrolled")
+            }
+            if($page.scrollTop() >= spcsDist) {
+              $itemBg.addClass("stuck");
+            }
+            else {
+              $itemBg.removeClass("stuck")
+            }
+            if($page.scrollTop() < $scope.$details) {
+              $scope.scrollP = 'ov';
+
+            }
+            if($page.scrollTop() >= $scope.$details && $page.scrollTop() < $scope.$inspiration) {
+              $scope.scrollP = 'det';
+
+            }
+            if($page.scrollTop() >= $scope.$inspiration && $page.scrollTop() < $scope.$straps) {
+              $scope.scrollP = 'insp';
+            }
+            else if($page.scrollTop() >= $scope.$straps) {
+              $scope.scrollP = 'str';
+            }
+            $scope.$apply();
+          });
+      }, 500)
+
     })
   }
   else {
@@ -92,7 +131,6 @@ angular.module("app")
 
       mainService.similarStraps()
       .then(function(response) {
-        console.log(response.data)
         $scope.similar = response.data
       })
       $scope.mHead = "More Pics"
@@ -108,6 +146,39 @@ angular.module("app")
     }).then(function() {
       $('.gGrid').addClass('hundred');
       $('.flickity-viewport').css('height', '100vw!important');
+
+      $scope.$details = $(".dets").offset().top + 80;
+      $scope.$inspiration = $(".productStats").offset().top - 80;
+
+      $scope.scrollToThis = function(where) {
+          $("html,body").animate({ scrollTop: where + 1}, 1000);
+        // $("html,body").animate({ scrollTop: scrollTo }, 1000);
+      }
+      $page.bind('scroll', function() {
+
+        if ($page.scrollTop() >= panelDist) {
+            $productDetails.addClass("pScrolled");
+          }
+          else {
+            $productDetails.removeClass("pScrolled")
+          }
+          if($page.scrollTop() >= spcsDist) {
+            $itemBg.addClass("stuck");
+          }
+          else {
+            $itemBg.removeClass("stuck")
+          }
+          if($page.scrollTop() < $scope.$details) {
+            $scope.scrollP = 'ov';
+          }
+          if($page.scrollTop() >= $scope.$details -1 && $page.scrollTop() < $scope.$inspiration) {
+            $scope.scrollP = 'det';
+          }
+          if($page.scrollTop() >= $scope.$inspiration) {
+            $scope.scrollP = 'insp';
+          }
+            $scope.$apply();
+        });
     })
   }
 
@@ -170,81 +241,24 @@ angular.module("app")
   var panelDist = $("#sctl").offset().top;
   var spcsDist = $("#spcs").offset().top - 150;
 
+  // $('a.page-scroll').bind('click', function(event) {
+  //   var $anchor = $(this);
+  //   $('html, body').stop().animate({
+  //       scrollTop: ($($anchor.attr('href')).offset().top - 50)
+  //   }, 1250, 'easeInOutExpo');
+  //   event.preventDefault();
 
-  $page.bind('scroll', function() {
-
-    if ($page.scrollTop() >= panelDist) {
-        $productDetails.addClass("pScrolled");
-      }
-      else {
-        $productDetails.removeClass("pScrolled")
-      }
-      if($page.scrollTop() >= spcsDist) {
-        $itemBg.addClass("stuck");
-      }
-      else {
-        $itemBg.removeClass("stuck")
-      }
-    });
+$scope.scrollP = 'ov';
 
 
-
-
-
-//cart fn
-//function updates cart for correct quantity
-$scope.putCart = (obj,str)=>{
-
-  if(str.match(/sub/gi)){
-    obj.quantity--;
-    if(obj.quantity === 0){
-      $scope.deleteCartItem(obj);
-    }
-  }
-  if(str.match(/add/gi)){
-    obj.quantity++;
-  }
-
-  cartSrvc.putCart(obj).then((res)=>{
-    for(let i=res.length-1; i >=0; i--){
-      if(res[i].quantity === 0){
-        res.splice(i,1);
-      }
-    };
-    $scope.cart = res;
-    totalCount($scope.cart);
-  });
-};
-
-
-//function post new item to cart
-$scope.postCart = (obj)=>{
-  if(!obj.quantity || obj.quantity == 0){
-    obj.quantity = 1;
-    // obj.subPrice = (obj.quantity*obj.price);
-  }
-  console.log(obj.quantity);
-  //find duplicates and just add to the quantity
-  let postBool = false;
-  for(let i = 0; i < $scope.cart.length; i++){
-    if(obj._id === $scope.cart[i]._id){
-      postBool = true;
-    }
-  };
-  //if there is a duplicate then call put or just add to cart if no duplicate
-  if(postBool){
-    $scope.putCart(obj,'add');
-  }else{
-    cartSrvc.postCart(obj).then((res)=>{
-      for(let i=res.length-1; i >=0; i--){
-        if(res[i].quantity === 0){
-          res.splice(i,1);
-        }
-      };
-      $scope.cart = res;
-      totalCount($scope.cart);
-    });
-  }
-};
+//     if($page.scrollTop() == 0) {
+//       console.log($page.scrollTop())
+//       // $page.animate({
+//       //   scrollTop: scrollTo
+//       // }, {duration: 2000})
+//       $("html,body").animate({ scrollTop: scrollTo }, 1000);
+//     }
+//   }, 3000)
+// })
 
 });

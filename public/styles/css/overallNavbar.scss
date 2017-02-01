@@ -16,8 +16,12 @@
   position: fixed;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.9);
-  left: 0;
+  left: -100px;
   top: 0;
+  transition: left 0.5s;
+}
+.shownav {
+  left: 0px;
 }
 
 .overall-navbar-container {
