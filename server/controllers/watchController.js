@@ -39,7 +39,6 @@ module.exports = {
     )
   },
   getCollWatches: function(req, res) {
-    console.log(req.params.coll)
       watches.find({coll:req.params.coll
       }, function(err, watches) {
         res.send(watches)
