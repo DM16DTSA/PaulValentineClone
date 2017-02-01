@@ -1,0 +1,54 @@
+@import '../styles';
+
+.checkout-overall-container {
+  width: calc(100vw - 98px);
+  height: 100vh;
+  margin: auto;
+  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.checkout-left-container {
+  width: 53vw;
+  height: 100vh;
+  margin: auto;
+}
+
+.checkout-logo {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.checkout-logo img {
+  width: 160px;
+  height: auto;
+  margin: auto;
+}
+
+.checkout-left-container h1 {
+  font-family: $header;
+  font-size: 28px;
+  line-height: 39px;
+  padding-left: 50px;
+  color: #333333;
+}
+
+.checkout-location {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.checkout-right-container {
+  width: 47vw;
+  height: 100vh;
+  margin: auto;
+  background-color: #fafafa;
+  border-left: 1px solid #cccccc;
+}
