@@ -7,11 +7,11 @@ angular.module("app")
 		// ============================================================
 		$stateProvider
 
-//     .state('carttest',{
-//       url: '/carttest',
-//       templateUrl: './app/routes/cartTest.html',
-//       controller: 'cartCtrl'
-//     })
+    .state('carttest',{
+      url: '/carttest',
+      templateUrl: './app/routes/cartTest.html',
+      controller: 'cartCtrl'
+    })
 
 
 
