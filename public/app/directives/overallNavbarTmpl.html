@@ -96,33 +96,33 @@
           <img id="bag-icon" class="bag-icon" src="./styles/images/icons/cart.png" />
           <img class="bag-icon-white" src="./styles/images/icons/cart-white.png" />
         </div>
-        <div class="bag-icon-qty"><span>1</span></div>
+        <div class="bag-icon-qty"><span>{{bagQty}}</span></div>
         <h3>USD</h3>
         <div class="cart-dir-container">
-          <div class="navbar-your-bag" ng-if="!product">
+          <div class="navbar-your-bag" ng-if="cart">
             <h1>YOUR BAG</h1>
           </div>
 
-          <div class="navbar-your-bag-noitems" ng-if="product">
+          <div class="navbar-your-bag-noitems" ng-if="!cart">
             <h1>YOUR BAG</h1>
           </div>
 
-          <div class="navbar-bag-items" ng-if="!product">
-            <div class="navbar-bag-item">
+          <div class="navbar-bag-items" ng-if="cart">
+            <div class="navbar-bag-item" ng-repeat="item in cart">
               <div class="navbar-bag-info">
-                <a><h2>FELIZ MESH</h2></a>
-                <h6>Quantity: 1</h6>
-                <h6>$149.99</h6>
+                <a><h2>{{item.name}}</h2></a>
+                <h6>Quantity: {{item.quantity}}</h6>
+                <h6>{{item.subPrice | currency}}</h6>
                 <br><br><br><br><br>
-                <button>X</button>
+                <button ng-click="deleteCartItem(item)">X</button>
               </div>
               <div id="navbar-bag-img">
-                <img src="./styles/images/watches/FELIZ_-_MESH_BLACK.png" />
+                <img src={{item.image}} />
               </div>
             </div>
           </div>
 
-          <div class="navbar-bag-noitems" ng-if="product">
+          <div class="navbar-bag-noitems" ng-if="!cart">
             <h3>Your bag is currently empty.</h3>
           </div>
 
@@ -130,7 +130,7 @@
             <div class="navbar-bag-total">
               <div class="navbar-bag-total-line">
                 <h2>TOTAL</h2>
-                <h4>$149.99</h4>
+                <h4>{{total | currency}}</h4>
               </div>
               <div class="navbar-paynowbtn" ui-sref="checkout">PAY NOW SECURELY</div>
             </div>

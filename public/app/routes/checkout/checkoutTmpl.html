@@ -1,11 +1,11 @@
 <overall-navbar-dir></overall-navbar-dir>
 
-<div class="checkout-overall-container">
+<div class="checkout-overall-container" ui-view="header" autoscroll="true">
   <div class="checkout-left-container">
     <div class="checkout-logo">
       <img src="./styles/images/icons/logo-text-black.png" />
     </div>
-    <h1>PAUL VALENTINE US</h1>
+    <h1><a ui-sref="home">PAUL VALENTINE US</a></h1>
     <!-- <div class="checkout-location">
       <p><a>Cart</a></p>
       <p>></p>
@@ -15,9 +15,106 @@
       <p>></p>
       <p>Payment Method</p>
     </div> -->
+
+    <div class="checkout-paypal">
+      <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="Check out with PayPal" />
+    </div>
+
+    <div class="checkout-or">
+      <div class="checkout-line"></div>
+      <span>OR</span>
+      <div class="checkout-line"></div>
+    </div>
+
+    <div class="checkout-form">
+      <form>
+        <h2>CUSTOMER INFORMATION</h2>
+        <input class="checkout-input-full" placeholder="Email" />
+        <h5>Already have an account? <a>Log in</a></h5>
+        <br><br><br>
+        <h2>SHIPPING ADDRESS</h2>
+        <input class="checkout-input-half" placeholder="First name" /> <input class="checkout-input-half" placeholder="Last name" style="float: right;" />
+        <br>
+        <input class="checkout-input-full" placeholder="Company (optional)" />
+        <br>
+        <input class="checkout-input-large" placeholder="Address" /> <input class="checkout-input-small" placeholder="Apt, suite, etc. (optional)" style="float: right;" />
+        <br>
+        <input class="checkout-input-full" placeholder="City" />
+        <br>
+        <input class="checkout-input-third" placeholder="Country" />
+        <input class="checkout-input-third" placeholder="State" style="margin-left: 7px;" />
+        <input class="checkout-input-third" placeholder="Zip code" style="float: right;" />
+        <br>
+        <input class="checkout-input-full" placeholder="Phone (optional)" />
+        <br>
+        <div class="checkout-input-checkbox">
+          <input type="checkbox" /> <h5>Save this information for next time</h5>
+        </div>
+        <br><br>
+
+
+      </form>
+      <div class="checkout-return-to-cart" ui-sref="cart">
+        <div class="checkout-pointer-left">
+          <h5>< </h5>
+        </div>
+        <div class="checkout-pointer-left-text">
+          <h5> Return to cart</h5>
+        </div>
+      </div>
+      <br>
+      <div class="checkout-cnt-shipping">CONTINUE TO SHIPPING METHOD</div>
+    </div>
+
+    <div class="checkout-line-full"></div>
+
+    <div class="checkout-left-links">
+      <a><h5>Privacy policy</h5></a>
+      <a><h5>Refund policy</h5></a>
+      <a><h5>Terms of service</h5></a>
+    </div>
   </div>
 
   <div class="checkout-right-container">
+    <div class="checkout-right-inner-container">
+      <div class="checkout-item-container" ng-repeat="item in cart">
+        <div class="checkout-item">
+          <div class="checkout-item-img">
+            <img src={{item.image}} />
+          </div>
+          <div class="checkout-item-qty"><h5>{{item.quantity}}</h5></div>
+        </div>
+        <div class="checkout-item-name">
+          <h5>{{item.name}}</h5>
+        </div>
+        <div class="checkout-item-price">
+          <span><h5>{{item.subPrice | currency}}</h5></span>
+        </div>
+      </div>
 
+      <div class="checkout-cart-line-full"></div>
+
+      <div class="checkout-totals">
+        <div class="checkout-totals-top">
+          <div class="checkout-subtotal">
+            <h5>Subtotal</h5>
+            <span><h5>{{total | currency}}</h5></span>
+          </div>
+          <div class="checkout-shipping">
+            <h5>Shipping</h5>
+            <span><h5><hr width="15px"></h5></span>
+          </div>
+        </div>
+
+        <div class="checkout-cart-line-full"></div>
+
+        <div class="checkout-totals-bottom">
+          <div class="checkout-total">
+            <h3>Total</h3>
+            <span><h2>{{total | currency}}</h2></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
