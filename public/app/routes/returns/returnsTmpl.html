@@ -1,45 +1,47 @@
-<overall-navbar-dir></overall-navbar-dir>
+<div ui-view="header" autoscroll="true">
+  <overall-navbar-dir></overall-navbar-dir>
 
-<secondary-navbar-dir></secondary-navbar-dir>
+  <secondary-navbar-dir></secondary-navbar-dir>
 
-<header class="returns-header"></header>
+  <header class="returns-header"></header>
 
-<div class="returns-container">
+  <div class="returns-container">
 
-  <div class="returns-wrapper">
-    <div class="returns-info">
-      <h2>RETURN POLICY</h2>
-      <p>Is something not quite right? Don’t worry, If you are not completely satisfied with your purchase, for any reason, we will offer you a full refund within 14 days of delivery.<br><br><br>
+    <div class="returns-wrapper">
+      <div class="returns-info">
+        <h2>RETURN POLICY</h2>
+        <p>Is something not quite right? Don’t worry, If you are not completely satisfied with your purchase, for any reason, we will offer you a full refund within 14 days of delivery.<br><br><br>
 
-      Your watch must:<br>
-      – Be returned within 14 days of delivery.<br>
-      – Be unworn & returned in original condition.<br>
-      – Have all tags, and plastic stickers attached.<br>
-      – Include the original packaging.<br><br>
+        Your watch must:<br>
+        – Be returned within 14 days of delivery.<br>
+        – Be unworn & returned in original condition.<br>
+        – Have all tags, and plastic stickers attached.<br>
+        – Include the original packaging.<br><br>
 
-      Once we receive the watch back and verify it is unworn, the return will be processed and a full refund will be issued. If you wish to return an item, please complete the form below and we’ll be in touch within 1 business days.</p>
+        Once we receive the watch back and verify it is unworn, the return will be processed and a full refund will be issued. If you wish to return an item, please complete the form below and we’ll be in touch within 1 business days.</p>
+      </div>
+      <div class="warranty-info">
+        <h2>WARRANTY CLAIM</h2>
+        <p>Paul Valentine has a limited warranty that covers manufacturer's defects for two years after the original purchase date from an authorised dealer. Basically, if the watch parts or mechanics don't work properly, and it's our fault, we will repair or replace your product for free. However, this does not cover any abuse you might put your watch through on your own. The warranty does not cover water damage, normal wear and tear, batteries, accidental glass damage, scratches, strap damage, or theft. Proof of purchase is required for all warranty claims and service requests, so please keep your receipt. If you consider your item to be faulty, please complete the form below. Our customer services team will then be in contact with you to discuss your warranty claim. </p>
+      </div>
     </div>
-    <div class="warranty-info">
-      <h2>WARRANTY CLAIM</h2>
-      <p>Paul Valentine has a limited warranty that covers manufacturer's defects for two years after the original purchase date from an authorised dealer. Basically, if the watch parts or mechanics don't work properly, and it's our fault, we will repair or replace your product for free. However, this does not cover any abuse you might put your watch through on your own. The warranty does not cover water damage, normal wear and tear, batteries, accidental glass damage, scratches, strap damage, or theft. Proof of purchase is required for all warranty claims and service requests, so please keep your receipt. If you consider your item to be faulty, please complete the form below. Our customer services team will then be in contact with you to discuss your warranty claim. </p>
+
+    <div class="returns-form">
+        <form>
+          <input type="text" ng-model='name' placeholder="Name">
+          <input type="text" ng-model='email' placeholder="Email">
+          <input type="text" ng-model='number' placeholder="Phone Number">
+          <input type="text" ng-model='order' placeholder="Order No.">
+          <textarea name="name" rows="8" cols="80" placeholder="Message" ng-model='message' maxlength="400"></textarea>
+          <button type="button" class='returns-slidebtn' name="button" ng-click='send(name,email,number,order,message)'>SEND</button>
+        </form>
+
     </div>
+
   </div>
 
-  <div class="returns-form">
-      <form>
-        <input type="text" ng-model='name' placeholder="Name">
-        <input type="text" ng-model='email' placeholder="Email">
-        <input type="text" ng-model='number' placeholder="Phone Number">
-        <input type="text" ng-model='order' placeholder="Order No.">
-        <textarea name="name" rows="8" cols="80" placeholder="Message" ng-model='message' maxlength="400"></textarea>
-        <button type="button" class='returns-slidebtn' name="button" ng-click='send(name,email,number,order,message)'>SEND</button>
-      </form>
 
-  </div>
+  <inbox-love-dir></inbox-love-dir>
 
+  <revealed-footer-dir></revealed-footer-dir>
 </div>
-
-
-<inbox-love-dir></inbox-love-dir>
-
-<revealed-footer-dir></revealed-footer-dir>
