@@ -1,6 +1,6 @@
 <overall-navbar-dir></overall-navbar-dir>
 
-<div class="checkout-overall-container">
+<div class="checkout-overall-container" ui-view="header" autoscroll="true">
   <div class="checkout-left-container">
     <div class="checkout-logo">
       <img src="./styles/images/icons/logo-text-black.png" />
@@ -30,8 +30,8 @@
       <form>
         <h2>CUSTOMER INFORMATION</h2>
         <input class="checkout-input-full" placeholder="Email" />
-        <p>Already have an account? <a>Log in</a></p>
-        <br>
+        <h5>Already have an account? <a>Log in</a></h5>
+        <br><br><br>
         <h2>SHIPPING ADDRESS</h2>
         <input class="checkout-input-half" placeholder="First name" /> <input class="checkout-input-half" placeholder="Last name" style="float: right;" />
         <br>
@@ -47,18 +47,74 @@
         <br>
         <input class="checkout-input-full" placeholder="Phone (optional)" />
         <br>
-        <input class="checkout-input-checkbox" type="checkbox" /> Save this information for next time
+        <div class="checkout-input-checkbox">
+          <input type="checkbox" /> <h5>Save this information for next time</h5>
+        </div>
         <br><br>
 
 
       </form>
-      <a ui-sref="cart">< Return to cart</a>
+      <div class="checkout-return-to-cart" ui-sref="cart">
+        <div class="checkout-pointer-left">
+          <h5>< </h5>
+        </div>
+        <div class="checkout-pointer-left-text">
+          <h5> Return to cart</h5>
+        </div>
+      </div>
       <br>
       <div class="checkout-cnt-shipping">CONTINUE TO SHIPPING METHOD</div>
+    </div>
+
+    <div class="checkout-line-full"></div>
+
+    <div class="checkout-left-links">
+      <a><h5>Privacy policy</h5></a>
+      <a><h5>Refund policy</h5></a>
+      <a><h5>Terms of service</h5></a>
     </div>
   </div>
 
   <div class="checkout-right-container">
+    <div class="checkout-right-inner-container">
+      <div class="checkout-item-container">
+        <div class="checkout-item">
+          <div class="checkout-item-img">
+            <img src="./styles/images/watches/FELIZ_-_MESH_BLACK.png" />
+          </div>
+          <div class="checkout-item-qty"><h5>1</h5></div>
+        </div>
+        <div class="checkout-item-name">
+          <h5>Feliz Mesh</h5>
+        </div>
+        <div class="checkout-item-price">
+          <span><h5>$149.00</h5></span>
+        </div>
+      </div>
 
+      <div class="checkout-cart-line-full"></div>
+
+      <div class="checkout-totals">
+        <div class="checkout-totals-top">
+          <div class="checkout-subtotal">
+            <h5>Subtotal</h5>
+            <span><h5>$149.00</h5></span>
+          </div>
+          <div class="checkout-shipping">
+            <h5>Shipping</h5>
+            <span><h5><hr width="15px"></h5></span>
+          </div>
+        </div>
+
+        <div class="checkout-cart-line-full"></div>
+
+        <div class="checkout-totals-bottom">
+          <div class="checkout-total">
+            <h3>Total</h3>
+            <span><h2>$149.00</h2></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
