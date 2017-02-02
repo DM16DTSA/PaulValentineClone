@@ -1,10 +1,6 @@
 
 angular.module('app').controller('cartCtrl',function($scope, $stateParams, $rootScope, cartSrvc, mainService){
-  //get list of watches
-  //comment out once cart Ctrl is ready
-  mainService.getWatches().then(function(res){
-    $scope.listWatches = res.data;
-  });
+
   // function gets cart from session. If no cart then sets cart to null;
   let getCart = ()=>{
     cartSrvc.getCart().then((res)=>{

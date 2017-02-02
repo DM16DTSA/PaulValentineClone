@@ -13,7 +13,7 @@
             <div class="pNavRight">
                 <div>
                     <span>{{thP.price | currency}}</span>
-                    <button class="slidebtn bagEmail" type="button" name="button">{{buttonText}}</button>
+                    <button class="slidebtn bagEmail" type="button" name="button" ng-click="postCart(thP)">{{buttonText}}</button>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                             <h1>{{thP.name}}</h1>
                             <div class="panelOffers">
                                 <div>
-                                    <button class="slidebtn bagEmail" type="button" name="button">{{buttonText}} {{thP.inStock === true ? " - $" + thP.price + ".00"  : ""}}</button>
+                                    <button class="slidebtn bagEmail" type="button" name="button" ng-click="postCart(thP)">{{buttonText}} {{thP.inStock === true ? " - $" + thP.price + ".00"  : ""}}</button>
                                     <a ui-sref="contact">send gift hint</a>
                                 </div>
                             </div>

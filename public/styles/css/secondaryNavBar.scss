@@ -7,7 +7,7 @@ $sec-nav-background: #FFFFFF;
 }
 .secondaryNavbar-wrapper{
   z-index: 1;
-  width: 93.907vw;
+  width: calc(100vw - 100px);
   height: 80px;
   background-color: $sec-nav-background;
   position: fixed;

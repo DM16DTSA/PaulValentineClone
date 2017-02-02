@@ -23,35 +23,35 @@
     </div>
   </div>
 
-  <div class="cart-item-info">
+  <div class="cart-item-info" ng-repeat="item in cart">
     <div class="cart-item-img">
-      <img src="./styles/images/watches/FELIZ_-_MESH_BLACK.png" />
+      <img src={{item.image}} />
     </div>
 
     <div class="cart-item-product">
-      <h2>FELIZ MESH</h2>
-      <button>Remove</button>
+      <h2>{{item.name}}</h2>
+      <button name="button" type="button" ng-click="deleteCartItem(item)">Remove</button>
     </div>
 
     <div class="cart-item-price">
-      <h6>$149.00</h6>
+      <h6>{{item.price | currency}}</h6>
     </div>
 
     <div class="cart-item-quantity-container">
       <div class="cart-item-quantity">
-        <div class="cart-minus-btn">-</div>
-        <input class="cart-item-qty" placeholder="1"></input>
-        <div class="cart-add-btn">+</div>
+        <div class="cart-minus-btn" ng-click="putCart(item, 'sub')">-</div>
+        <input class="cart-item-qty" placeholder={{item.quantity}}></input>
+        <div class="cart-add-btn" ng-click="putCart(item, 'add')">+</div>
       </div>
     </div>
 
     <div class="cart-item-total">
-      <h6>$149.00</h6>
+      <h6>{{item.subPrice | currency}}</h6>
     </div>
   </div>
 
   <div class="cart-bottom">
-    <h3>Subtotal <span>$149.00</span></h3>
+    <h3>Subtotal <span>{{total | currency}}</span></h3>
     <br>
     <h3><i>Shipping & taxes calculated at checkout</i></h3>
     <br>

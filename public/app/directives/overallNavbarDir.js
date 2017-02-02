@@ -4,7 +4,7 @@ angular.module("app")
   return {
     restrict: 'AE',
     templateUrl: './app/directives/overallNavbarTmpl.html',
-    controller: function($scope, mainService, $state) {
+    controller: function($scope, mainService, cartSrvc, $state, $rootScope) {
       var $navbar = $('.overall-navbar-container-fixed')
       var $page = $(document);
       if($state.current.name === 'home') {
@@ -277,6 +277,27 @@ angular.module("app")
         $(this).data("clicks", !clicks);
       });
       });
+
+
+      // function gets cart from session. If no cart then sets cart to null;
+      let getCart = ()=>{
+        cartSrvc.getCart().then((res)=>{
+            $scope.cart = res.cart;
+            $scope.total = res.subTotal;
+            $scope.bagQty = res.cart.length;
+        });
+      };
+
+      //delete one item off of cart
+      $scope.deleteCartItem = (obj)=>{
+        cartSrvc.deleteCartItem(obj).then((res)=>{
+          //call getCart to render cart on DOM
+          getCart();
+        });
+      };
+
+      // render cart on DOM when hitting page
+      getCart();
 
     }
   }
