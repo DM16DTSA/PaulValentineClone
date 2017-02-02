@@ -13,9 +13,9 @@ angular.module("app")
             // $page.animate({
             //   scrollTop: scrollTo
             // }, {duration: 2000})
-            $("html,body").animate({ scrollTop: scrollTo }, 1000);
+            $("html,body").animate({ scrollTop: scrollTo }, 1100);
           }
-        }, 3000)
+        }, 4500)
       })
 
   mainService.getWatches()
