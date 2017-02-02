@@ -11,6 +11,7 @@ angular.module('app').service('cartSrvc',function($http){
   };
   //post new item to cart
   this.postCart = (obj)=>{
+    console.log(obj);
     if(!obj.quantity){
       obj.quantity = 1;
     }

@@ -77,18 +77,18 @@
 
   <div class="checkout-right-container">
     <div class="checkout-right-inner-container">
-      <div class="checkout-item-container">
+      <div class="checkout-item-container" ng-repeat="item in cart">
         <div class="checkout-item">
           <div class="checkout-item-img">
-            <img src="./styles/images/watches/FELIZ_-_MESH_BLACK.png" />
+            <img src={{item.image}} />
           </div>
-          <div class="checkout-item-qty"><h5>1</h5></div>
+          <div class="checkout-item-qty"><h5>{{item.quantity}}</h5></div>
         </div>
         <div class="checkout-item-name">
-          <h5>Feliz Mesh</h5>
+          <h5>{{item.name}}</h5>
         </div>
         <div class="checkout-item-price">
-          <span><h5>$149.00</h5></span>
+          <span><h5>{{item.subPrice | currency}}</h5></span>
         </div>
       </div>
 
@@ -98,7 +98,7 @@
         <div class="checkout-totals-top">
           <div class="checkout-subtotal">
             <h5>Subtotal</h5>
-            <span><h5>$149.00</h5></span>
+            <span><h5>{{total | currency}}</h5></span>
           </div>
           <div class="checkout-shipping">
             <h5>Shipping</h5>
@@ -111,7 +111,7 @@
         <div class="checkout-totals-bottom">
           <div class="checkout-total">
             <h3>Total</h3>
-            <span><h2>$149.00</h2></span>
+            <span><h2>{{total | currency}}</h2></span>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 angular.module("app")
-.controller('productCtrl', function($scope, $stateParams, mainService, $rootScope) {
+.controller('productCtrl', function($scope, $stateParams, mainService, cartSrvc, $rootScope) {
   $scope.sel = "des"
   var strapsArr = ["587e9f6110648c27aee6d521", "587ea2d8be9a8127b9337ede", "587ea2d8be9a8127b9337edf", "587ea2d8be9a8127b9337ee0", "587ea2d8be9a8127b9337ee1", "587ea2d8be9a8127b9337ee2", "587ea2d8be9a8127b9337ee3", "587ea2d8be9a8127b9337ee4"];
 
@@ -241,24 +241,15 @@ angular.module("app")
   var panelDist = $("#sctl").offset().top;
   var spcsDist = $("#spcs").offset().top - 150;
 
-  // $('a.page-scroll').bind('click', function(event) {
-  //   var $anchor = $(this);
-  //   $('html, body').stop().animate({
-  //       scrollTop: ($($anchor.attr('href')).offset().top - 50)
-  //   }, 1250, 'easeInOutExpo');
-  //   event.preventDefault();
-
 $scope.scrollP = 'ov';
 
+//function post new item to cart
+$scope.postCart = (obj)=>{
+  console.log(obj);
+  //obj needs to be the watch obj from page
+  cartSrvc.postCart(obj);
+};
 
-//     if($page.scrollTop() == 0) {
-//       console.log($page.scrollTop())
-//       // $page.animate({
-//       //   scrollTop: scrollTo
-//       // }, {duration: 2000})
-//       $("html,body").animate({ scrollTop: scrollTo }, 1000);
-//     }
-//   }, 3000)
-// })
+
 
 });
