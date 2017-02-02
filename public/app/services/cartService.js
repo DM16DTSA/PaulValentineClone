@@ -5,13 +5,15 @@ angular.module('app').service('cartSrvc',function($http){
       method: 'GET',
       url: '/api/cart',
     }).then((res)=>{
-
-      console.log('Cart service get cart', res);
+      console.log('Cart service get cart', res.data);
       return res.data;
     });
   };
   //post new item to cart
   this.postCart = (obj)=>{
+    if(!obj.quantity){
+      obj.quantity = 1;
+    }
     console.log('Cart service Post cart', obj);
     return $http({
       method: 'POST',
@@ -23,11 +25,10 @@ angular.module('app').service('cartSrvc',function($http){
     });
   };
   //put for cart, change quantity on cart. uses obj_id and obj.quantity
-  this.putCart = (obj)=>{
+  this.putCart = (obj,str)=>{
     return $http({
       method: 'PUT',
-      url: '/api/cart/'+obj._id+'/'+obj.quantity,
-      data: obj
+      url: '/api/cart/'+obj._id+'/'+str
     }).then((res)=>{
       console.log('Cart service Put cart', res.data);
       return res.data;
@@ -52,13 +53,4 @@ angular.module('app').service('cartSrvc',function($http){
       return res.data
     });
   };
-  // this.cartTotal = ()=>{
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/cartTotal',
-  //   }).then((res)=>{
-  //     console.log('Cart service destroyCart', res.data);
-  //     return res.data
-  //   });
-  // };
 });//closing
