@@ -2,7 +2,7 @@ angular.module("app")
     .controller('faqCtrl', function($scope, $stateParams, mainService, $rootScope) {
         $rootScope.header = "FAQ – Paul Valentine US";
 
-        $scope.openfaq = function() {
+        $scope.openfaq = function($event) {
           console.log("hello")
             if ($event.currentTarget.siblings().hasClass('openf')) {
                 $event.currentTarget.removeClass('openf')
