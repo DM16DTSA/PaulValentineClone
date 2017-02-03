@@ -1327,7 +1327,7 @@ body {
         .faq-container .faq-content .faq .faq-answer p {
           margin: 0 0 15px;
           padding: 30px 0; }
-        .faq-container .faq-content .faq .faq-answer.open {
+        .faq-container .faq-content .faq .faq-answer.openf {
           max-height: 1000px;
           height: auto; }
 

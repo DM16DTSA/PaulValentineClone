@@ -3,10 +3,10 @@ angular.module("app")
         $rootScope.header = "FAQ – Paul Valentine US";
 
         $('.faq-question').on('click', function() {
-            if ($(this).siblings().hasClass('open')) {
-                $(this).siblings().removeClass('open')
+            if ($(this).siblings().hasClass('openf')) {
+                $(this).siblings().removeClass('openf')
             } else {
-                $(this).siblings().addClass('open')
+                $(this).siblings().addClass('openf')
             }
         })
     });
