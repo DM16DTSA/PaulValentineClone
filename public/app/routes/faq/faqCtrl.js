@@ -4,10 +4,11 @@ angular.module("app")
 
         $scope.openfaq = function($event) {
           console.log("hello")
-            if ($event.currentTarget.siblings().hasClass('openf')) {
-                $event.currentTarget.removeClass('openf')
+          var thisf = $event.currentTarget;
+            if (thisf.siblings().hasClass('openf')) {
+                thisf.siblings.removeClass('openf')
             } else {
-                $event.currentTarget.siblings().addClass('openf')
+                thisf.siblings().addClass('openf')
             }
         }
   });
