@@ -5,10 +5,10 @@ var cors = require('cors');
 var session = require('express-session');
 var passport = require('passport');
 var cookieParser = require('cookie-parser');
-var config = require('./config');
+// var config = require('./config');
 
 var mongoose = require('mongoose');
-
+var port = process.env.PORT || 3000;
 var app = express();
 app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
 app.use(session({
-  secret: config.sessionSecret,
+  secret: process.env.sessionSecret,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false}
@@ -79,6 +79,6 @@ app.post('/sendmail', mailCtrl.mail);
 //////////////////////
 
 module.exports = app;
-app.listen(config.port, function() {
-  console.log("Started server on port", config.port);
+app.listen(port, function() {
+  console.log("Started server on port", port);
 });
