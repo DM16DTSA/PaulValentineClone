@@ -3,6 +3,7 @@ angular.module("app")
         $rootScope.header = "FAQ – Paul Valentine US";
 
         $('.faq-question').on('click', function() {
+          console.log("hello")
             if ($(this).siblings().hasClass('openf')) {
                 $(this).siblings().removeClass('openf')
             } else {

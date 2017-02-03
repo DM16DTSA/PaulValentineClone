@@ -778,6 +778,7 @@ angular.module("app").controller('faqCtrl', function ($scope, $stateParams, main
     $rootScope.header = "FAQ – Paul Valentine US";
 
     $('.faq-question').on('click', function () {
+        console.log("hello");
         if ($(this).siblings().hasClass('openf')) {
             $(this).siblings().removeClass('openf');
         } else {
@@ -825,113 +826,6 @@ angular.module("app").controller('lookbookCtrl', function ($scope, $stateParams,
 "use strict";
 
 angular.module("app").controller('privacyCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
-"use strict";
-
-angular.module("app").controller('shippingCtrl', function ($scope, $stateParams, mainService, $rootScope) {
-  $rootScope.header = "Shipping – Paul Valentine US";
-});
-"use strict";
-
-angular.module("app").controller('shopInstagramCtrl', function ($scope, $stateParams, mainService, $rootScope) {
-  $rootScope.header = "Shop Instagram – Paul Valentine US";
-});
-"use strict";
-
-angular.module("app").controller('storeFinderCtrl', function ($scope, $stateParams, mainService, $rootScope) {
-  $rootScope.header = "Store Finder – Paul Valentine US";
-
-  $scope.initMap = function () {
-
-    var uluru = {
-      lat: 48.244668,
-      lng: 14.236425
-    };
-
-    var uluruTwo = {
-      lat: 48.308553,
-      lng: 14.021768
-    };
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 11,
-      center: uluru,
-      styles: [{ elementType: 'geometry', stylers: [{ color: '#555555' }] }, { elementType: 'labels.text', stylers: [{ visibility: "off", font: 'AvenirLTStd-Roman' }] }, { elementType: 'labels.text.fill', stylers: [{ color: '#746855', font: 'AvenirLTStd-Roman' }] }, {
-        featureType: 'administrative.locality',
-        elementType: 'labels',
-        stylers: [{ visibility: "off" }]
-      }, {
-        featureType: 'poi',
-        elementType: 'labels',
-        stylers: [{ visibility: "off" }]
-      }, {
-        featureType: 'poi.park',
-        elementType: 'geometry',
-        stylers: [{ opacity: "0.2" }]
-      }, {
-        featureType: 'poi.park',
-        elementType: 'labels',
-        stylers: [{ opacity: "0.2" }]
-      }, {
-        featureType: 'road',
-        elementType: 'geometry',
-        stylers: [{ color: '#38414e' }]
-      }, {
-        featureType: 'road',
-        elementType: 'geometry.stroke',
-        stylers: [{ color: '#212a37' }]
-      }, {
-        featureType: 'road',
-        elementType: 'labels',
-        stylers: [{ visibility: "off" }]
-      }, {
-        featureType: 'road.highway',
-        elementType: 'geometry',
-        stylers: [{ color: '#333' }]
-      }, {
-        featureType: 'road.highway',
-        elementType: 'geometry.stroke',
-        stylers: [{ color: '#333' }]
-      }, {
-        featureType: 'road.highway',
-        elementType: 'labels.text.fill',
-        stylers: [{ color: '#fff' }]
-      }, {
-        featureType: 'transit',
-        elementType: 'geometry',
-        stylers: [{ color: '#2f3948' }]
-      }, {
-        featureType: 'transit.station',
-        elementType: 'labels.text.fill',
-        stylers: [{ color: '#fff' }]
-      }, {
-        featureType: 'water',
-        elementType: 'geometry',
-        stylers: [{ color: '#303030' }]
-      }, {
-        featureType: 'water',
-        elementType: 'labels.text.fill',
-        stylers: [{ color: '#fff' }]
-      }, {
-        featureType: 'water',
-        elementType: 'labels.text.stroke',
-        stylers: [{ color: '#fff' }]
-      }]
-    });
-    var marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
-      icon: '../../styles/images/icons/mappin.png'
-    });
-
-    var markerTwo = new google.maps.Marker({
-      position: uluruTwo,
-      map: map,
-      icon: '../../styles/images/icons/mappin.png'
-    });
-  };
-
-  $scope.initMap();
-});
 "use strict";
 
 angular.module("app").controller('productCtrl', function ($scope, $stateParams, mainService, cartSrvc, $rootScope) {
@@ -1160,36 +1054,141 @@ angular.module("app").controller('productCtrl', function ($scope, $stateParams, 
 });
 "use strict";
 
-angular.module("app").controller('termsCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
+angular.module("app").controller('returnsCtrl', function ($scope, $stateParams, mainService, contactSrvc, $rootScope) {
+  $rootScope.header = "Returns – Paul Valentine US";
+
+  $scope.send = function (name, email, number, order, message) {
+    console.log('returnCtrl fired', name, email, number, order, message);
+    if (!name || !email || !number || !order || !message) {
+      return swal('please fill out all fields');
+    }
+    if (!email.match(/@/gi)) {
+      return swal('please enter a valid email');
+    }
+
+    var obj = {
+      name: name,
+      email: email,
+      phone: number,
+      order: order,
+      message: message
+    };
+
+    contactSrvc.send(obj);
+
+    $scope.name = '';
+    $scope.email = '';
+    $scope.number = '';
+    $scope.order = '';
+    $scope.message = '';
+  };
+});
 "use strict";
 
-angular.module("app").controller('watchesCtrl', function ($scope, mainService, $rootScope, $document, $state) {
-  $rootScope.header = $state.current.name.charAt(0).toUpperCase() + $state.current.name.substr(1) + " – Paul Valentine US";
-  mainService.getWatches().then(function (response) {
-    $scope.collWatches = response.data;
-    // console.log(response.data)
-  });
+angular.module("app").controller('shippingCtrl', function ($scope, $stateParams, mainService, $rootScope) {
+  $rootScope.header = "Shipping – Paul Valentine US";
+});
+"use strict";
 
-  $('.collNav').ready(function () {
-    var navPosition = $('.collNav').offset().top;
-    // console.log(navPosition)
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= navPosition) {
-        $('.collNav').addClass('navbar-fixed');
-      }
-      if ($(window).scrollTop() < navPosition) {
-        $('.collNav').removeClass('navbar-fixed');
-      }
+angular.module("app").controller('shopInstagramCtrl', function ($scope, $stateParams, mainService, $rootScope) {
+  $rootScope.header = "Shop Instagram – Paul Valentine US";
+});
+"use strict";
+
+angular.module("app").controller('storeFinderCtrl', function ($scope, $stateParams, mainService, $rootScope) {
+  $rootScope.header = "Store Finder – Paul Valentine US";
+
+  $scope.initMap = function () {
+
+    var uluru = {
+      lat: 48.244668,
+      lng: 14.236425
+    };
+
+    var uluruTwo = {
+      lat: 48.308553,
+      lng: 14.021768
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: uluru,
+      styles: [{ elementType: 'geometry', stylers: [{ color: '#555555' }] }, { elementType: 'labels.text', stylers: [{ visibility: "off", font: 'AvenirLTStd-Roman' }] }, { elementType: 'labels.text.fill', stylers: [{ color: '#746855', font: 'AvenirLTStd-Roman' }] }, {
+        featureType: 'administrative.locality',
+        elementType: 'labels',
+        stylers: [{ visibility: "off" }]
+      }, {
+        featureType: 'poi',
+        elementType: 'labels',
+        stylers: [{ visibility: "off" }]
+      }, {
+        featureType: 'poi.park',
+        elementType: 'geometry',
+        stylers: [{ opacity: "0.2" }]
+      }, {
+        featureType: 'poi.park',
+        elementType: 'labels',
+        stylers: [{ opacity: "0.2" }]
+      }, {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{ color: '#38414e' }]
+      }, {
+        featureType: 'road',
+        elementType: 'geometry.stroke',
+        stylers: [{ color: '#212a37' }]
+      }, {
+        featureType: 'road',
+        elementType: 'labels',
+        stylers: [{ visibility: "off" }]
+      }, {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{ color: '#333' }]
+      }, {
+        featureType: 'road.highway',
+        elementType: 'geometry.stroke',
+        stylers: [{ color: '#333' }]
+      }, {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#fff' }]
+      }, {
+        featureType: 'transit',
+        elementType: 'geometry',
+        stylers: [{ color: '#2f3948' }]
+      }, {
+        featureType: 'transit.station',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#fff' }]
+      }, {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{ color: '#303030' }]
+      }, {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#fff' }]
+      }, {
+        featureType: 'water',
+        elementType: 'labels.text.stroke',
+        stylers: [{ color: '#fff' }]
+      }]
     });
-  });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      icon: '../../styles/images/icons/mappin.png'
+    });
 
-  $scope.menuSwitch = function () {
-    if ($('.collMenuTabs').hasClass('open')) {
-      $('.collMenuTabs').removeClass('open');
-    } else {
-      $('.collMenuTabs').addClass('open');
-    }
+    var markerTwo = new google.maps.Marker({
+      position: uluruTwo,
+      map: map,
+      icon: '../../styles/images/icons/mappin.png'
+    });
   };
+
+  $scope.initMap();
 });
 "use strict";
 
@@ -1222,33 +1221,35 @@ angular.module("app").controller('strapsCtrl', function ($scope, $stateParams, m
 });
 "use strict";
 
-angular.module("app").controller('returnsCtrl', function ($scope, $stateParams, mainService, contactSrvc, $rootScope) {
-  $rootScope.header = "Returns – Paul Valentine US";
+angular.module("app").controller('termsCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
+"use strict";
 
-  $scope.send = function (name, email, number, order, message) {
-    console.log('returnCtrl fired', name, email, number, order, message);
-    if (!name || !email || !number || !order || !message) {
-      return swal('please fill out all fields');
+angular.module("app").controller('watchesCtrl', function ($scope, mainService, $rootScope, $document, $state) {
+  $rootScope.header = $state.current.name.charAt(0).toUpperCase() + $state.current.name.substr(1) + " – Paul Valentine US";
+  mainService.getWatches().then(function (response) {
+    $scope.collWatches = response.data;
+    // console.log(response.data)
+  });
+
+  $('.collNav').ready(function () {
+    var navPosition = $('.collNav').offset().top;
+    // console.log(navPosition)
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= navPosition) {
+        $('.collNav').addClass('navbar-fixed');
+      }
+      if ($(window).scrollTop() < navPosition) {
+        $('.collNav').removeClass('navbar-fixed');
+      }
+    });
+  });
+
+  $scope.menuSwitch = function () {
+    if ($('.collMenuTabs').hasClass('open')) {
+      $('.collMenuTabs').removeClass('open');
+    } else {
+      $('.collMenuTabs').addClass('open');
     }
-    if (!email.match(/@/gi)) {
-      return swal('please enter a valid email');
-    }
-
-    var obj = {
-      name: name,
-      email: email,
-      phone: number,
-      order: order,
-      message: message
-    };
-
-    contactSrvc.send(obj);
-
-    $scope.name = '';
-    $scope.email = '';
-    $scope.number = '';
-    $scope.order = '';
-    $scope.message = '';
   };
 });
 //# sourceMappingURL=bundle.js.map
