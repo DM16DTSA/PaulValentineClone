@@ -223,16 +223,20 @@ angular.module("app")
     if (strapsArr.indexOf($stateParams.id.toString()) == -1) {
       mainService.addWatchReview(review)
       .then(function(response) {
-        $scope.thP.reviews = response;
+        $scope.thP.reviews.push(response.config.data)
+        console.log(response.config.data)
       })
     }
     else {
       mainService.addStrapReview(review)
       .then(function(response) {
-        $scope.thP.reviews = response;
+        $scope.thP.reviews.push(response.config.data)
+
       })
     }
+
     $scope.formAppear = false;
+
   }
 
   var $productDetails = $('.productDetails');
