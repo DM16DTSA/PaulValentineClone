@@ -159,7 +159,7 @@
   height: 40px;
     line-height: 40px;
   p {
-    font-family: $headerlight;
+    font-family: $headerlight; font-weight: 200;
     color: black;
     font-size: 15px;
     margin-bottom: 15px;
@@ -309,7 +309,7 @@
             transition: all 350ms;
             h2 {
               color: white;
-              font-family: $headerlight;
+              font-family: $headerlight; font-weight: 200;
               text-transform: uppercase;
               font-size: 24px;
               letter-spacing: 2px;
@@ -364,7 +364,7 @@
               width: 100%;
               padding: 0 30px;
               text-align: center;
-              font-family: $headerlight;
+              font-family: $headerlight; font-weight: 200;
               h3 {
                 color: white;
                 font-size: 18px;
@@ -415,7 +415,7 @@
     text-align: center;
 
     h2 {
-      font-family: $headerlight;
+      font-family: $headerlight; font-weight: 200;
       text-transform: uppercase;
       font-size: 24px;
       letter-spacing: 2px;
@@ -423,7 +423,7 @@
       line-height: 1.4;
     }
     p {
-      font-family: $headerlight;
+      font-family: $headerlight; font-weight: 200;
       margin-bottom: 15px;
       color: #A8A8A8;
       font-size: 16px;
@@ -533,7 +533,7 @@
         margin-bottom: 18px;
       }
       .igLink {
-        font-family: $headerlight;
+        font-family: $headerlight; font-weight: 200;
         font-size: 24px;
         line-height: 1.4;
         letter-spacing: 2px;
