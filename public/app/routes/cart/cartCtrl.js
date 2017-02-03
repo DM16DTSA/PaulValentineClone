@@ -6,6 +6,7 @@ angular.module('app').controller('cartCtrl',function($scope, $stateParams, $root
     cartSrvc.getCart().then((res)=>{
         $scope.cart = res.cart;
         $scope.total = res.subTotal;
+        $rootScope.$broadcast("getCartDir");
     });
   };
 

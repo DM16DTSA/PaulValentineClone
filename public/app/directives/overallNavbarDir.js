@@ -296,6 +296,10 @@ angular.module("app")
         });
       };
 
+      $scope.$on('getCartDir',(event, args)=>{
+       getCart();
+      });
+      
       // render cart on DOM when hitting page
       getCart();
 
