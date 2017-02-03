@@ -2,7 +2,6 @@
 module.exports = {
   mail: (req,res,next)=>{
     const app = require('../index')
-    // const process.env = require('../process.env');
     const nodemailer = require('nodemailer');
     const hbs = require('nodemailer-express-handlebars');
     let transporter = nodemailer.createTransport({
