@@ -7,8 +7,8 @@ var passport = require('passport');
 var cookieParser = require('cookie-parser');
 // var config = require('./config');
 
-var uri = "mongodb://heroku_ngd5klnv:i2em7ssc6sh4gqb0vqbob0mg22@ds139949.mlab.com:39949/heroku_ngd5klnv"
-mongodb://user:pass@host:port/db
+
+
 var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 var app = express();
@@ -26,7 +26,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(uri);
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', function() {
   console.log('connected to database')
 })
