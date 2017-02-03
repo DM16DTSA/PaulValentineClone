@@ -4,7 +4,7 @@ angular.module("app")
 
         $scope.openfaq = function() {
           console.log("hello")
-            if $event.currentTarget.siblings().hasClass('openf') {
+            if ($event.currentTarget.siblings().hasClass('openf')) {
                 $event.currentTarget.removeClass('openf')
             } else {
                 $event.currentTarget.siblings().addClass('openf')
