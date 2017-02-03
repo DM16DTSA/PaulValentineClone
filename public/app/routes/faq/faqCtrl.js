@@ -2,12 +2,12 @@ angular.module("app")
     .controller('faqCtrl', function($scope, $stateParams, mainService, $rootScope) {
         $rootScope.header = "FAQ – Paul Valentine US";
 
-        $('.faq-question').on('click', function() {
+        $scope.openfaq = function() {
           console.log("hello")
-            if ($(this).siblings().hasClass('openf')) {
-                $(this).siblings().removeClass('openf')
+            if $event.currentTarget.siblings().hasClass('openf') {
+                $event.currentTarget.removeClass('openf')
             } else {
-                $(this).siblings().addClass('openf')
+                $event.currentTarget.siblings().addClass('openf')
             }
-        })
-    });
+        }
+  });
