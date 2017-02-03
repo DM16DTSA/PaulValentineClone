@@ -252,6 +252,7 @@ $scope.postCart = (obj)=>{
   console.log(obj);
   //obj needs to be the watch obj from page
   cartSrvc.postCart(obj);
+  $rootScope.$broadcast("getCartDir");
 };
 
 
