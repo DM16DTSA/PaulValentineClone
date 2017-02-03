@@ -280,11 +280,17 @@ angular.module("app")
 
 
       // function gets cart from session. If no cart then sets cart to null;
+      $scope.bagQty = 0;
       let getCart = ()=>{
         cartSrvc.getCart().then((res)=>{
             $scope.cart = res.cart;
             $scope.total = res.subTotal;
-            $scope.bagQty = res.cart.length;
+
+            $scope.bagQty = $scope.cart.reduce((prev, curr)=>{
+              return prev + curr.quantity;
+            },0);
+            // if(!$scope.cart || !$scope.cart[0] ){
+            // }
         });
       };
 
@@ -299,7 +305,7 @@ angular.module("app")
       $scope.$on('getCartDir',(event, args)=>{
        getCart();
       });
-      
+
       // render cart on DOM when hitting page
       getCart();
 

@@ -458,11 +458,17 @@ angular.module("app").directive('overallNavbarDir', function () {
       });
 
       // function gets cart from session. If no cart then sets cart to null;
+      $scope.bagQty = 0;
       var getCart = function getCart() {
         cartSrvc.getCart().then(function (res) {
           $scope.cart = res.cart;
           $scope.total = res.subTotal;
-          $scope.bagQty = res.cart.length;
+
+          $scope.bagQty = $scope.cart.reduce(function (prev, curr) {
+            return prev + curr.quantity;
+          }, 0);
+          // if(!$scope.cart || !$scope.cart[0] ){
+          // }
         });
       };
 
@@ -639,6 +645,9 @@ angular.module("app").service("mainService", function ($http) {
 });
 "use strict";
 
+angular.module("app").controller('accountCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
+"use strict";
+
 angular.module("app").controller('aboutCtrl', function ($scope, $stateParams, mainService, $rootScope) {
   $rootScope.header = "About – Paul Valentine US";
 });
@@ -690,31 +699,11 @@ angular.module('app').controller('cartCtrl', function ($scope, $stateParams, $ro
   // render cart on DOM when hitting page
   getCart();
 }); //closing
-'use strict';
+"use strict";
 
-angular.module("app").controller('contactCtrl', function ($scope, $stateParams, contactSrvc, $rootScope) {
-  // $rootScope.header = "Contact – Paul Valentine US";
-  $scope.send = function (name, email, number, message) {
-    console.log('contactCtrl fired', name, email, number, message);
-    if (!name || !email || !number || !message) {
-      return swal('please fill out all fields');
-    }
-    if (!email.match(/@/gi)) {
-      return swal('please enter a valid email');
-    }
-    var obj = {
-      name: name,
-      email: email,
-      phone: number,
-      message: message
-    };
-    contactSrvc.send(obj);
-    $scope.name = '';
-    $scope.email = '';
-    $scope.number = '';
-    $scope.message = '';
-  };
-  // return alert('Info sent');
+angular.module("app").controller('journalCtrl', function ($scope, $stateParams, mainService, $rootScope) {
+  $rootScope.header = "Journal – Paul Valentine US";
+  $scope.test = 'HELLOWORLD';
 });
 "use strict";
 
@@ -752,62 +741,35 @@ angular.module("app").controller('homeCtrl', function ($scope, $stateParams, mai
     $scope.mainWatches = response.data;
   });
 });
-"use strict";
+'use strict';
 
-angular.module("app").controller('checkoutCtrl', function ($scope, $stateParams, mainService, cartSrvc, $rootScope) {
-
-  // function gets cart from session. If no cart then sets cart to null;
-  var getCart = function getCart() {
-    cartSrvc.getCart().then(function (res) {
-      $scope.cart = res.cart;
-      $scope.total = res.subTotal;
-    });
+angular.module("app").controller('contactCtrl', function ($scope, $stateParams, contactSrvc, $rootScope) {
+  // $rootScope.header = "Contact – Paul Valentine US";
+  $scope.send = function (name, email, number, message) {
+    console.log('contactCtrl fired', name, email, number, message);
+    if (!name || !email || !number || !message) {
+      return swal('please fill out all fields');
+    }
+    if (!email.match(/@/gi)) {
+      return swal('please enter a valid email');
+    }
+    var obj = {
+      name: name,
+      email: email,
+      phone: number,
+      message: message
+    };
+    contactSrvc.send(obj);
+    $scope.name = '';
+    $scope.email = '';
+    $scope.number = '';
+    $scope.message = '';
   };
-
-  //function post new item to cart
-  $scope.postCart = function (obj) {
-    //obj needs to be the watch obj from page
-    cartSrvc.postCart(obj);
-    //call getCart to render cart on DOM
-    getCart();
-  };
-
-  //function updates cart for correct quantity
-  $scope.putCart = function (obj, str) {
-    console.log(str);
-    //string argument needs to be either 'add' or 'sub'
-    cartSrvc.putCart(obj, str).then(function (res) {
-      //call getCart to render cart on DOM
-      getCart();
-    });
-  };
-
-  //delete one item off of cart
-  $scope.deleteCartItem = function (obj) {
-    cartSrvc.deleteCartItem(obj).then(function (res) {
-      //call getCart to render cart on DOM
-      getCart();
-    });
-  };
-  //delete all items in cart
-  $scope.deleteAllCart = function () {
-    cartSrvc.destroyCart().then(function (res) {
-      //call getCart to render cart on DOM
-      getCart();
-    });
-  };
-  // render cart on DOM when hitting page
-  getCart();
+  // return alert('Info sent');
 });
 "use strict";
 
-angular.module("app").controller('journalCtrl', function ($scope, $stateParams, mainService, $rootScope) {
-  $rootScope.header = "Journal – Paul Valentine US";
-  $scope.test = 'HELLOWORLD';
-});
-"use strict";
-
-angular.module("app").controller('accountCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
+angular.module("app").controller('legalCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
 "use strict";
 
 angular.module("app").controller('lookbookCtrl', function ($scope, $stateParams, mainService, $rootScope) {
@@ -846,6 +808,113 @@ angular.module("app").controller('returnsCtrl', function ($scope, $stateParams, 
     $scope.order = '';
     $scope.message = '';
   };
+});
+"use strict";
+
+angular.module("app").controller('shippingCtrl', function ($scope, $stateParams, mainService, $rootScope) {
+  $rootScope.header = "Shipping – Paul Valentine US";
+});
+"use strict";
+
+angular.module("app").controller('shopInstagramCtrl', function ($scope, $stateParams, mainService, $rootScope) {
+  $rootScope.header = "Shop Instagram – Paul Valentine US";
+});
+"use strict";
+
+angular.module("app").controller('storeFinderCtrl', function ($scope, $stateParams, mainService, $rootScope) {
+  $rootScope.header = "Store Finder – Paul Valentine US";
+
+  $scope.initMap = function () {
+
+    var uluru = {
+      lat: 48.244668,
+      lng: 14.236425
+    };
+
+    var uluruTwo = {
+      lat: 48.308553,
+      lng: 14.021768
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: uluru,
+      styles: [{ elementType: 'geometry', stylers: [{ color: '#555555' }] }, { elementType: 'labels.text', stylers: [{ visibility: "off", font: 'AvenirLTStd-Roman' }] }, { elementType: 'labels.text.fill', stylers: [{ color: '#746855', font: 'AvenirLTStd-Roman' }] }, {
+        featureType: 'administrative.locality',
+        elementType: 'labels',
+        stylers: [{ visibility: "off" }]
+      }, {
+        featureType: 'poi',
+        elementType: 'labels',
+        stylers: [{ visibility: "off" }]
+      }, {
+        featureType: 'poi.park',
+        elementType: 'geometry',
+        stylers: [{ opacity: "0.2" }]
+      }, {
+        featureType: 'poi.park',
+        elementType: 'labels',
+        stylers: [{ opacity: "0.2" }]
+      }, {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{ color: '#38414e' }]
+      }, {
+        featureType: 'road',
+        elementType: 'geometry.stroke',
+        stylers: [{ color: '#212a37' }]
+      }, {
+        featureType: 'road',
+        elementType: 'labels',
+        stylers: [{ visibility: "off" }]
+      }, {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{ color: '#333' }]
+      }, {
+        featureType: 'road.highway',
+        elementType: 'geometry.stroke',
+        stylers: [{ color: '#333' }]
+      }, {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#fff' }]
+      }, {
+        featureType: 'transit',
+        elementType: 'geometry',
+        stylers: [{ color: '#2f3948' }]
+      }, {
+        featureType: 'transit.station',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#fff' }]
+      }, {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{ color: '#303030' }]
+      }, {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#fff' }]
+      }, {
+        featureType: 'water',
+        elementType: 'labels.text.stroke',
+        stylers: [{ color: '#fff' }]
+      }]
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      icon: '../../styles/images/icons/mappin.png'
+    });
+
+    var markerTwo = new google.maps.Marker({
+      position: uluruTwo,
+      map: map,
+      icon: '../../styles/images/icons/mappin.png'
+    });
+  };
+
+  $scope.initMap();
 });
 "use strict";
 
@@ -1075,106 +1144,54 @@ angular.module("app").controller('productCtrl', function ($scope, $stateParams, 
 });
 "use strict";
 
-angular.module("app").controller('shopInstagramCtrl', function ($scope, $stateParams, mainService, $rootScope) {
-  $rootScope.header = "Shop Instagram – Paul Valentine US";
-});
-"use strict";
+angular.module("app").controller('checkoutCtrl', function ($scope, $stateParams, mainService, cartSrvc, $rootScope) {
 
-angular.module("app").controller('storeFinderCtrl', function ($scope, $stateParams, mainService, $rootScope) {
-  $rootScope.header = "Store Finder – Paul Valentine US";
-
-  $scope.initMap = function () {
-
-    var uluru = {
-      lat: 48.244668,
-      lng: 14.236425
-    };
-
-    var uluruTwo = {
-      lat: 48.308553,
-      lng: 14.021768
-    };
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 11,
-      center: uluru,
-      styles: [{ elementType: 'geometry', stylers: [{ color: '#555555' }] }, { elementType: 'labels.text', stylers: [{ visibility: "off", font: 'AvenirLTStd-Roman' }] }, { elementType: 'labels.text.fill', stylers: [{ color: '#746855', font: 'AvenirLTStd-Roman' }] }, {
-        featureType: 'administrative.locality',
-        elementType: 'labels',
-        stylers: [{ visibility: "off" }]
-      }, {
-        featureType: 'poi',
-        elementType: 'labels',
-        stylers: [{ visibility: "off" }]
-      }, {
-        featureType: 'poi.park',
-        elementType: 'geometry',
-        stylers: [{ opacity: "0.2" }]
-      }, {
-        featureType: 'poi.park',
-        elementType: 'labels',
-        stylers: [{ opacity: "0.2" }]
-      }, {
-        featureType: 'road',
-        elementType: 'geometry',
-        stylers: [{ color: '#38414e' }]
-      }, {
-        featureType: 'road',
-        elementType: 'geometry.stroke',
-        stylers: [{ color: '#212a37' }]
-      }, {
-        featureType: 'road',
-        elementType: 'labels',
-        stylers: [{ visibility: "off" }]
-      }, {
-        featureType: 'road.highway',
-        elementType: 'geometry',
-        stylers: [{ color: '#333' }]
-      }, {
-        featureType: 'road.highway',
-        elementType: 'geometry.stroke',
-        stylers: [{ color: '#333' }]
-      }, {
-        featureType: 'road.highway',
-        elementType: 'labels.text.fill',
-        stylers: [{ color: '#fff' }]
-      }, {
-        featureType: 'transit',
-        elementType: 'geometry',
-        stylers: [{ color: '#2f3948' }]
-      }, {
-        featureType: 'transit.station',
-        elementType: 'labels.text.fill',
-        stylers: [{ color: '#fff' }]
-      }, {
-        featureType: 'water',
-        elementType: 'geometry',
-        stylers: [{ color: '#303030' }]
-      }, {
-        featureType: 'water',
-        elementType: 'labels.text.fill',
-        stylers: [{ color: '#fff' }]
-      }, {
-        featureType: 'water',
-        elementType: 'labels.text.stroke',
-        stylers: [{ color: '#fff' }]
-      }]
-    });
-    var marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
-      icon: '../../styles/images/icons/mappin.png'
-    });
-
-    var markerTwo = new google.maps.Marker({
-      position: uluruTwo,
-      map: map,
-      icon: '../../styles/images/icons/mappin.png'
+  // function gets cart from session. If no cart then sets cart to null;
+  var getCart = function getCart() {
+    cartSrvc.getCart().then(function (res) {
+      $scope.cart = res.cart;
+      $scope.total = res.subTotal;
     });
   };
 
-  $scope.initMap();
+  //function post new item to cart
+  $scope.postCart = function (obj) {
+    //obj needs to be the watch obj from page
+    cartSrvc.postCart(obj);
+    //call getCart to render cart on DOM
+    getCart();
+  };
+
+  //function updates cart for correct quantity
+  $scope.putCart = function (obj, str) {
+    console.log(str);
+    //string argument needs to be either 'add' or 'sub'
+    cartSrvc.putCart(obj, str).then(function (res) {
+      //call getCart to render cart on DOM
+      getCart();
+    });
+  };
+
+  //delete one item off of cart
+  $scope.deleteCartItem = function (obj) {
+    cartSrvc.deleteCartItem(obj).then(function (res) {
+      //call getCart to render cart on DOM
+      getCart();
+    });
+  };
+  //delete all items in cart
+  $scope.deleteAllCart = function () {
+    cartSrvc.destroyCart().then(function (res) {
+      //call getCart to render cart on DOM
+      getCart();
+    });
+  };
+  // render cart on DOM when hitting page
+  getCart();
 });
+"use strict";
+
+angular.module("app").controller('termsCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
 "use strict";
 
 angular.module("app").controller('strapsCtrl', function ($scope, $stateParams, mainService, $rootScope) {
@@ -1206,9 +1223,6 @@ angular.module("app").controller('strapsCtrl', function ($scope, $stateParams, m
 });
 "use strict";
 
-angular.module("app").controller('termsCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
-"use strict";
-
 angular.module("app").controller('watchesCtrl', function ($scope, mainService, $rootScope, $document, $state) {
   $rootScope.header = $state.current.name.charAt(0).toUpperCase() + $state.current.name.substr(1) + " – Paul Valentine US";
   mainService.getWatches().then(function (response) {
@@ -1237,12 +1251,4 @@ angular.module("app").controller('watchesCtrl', function ($scope, mainService, $
     }
   };
 });
-"use strict";
-
-angular.module("app").controller('shippingCtrl', function ($scope, $stateParams, mainService, $rootScope) {
-  $rootScope.header = "Shipping – Paul Valentine US";
-});
-"use strict";
-
-angular.module("app").controller('legalCtrl', function ($scope, $stateParams, mainService, $rootScope) {});
 //# sourceMappingURL=bundle.js.map
