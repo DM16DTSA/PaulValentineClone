@@ -9,7 +9,6 @@ angular.module("app")
       $(document).ready(function() {
         setTimeout(function() {
           if($page.scrollTop() == 0) {
-            console.log($page.scrollTop())
             // $page.animate({
             //   scrollTop: scrollTo
             // }, {duration: 2000})

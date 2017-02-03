@@ -46,9 +46,7 @@ app.get('/similarS', strapController.similarStraps)
 app.put('/watches', function(req, res) {
   watchController.addWatchReview(req, res)
 });
-app.put('/straps', function(res, res) {
-  watchController.addStrapReview(req, res)
-});
+app.put('/straps', strapController.addStrapReview);
 /////////////////////
 //////reviews////////
 /////////////////////
