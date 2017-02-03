@@ -2,23 +2,22 @@
 module.exports = {
   mail: (req,res,next)=>{
     const app = require('../index')
-    const config = require('../config');
     const nodemailer = require('nodemailer');
     const hbs = require('nodemailer-express-handlebars');
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       secure: true,
       auth: {
-        user: config.emailAddress,
-        pass: config.emailPas
+        user: process.env.emailAddress,
+        pass: process.env.emailPas
       }
     });
     //
     if(req.body.order){
       let text = 'name: '+req.body.name+'\n\n'+'phone: '+req.body.phone+'\n\n'+'order: '+req.body.order+'\n\n'+'message: '+req.body.message;
       let mailOptions = {
-        from: config.emailAddress, // sender address
-        to: config.emailAddress, // list of receivers
+        from: process.env.emailAddress, // sender address
+        to: process.env.emailAddress, // list of receivers
         subject: 'From:'+req.body.email+'  RETURN', // Subject line
         text: text//, // plaintext body
       };
@@ -34,8 +33,8 @@ module.exports = {
     }else{
       let text = 'name: '+req.body.name+'\n\n'+'phone: '+req.body.phone+'\n\n'+'message: '+req.body.message;
       let mailOptions = {
-        from: config.emailAddress, // sender address
-        to: config.emailAddress, // list of receivers
+        from: process.env.emailAddress, // sender address
+        to: process.env.emailAddress, // list of receivers
         subject: 'From:'+req.body.email, // Subject line
         text: text//, // plaintext body
         // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
